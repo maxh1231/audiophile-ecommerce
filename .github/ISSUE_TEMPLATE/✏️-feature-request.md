@@ -1,7 +1,7 @@
 ---
-name: "✏️ Title"
+name: "✏️ Feature Request"
 about: Suggest an idea for this project
-title: ''
+title: "✏️ Title"
 labels: ''
 assignees: ''
 
