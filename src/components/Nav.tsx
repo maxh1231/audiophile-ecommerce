@@ -1,13 +1,27 @@
 import Link from "next/link";
 import menu from "../assets/shared/tablet/icon-hamburger.svg";
+import mobileSpeakerMenu from '../assets/shared/desktop/image-category-thumbnail-speakers.png'
+import mobileEarphoneMenu from '../assets/shared/desktop/image-category-thumbnail-earphones.png'
+import mobileHeadphonesMenu from '../assets/shared/desktop/image-category-thumbnail-headphones.png'
+import arrowRight from '../assets/shared/desktop/icon-arrow-right.svg'
+// src / assets / shared / desktop / image - category - thumbnail - earphones.png
+import { useState } from "react";
 
 const Nav = () => {
+    const [activeMenu, setActiveMenu] = useState(false);
+
+    const menuHandler = () => {
+        if (activeMenu == false) {
+            setActiveMenu(true)
+        } else {
+            setActiveMenu(false);
+        }
+    }
 
     return (
-        <>
-            {/* TODO: Add Logo and shopping cart icon. Remove temp styles */}
+        <div className="flex flex-col">
             <ul className="flex justify-between items-center py-8 px-8 border-b-[1px] border-neutral-800">
-                <li>
+                <li onClick={menuHandler}>
                     {/* Menu icon */}
                     <svg width="16" height="15" xmlns="http://www.w3.org/2000/svg"><g fill="#FFF" fill-rule="evenodd"><path d="M0 0h16v3H0zM0 6h16v3H0zM0 12h16v3H0z" /></g></svg>
                 </li>
@@ -20,7 +34,38 @@ const Nav = () => {
                     <svg width="23" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M8.625 15.833c1.132 0 2.054.935 2.054 2.084 0 1.148-.922 2.083-2.054 2.083-1.132 0-2.054-.935-2.054-2.083 0-1.15.922-2.084 2.054-2.084zm9.857 0c1.132 0 2.054.935 2.054 2.084 0 1.148-.922 2.083-2.054 2.083-1.132 0-2.053-.935-2.053-2.083 0-1.15.92-2.084 2.053-2.084zm-9.857 1.39a.69.69 0 00-.685.694.69.69 0 00.685.694.69.69 0 00.685-.694.69.69 0 00-.685-.695zm9.857 0a.69.69 0 00-.684.694.69.69 0 00.684.694.69.69 0 00.685-.694.69.69 0 00-.685-.695zM4.717 0c.316 0 .59.215.658.517l.481 2.122h16.47a.68.68 0 01.538.262c.127.166.168.38.11.579l-2.695 9.236a.672.672 0 01-.648.478H7.41a.667.667 0 00-.673.66c0 .364.303.66.674.66h12.219c.372 0 .674.295.674.66 0 .364-.302.66-.674.66H7.412c-1.115 0-2.021-.889-2.021-1.98 0-.812.502-1.511 1.218-1.816L4.176 1.32H.674A.667.667 0 010 .66C0 .296.302 0 .674 0zm16.716 3.958H6.156l1.797 7.917h11.17l2.31-7.917z" fill="#FFF" fill-rule="nonzero" /></svg>
                 </li>
             </ul>
-        </>
+            {activeMenu &&
+                <div className="fadeIn absolute overflow-hidden top-24 h-[750px] bg-[#FFFFFF] w-[375px] flex flex-col items-center justify-evenly">
+                    <Link href='/headphones' className="flex flex-col justify-center items-center w-[325px] h-[165px] rounded-xl bg-[#F1F1F1] mt-10">
+                        <img src={mobileHeadphonesMenu.src} alt="" className="relative bottom-10 object-cover w-[160px] h-[160px]" />
+                        <h2 className="relative bottom-12 text-black font-extrabold tracking-wider">HEADPHONES</h2>
+                        <div>
+                            <p className="relative bottom-8 text-black font-bold tracking-widest text-[13px] opacity-50">SHOP </p>
+                            <img src={arrowRight.src} alt="" className="relative bottom-12 left-12 " />
+                        </div>
+                    </Link>
+                    <Link href='/speakers' className="flex flex-col justify-center items-center w-[325px] h-[165px] rounded-xl bg-[#F1F1F1] mt-10">
+                        <img src={mobileSpeakerMenu.src} alt="" className="relative bottom-10 object-cover w-[160px] h-[160px]" />
+                        <h2 className="relative bottom-12 text-black font-extrabold tracking-wider">SPEAKERS</h2>
+                        <div>
+                            <p className="relative bottom-8 text-black font-bold tracking-widest text-[13px] opacity-50">SHOP </p>
+                            <img src={arrowRight.src} alt="" className="relative bottom-12 left-12 " />
+                        </div>
+                    </Link>
+                    <Link href='/earphones' className="flex flex-col justify-center items-center w-[325px] h-[165px] rounded-xl bg-[#F1F1F1] mt-10">
+                        <img src={mobileEarphoneMenu.src} alt="" className="relative bottom-10 object-cover w-[160px] h-[160px]" />
+                        <h2 className="relative bottom-12 text-black font-extrabold tracking-wider">EARPHONES</h2>
+                        <div>
+                            <p className="relative bottom-8 text-black font-bold tracking-widest text-[13px] opacity-50">SHOP </p>
+                            <img src={arrowRight.src} alt="" className="relative bottom-12 left-12  " />
+                        </div>
+                    </Link>
+
+
+
+                </div>
+            }
+        </div>
     )
 }
 
