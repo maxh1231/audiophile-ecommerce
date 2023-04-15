@@ -9,7 +9,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'mobile-new-product': "url('/assets/home/mobile/image-header.jpg')",
+      }
+    },
   },
   plugins: [],
 }

@@ -1,12 +1,16 @@
 import Link from "next/link";
 import menu from "../assets/shared/tablet/icon-hamburger.svg";
-import mobileSpeakerMenu from '../assets/shared/desktop/image-category-thumbnail-speakers.png'
-import mobileEarphoneMenu from '../assets/shared/desktop/image-category-thumbnail-earphones.png'
-import mobileHeadphonesMenu from '../assets/shared/desktop/image-category-thumbnail-headphones.png'
-import arrowRight from '../assets/shared/desktop/icon-arrow-right.svg'
+// import mobileSpeakerMenu from '../assets/shared/desktop/image-category-thumbnail-speakers.png'
+// import mobileEarphoneMenu from '../assets/shared/desktop/image-category-thumbnail-earphones.png'
+// import mobileHeadphonesMenu from '../assets/shared/desktop/image-category-thumbnail-headphones.png'
+// import arrowRight from '../assets/shared/desktop/icon-arrow-right.svg'
 // src / assets / shared / desktop / image - category - thumbnail - earphones.png
 import { useState } from "react";
+import Image from 'next/image';
 
+function MobileSpeackerMenu() {
+    return <Image className="relative bottom-10 object-cover" src="/assets/shared/desktop/image-category-thumbnail-speakers.png" alt="speakers" width={160} height={160} />
+}
 const Nav = () => {
     const [activeMenu, setActiveMenu] = useState(false);
 
@@ -37,27 +41,28 @@ const Nav = () => {
             {activeMenu &&
                 <div className="fadeIn absolute overflow-hidden top-24 h-[750px] bg-[#FFFFFF] w-[375px] flex flex-col items-center justify-evenly">
                     <Link href='/headphones' className="flex flex-col justify-center items-center w-[325px] h-[165px] rounded-xl bg-[#F1F1F1] mt-10">
-                        <img src={mobileHeadphonesMenu.src} alt="" className="relative bottom-10 object-cover w-[160px] h-[160px]" />
+
                         <h2 className="relative bottom-12 text-black font-extrabold tracking-wider">HEADPHONES</h2>
                         <div>
                             <p className="relative bottom-8 text-black font-bold tracking-widest text-[13px] opacity-50">SHOP </p>
-                            <img src={arrowRight.src} alt="" className="relative bottom-12 left-12 " />
+                            {/* <img src={arrowRight.src} alt="" className="relative bottom-12 left-12 " /> */}
                         </div>
                     </Link>
                     <Link href='/speakers' className="flex flex-col justify-center items-center w-[325px] h-[165px] rounded-xl bg-[#F1F1F1] mt-10">
-                        <img src={mobileSpeakerMenu.src} alt="" className="relative bottom-10 object-cover w-[160px] h-[160px]" />
+                        {MobileSpeackerMenu()}
+                        {/* <img src={mobileSpeakerMenu.src} alt="" className="relative bottom-10 object-cover w-[160px] h-[160px]" /> */}
                         <h2 className="relative bottom-12 text-black font-extrabold tracking-wider">SPEAKERS</h2>
                         <div>
                             <p className="relative bottom-8 text-black font-bold tracking-widest text-[13px] opacity-50">SHOP </p>
-                            <img src={arrowRight.src} alt="" className="relative bottom-12 left-12 " />
+                            {/* <img src={arrowRight.src} alt="" className="relative bottom-12 left-12 " /> */}
                         </div>
                     </Link>
                     <Link href='/earphones' className="flex flex-col justify-center items-center w-[325px] h-[165px] rounded-xl bg-[#F1F1F1] mt-10">
-                        <img src={mobileEarphoneMenu.src} alt="" className="relative bottom-10 object-cover w-[160px] h-[160px]" />
+                        {/* <img src={mobileEarphoneMenu.src} alt="" className="relative bottom-10 object-cover w-[160px] h-[160px]" /> */}
                         <h2 className="relative bottom-12 text-black font-extrabold tracking-wider">EARPHONES</h2>
                         <div>
                             <p className="relative bottom-8 text-black font-bold tracking-widest text-[13px] opacity-50">SHOP </p>
-                            <img src={arrowRight.src} alt="" className="relative bottom-12 left-12  " />
+                            {/* <img src={arrowRight.src} alt="" className="relative bottom-12 left-12  " /> */}
                         </div>
                     </Link>
 
