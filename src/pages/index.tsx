@@ -7,15 +7,23 @@ const NewProduct = dynamic(() =>
 const Menu = dynamic(() =>
   import('../components/Menu'))
 
+const ZX9Speaker = dynamic(() =>
+  import('../components/ZX9Speaker')
+)
+
 export default function Home() {
   return (
     <>
       <div className="">
         <NewProduct />
         <section className='bg-white'>
-          <div className='py-10'>
+          <div className='py-10 bg-white'>
             <Menu />;
           </div>
+        </section>
+        <section className='bg-white py-10'>
+
+          <ZX9Speaker />
         </section>
 
         <h1 className="text-white">Next</h1>
