@@ -9,7 +9,7 @@ const NavComponent = dynamic(() =>
 
 const manrope = Manrope({
   subsets: ['latin'],
-  weight: ['400', '700']
+  weight: ['400', '500', '700']
 })
 
 export default function App({ Component, pageProps }: AppProps) {
