@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'mobile-new-product': "url('/assets/home/mobile/image-header.jpg')",
+        'mobile-zx7': "url('/assets/home/mobile/image-speaker-zx7.jpg')",
       }
     },
   },
