@@ -19,10 +19,6 @@ const YX1Earphones = dynamic(() =>
   import('../components/YX1Earphones')
 )
 
-const BestGear = dynamic(() =>
-  import('../components/BestGear')
-)
-
 const Footer = dynamic(() =>
   import('../components/Footer')
 )
@@ -45,9 +41,6 @@ export default function Home() {
         </section>
         <section className='bg-white py-10'>
           <YX1Earphones />
-        </section>
-        <section className='bg-white py-10'>
-          <BestGear />
         </section>
         <section className='bg-white pt-10'>
           <Footer />

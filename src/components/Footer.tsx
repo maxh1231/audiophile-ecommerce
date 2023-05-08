@@ -19,28 +19,37 @@ function instagramIcon(): JSX.Element {
 
 const Footer = (): JSX.Element => {
     return (
-        <div className="h-[654px] bg-black flex flex-col items-center justify-between">
-            <div className="border-t-8 border-[#D87D4A] h-[4px] w-1/4"></div>
-            {logo()}
-            <div className="flex flex-col items-center">
-                <ul>
-                    <li className="font-bold text-center text-lg tracking-[2px] my-4">HOME</li>
-                    <li className="font-bold text-center text-lg tracking-[2px] my-4">HEADPHONES</li>
-                    <li className="font-bold text-center text-lg tracking-[2px] my-4">SPEAKERS</li>
-                    <li className="font-bold text-center text-lg tracking-[2px] my-4">EARPHONES</li>
-                </ul>
+        <div>
+            <div className="flex flex-col h-[698px] mx-[24px] my-6 mb-20">
+                <div className="bg-mobile-best-gear h-1/2 bg-cover bg-no-repeat rounded-md"></div>
+                <div className="flex flex-col items-center justify-center h-1/2 my-6">
+                    <h3 className="text-black font-bold text-[28px] tracking-[1px] text-center my-6">BRINGING YOU THE <span className="text-[#D97D4A]">BEST</span> AUDIO GEAR</h3>
+                    <p className="text-black text-center opacity-50 font-medium leading-[25px]">Located at the heart of New York City, Audipphile is the preimer store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience. Stop by our store to meet some of the fantastic people who make Audiphile the best place to buy your portable audio equipment.</p>
+                </div>
             </div>
-            <p className="text-center px-6 opacity-50 font-medium">Audipphile is an all in one stop to fulfill your audio needs. We&apos;re a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit your demo facility - we&apos;re open 7 days a week.</p>
-            <p className="text-center opacity-50 font-bold">Copyright 2023. All Rights Reserved</p>
-            <div className="flex flex-row items-center mb-8">
-                <div className="px-2">
-                    {facebookIcon()}
+            <div className="h-[654px] bg-black flex flex-col items-center justify-between">
+                <div className="border-t-8 border-[#D87D4A] h-[4px] w-1/4"></div>
+                {logo()}
+                <div className="flex flex-col items-center">
+                    <ul>
+                        <li className="font-bold text-center text-lg tracking-[2px] my-4">HOME</li>
+                        <li className="font-bold text-center text-lg tracking-[2px] my-4">HEADPHONES</li>
+                        <li className="font-bold text-center text-lg tracking-[2px] my-4">SPEAKERS</li>
+                        <li className="font-bold text-center text-lg tracking-[2px] my-4">EARPHONES</li>
+                    </ul>
                 </div>
-                <div className="px-2">
-                    {twitterIcon()}
-                </div>
-                <div className="px-2">
-                    {instagramIcon()}
+                <p className="text-center px-6 opacity-50 font-medium">Audipphile is an all in one stop to fulfill your audio needs. We&apos;re a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit your demo facility - we&apos;re open 7 days a week.</p>
+                <p className="text-center opacity-50 font-bold">Copyright 2023. All Rights Reserved</p>
+                <div className="flex flex-row items-center mb-8">
+                    <div className="px-2">
+                        {facebookIcon()}
+                    </div>
+                    <div className="px-2">
+                        {twitterIcon()}
+                    </div>
+                    <div className="px-2">
+                        {instagramIcon()}
+                    </div>
                 </div>
             </div>
         </div>
