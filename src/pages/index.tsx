@@ -19,16 +19,16 @@ const YX1Earphones = dynamic(() =>
   import('../components/YX1Earphones')
 )
 
-const BestGear = dynamic(() =>
-  import('../components/BestGear')
+const Footer = dynamic(() =>
+  import('../components/Footer')
 )
 
 export default function Home() {
   return (
     <>
-      <div className="">
+      <div className="bg-white">
         <NewProduct />
-        <section className='bg-white'>
+        <section>
           <div className='py-10 bg-white'>
             <Menu />;
           </div>
@@ -36,20 +36,15 @@ export default function Home() {
         <section className='bg-white py-10'>
           <ZX9Speaker />
         </section>
-
         <section className='bg-white py-10'>
           <ZX7Speaker />
         </section>
-
         <section className='bg-white py-10'>
           <YX1Earphones />
         </section>
-
-        <section className='bg-white py-10'>
-          <BestGear />
+        <section className='bg-white pt-10'>
+          <Footer />
         </section>
-
-        <h1 className="text-white">Next</h1>
       </div>
     </>
   )
