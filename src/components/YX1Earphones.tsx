@@ -1,4 +1,4 @@
-const YX1Earphones = () => {
+const YX1Earphones = (): JSX.Element => {
     return (
         <div className="mx-[24px]">
             <div className=" bg-mobile-yx1 h-[200px] rounded-md bg-cover"></div>

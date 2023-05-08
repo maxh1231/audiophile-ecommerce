@@ -1,4 +1,10 @@
-const Headphones = () => {
+import dynamic from 'next/dynamic';
+
+const XXMarkII = dynamic(() =>
+    import('../../components/XXMarkII')
+)
+
+const Headphones = (): JSX.Element => {
     return (
         <div>
             <header className="h-[102px]  flex justify-center items-center">
@@ -6,6 +12,10 @@ const Headphones = () => {
                     HEADPHONES
                 </h1>
             </header>
+
+            <section className='bg-white py-12'>
+                <XXMarkII />
+            </section>
         </div>
     )
 }
