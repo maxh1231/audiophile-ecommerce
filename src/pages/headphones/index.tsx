@@ -8,6 +8,17 @@ const XXMarkI = dynamic(() =>
     import('../../components/XXMarkI')
 )
 
+const XX59 = dynamic(() =>
+    import('../../components/XX59Headphones')
+)
+
+const Menu = dynamic(() =>
+    import('../../components/Menu'))
+
+const Footer = dynamic(() =>
+    import('../../components/Footer')
+)
+
 const Headphones = (): JSX.Element => {
     return (
         <div className=''>
@@ -23,6 +34,18 @@ const Headphones = (): JSX.Element => {
 
             <section className='bg-white py-12'>
                 <XXMarkI />
+            </section>
+
+            <section className='bg-white py-12'>
+                <XX59 />
+            </section>
+
+            <section className='bg-white py-12'>
+                <Menu />
+            </section>
+
+            <section className='bg-white pt-12'>
+                <Footer />
             </section>
         </div>
     )
