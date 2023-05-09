@@ -4,7 +4,7 @@ function PagePreview(): JSX.Element {
     return <Image src="/assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
 }
 
-const XXMarkII = (): JSX.Element => {
+const XXMarkIIHeadphones = (): JSX.Element => {
     return (
 
         <div className='mx-[24px] h-[724px]'>
@@ -21,4 +21,4 @@ const XXMarkII = (): JSX.Element => {
     )
 }
 
-export default XXMarkII;
+export default XXMarkIIHeadphones;

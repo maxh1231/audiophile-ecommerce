@@ -2,21 +2,21 @@ import dynamic from 'next/dynamic';
 
 
 const NewProduct = dynamic(() =>
-  import('../components/NewProduct'))
+  import('../components/Home/NewProduct'))
 
 const Menu = dynamic(() =>
   import('../components/Menu'))
 
 const ZX9Speaker = dynamic(() =>
-  import('../components/ZX9Speaker')
+  import('../components/Home/ZX9Speaker')
 )
 
 const ZX7Speaker = dynamic(() =>
-  import('../components/ZX7Speaker')
+  import('../components/Home/ZX7Speaker')
 )
 
 const YX1Earphones = dynamic(() =>
-  import('../components/YX1Earphones')
+  import('../components/Home/YX1Earphones')
 )
 
 const Footer = dynamic(() =>

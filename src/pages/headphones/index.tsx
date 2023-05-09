@@ -1,15 +1,15 @@
 import dynamic from 'next/dynamic';
 
 const XXMarkII = dynamic(() =>
-    import('../../components/XXMarkII')
+    import('../../components/Headphones/XXMarkIIHeadphones')
 )
 
 const XXMarkI = dynamic(() =>
-    import('../../components/XXMarkI')
+    import('../../components/Headphones/XXMarkIHeadphones')
 )
 
 const XX59 = dynamic(() =>
-    import('../../components/XX59Headphones')
+    import('../../components/Headphones/XX59Headphones')
 )
 
 const Menu = dynamic(() =>
