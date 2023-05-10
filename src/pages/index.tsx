@@ -23,10 +23,14 @@ const Footer = dynamic(() =>
   import('../components/Footer')
 )
 
-export default function Home() {
+interface Background {
+  background: string,
+}
+
+export default function Home({ background }: Background) {
   return (
     <>
-      <div className="bg-white">
+      <div className={`bg-white ${background}`}>
         <NewProduct />
         <section>
           <div className='py-10 bg-white'>

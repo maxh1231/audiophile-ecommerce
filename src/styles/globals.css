@@ -130,3 +130,8 @@ a {
     opacity: 1;
   }
 }
+
+.setOpacity {
+  opacity: .40;
+  transition: opacity .5s;
+}

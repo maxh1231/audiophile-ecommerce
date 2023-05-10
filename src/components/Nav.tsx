@@ -20,14 +20,21 @@ function NavCartIcon(): JSX.Element {
 const Menu = dynamic(() =>
     import('../components/Menu'))
 
-const Nav = (): JSX.Element => {
+interface Background {
+    background: string,
+    setBackground: React.Dispatch<React.SetStateAction<string>>
+}
+
+const Nav = ({ background, setBackground }: Background): JSX.Element => {
     const [activeMenu, setActiveMenu] = useState(false);
 
     const menuHandler = () => {
         if (activeMenu == false) {
             setActiveMenu(true)
+            setBackground('setOpacity')
         } else {
             setActiveMenu(false);
+            setBackground('')
         }
     }
 
