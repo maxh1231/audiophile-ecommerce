@@ -1,6 +1,126 @@
+import Link from 'next/link';
+import Image from 'next/image';
+import dynamic from 'next/dynamic';
+
+function PagePreview(): JSX.Element {
+    return <Image src="/assets/product-yx1-earphones/mobile/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+}
+
+function renderGallery(): JSX.Element {
+    return (
+        <div className='h-[726px] mx-[24px] mt-20'>
+            <div className='my-5 bg-cover'>
+                <Image src="/assets/product-yx1-earphones/mobile/image-gallery-1.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+            </div>
+            <div className='my-5 bg-cover'>
+                <Image src="/assets/product-yx1-earphones/mobile/image-gallery-2.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+            </div>
+            <div className='my-5 bg-cover'>
+                <Image src="/assets/product-yx1-earphones/mobile/image-gallery-3.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+            </div>
+        </div>
+    )
+}
+
+const Menu = dynamic(() =>
+    import('../../components/Menu'))
+
+const Footer = dynamic(() =>
+    import('../../components/Footer')
+)
+
+
 const renderComponent = () => {
     return (
-        <h1>YX1</h1>
+        <div className='bg-white'>
+            <div className='mx-[24px]'>
+                <div className='py-4'>
+                    <Link className='text-lg text-black opacity-50 font-medium' href={'/'}>Go Back</Link>
+                </div>
+                <div>
+                    {PagePreview()}
+                </div>
+                <div className='flex flex-col items-start justify-center my-2'>
+                    <p className='text-[#D87D4A]  tracking-[10px] my-6'>NEW PRODUCT</p>
+                    <h2 className='font-bold text-black text-left text-3xl tracking-[1px]'>YX1 WIRELESS<br />EARPHONES</h2>
+                    <p className='opacity-50 font-medium text-lg text-black text-left my-6'>Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.</p>
+                    <p className='text-black font-bold text-xl tracking-[1.2px]'>$ 599</p>
+                    <div className='flex my-6'>
+                        <div className='bg-[#F1F1F1] flex justify-start items-center mr-4'>
+                            <button className='text-black opacity-25 text-xl pl-5'>-</button>
+                            <span className='text-black text-xl px-7 font-bold'>1</span>
+                            <button className='text-black opacity-25 text-xl pr-5'>+</button>
+                        </div>
+                        <button className='bg-[#D87D4A] font-bold px-6 py-4 tracking-[1px]'>ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+
+            <div className='mx-[24px] mt-20'>
+                <h2 className='text-black font-bold text-2xl tracking-widest my-6'>FEATURES</h2>
+                <p className='text-black opacity-50 text-lg font-medium my-6'>Experience unrivaled stereo sound thanks to innovative acoustic technology. With improved ergonomics designed for full day wearing, these revolutionary earphones have been finely crafted to provide you with the perfect fit, delivering complete comfort all day long while enjoying exceptional noise isolation and truly immersive sound.</p>
+                <p className='text-black opacity-50 text-lg font-medium my-6'>The YX1 Wireless Earphones features customizable controls for volume, music, calls, and voice assistants built into both earbuds. The new 7-hour battery life can be extended up to 28 hours with the charging case, giving you uninterrupted play time. Exquisite craftsmanship with a splash resistant design now available in an all new white and grey color scheme as well as the popular classic black.</p>
+            </div>
+
+            <div className='mx-[24px] mt-20 my-6'>
+                <h2 className='text-black font-bold text-2xl tracking-widest my-6'>IN THE BOX</h2>
+                <p className='text-[#D87D4A] font-bold text-lg my-2'>2x <span className='text-black opacity-50 font-medium ml-6'>Earphone Unit</span></p>
+                <p className='text-[#D87D4A] font-bold text-lg my-2'>6x <span className='text-black opacity-50 font-medium ml-6'>Multi-size Earplugs</span></p>
+                <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>User Manual</span></p>
+                <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>USB-C Charging Cable</span></p>
+                <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>Travel Pouch</span></p>
+            </div>
+
+            {renderGallery()}
+
+            <div className='h-[983px] mx-[24px] mt-20 flex flex-col items-center my-20'>
+                <h2 className='text-black text-2xl font-bold tracking-[0.8px] my-4 mt-10'>YOU MAY ALSO LIKE</h2>
+                <div className='flex flex-col items-center'>
+                    <div className='my-4'>
+                        <Image className='' src="/assets/shared/mobile/image-xx99-mark-one-headphones.jpg" width={327} height={120} alt='mark-1'></Image>
+                    </div>
+                    <div className='my-4'>
+                        <h2 className='text-black text-2xl font-bold tracking-[0.8px]'>XX99 MARK I</h2>
+                    </div>
+                    <div className='my-4'>
+                        <Link href="/headphones/xx99-mark-i"><button className='bg-[#D87D4A] font-bold px-6 py-4 tracking-[1px]'>SEE PRODUCT</button></Link>
+                    </div>
+                </div>
+
+                <div className='flex flex-col items-center'>
+                    <div className='my-4'>
+                        <Image className='' src="/assets/shared/mobile/image-xx59-headphones.jpg" width={327} height={120} alt='xx59'></Image>
+                    </div>
+                    <div className='my-4'>
+                        <h2 className='text-black text-2xl font-bold tracking-[0.8px]'>XX59</h2>
+                    </div>
+                    <div className='my-4'>
+                        <Link href="/headphones/xx59"><button className='bg-[#D87D4A] font-bold px-6 py-4 tracking-[1px]'>SEE PRODUCT</button></Link>
+                    </div>
+                </div>
+
+                <div className='flex flex-col items-center'>
+                    <div className='my-4'>
+                        <Image className='' src="/assets/shared/mobile/image-zx9-speaker.jpg" width={327} height={120} alt='zx9'></Image>
+                    </div>
+                    <div className='my-4'>
+                        <h2 className='text-black text-2xl font-bold tracking-[0.8px]'>ZX9 SPEAKER</h2>
+                    </div>
+                    <div className='my-4'>
+                        <Link href="/speakers/zx9"><button className='bg-[#D87D4A] font-bold px-6 py-4 tracking-[1px]'>SEE PRODUCT</button></Link>
+                    </div>
+                </div>
+            </div>
+
+            <section className='bg-white py-6'>
+                <Menu />
+            </section>
+
+            <section className='bg-white pt-12'>
+                <Footer />
+            </section>
+        </div>
+
     )
 }
 
