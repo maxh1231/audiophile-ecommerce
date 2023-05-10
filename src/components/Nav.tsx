@@ -38,7 +38,9 @@ const Nav = (): JSX.Element => {
                     {NavMenuIcon()}
                 </li>
                 <li>
-                    {NavLogo()}
+                    <Link href="/">
+                        {NavLogo()}
+                    </Link>
                 </li>
                 <li>
                     {NavCartIcon()}
@@ -48,8 +50,6 @@ const Nav = (): JSX.Element => {
                 <div className="fadeIn absolute top-24 z-50">
                     <Menu />
                 </div>
-
-
             }
         </div>
     )

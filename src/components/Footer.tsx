@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Image from 'next/image';
 
 function logo(): JSX.Element {
@@ -32,10 +33,10 @@ const Footer = (): JSX.Element => {
                 {logo()}
                 <div className="flex flex-col items-center">
                     <ul>
-                        <li className="font-bold text-center text-lg tracking-[2px] my-4">HOME</li>
-                        <li className="font-bold text-center text-lg tracking-[2px] my-4">HEADPHONES</li>
-                        <li className="font-bold text-center text-lg tracking-[2px] my-4">SPEAKERS</li>
-                        <li className="font-bold text-center text-lg tracking-[2px] my-4">EARPHONES</li>
+                        <Link href="/"><li className="font-bold text-center text-lg tracking-[2px] my-4">HOME</li></Link>
+                        <Link href="/headphones"><li className="font-bold text-center text-lg tracking-[2px] my-4">HEADPHONES</li></Link>
+                        <Link href="/speakers"><li className="font-bold text-center text-lg tracking-[2px] my-4">SPEAKERS</li></Link>
+                        <Link href="/earphones"><li className="font-bold text-center text-lg tracking-[2px] my-4">EARPHONES</li></Link>
                     </ul>
                 </div>
                 <p className="text-center px-6 opacity-50 font-medium">Audipphile is an all in one stop to fulfill your audio needs. We&apos;re a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit your demo facility - we&apos;re open 7 days a week.</p>

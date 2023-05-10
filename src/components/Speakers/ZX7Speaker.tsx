@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Image from 'next/image';
 
 function PagePreview(): JSX.Element {
@@ -14,7 +15,7 @@ const ZX7Speaker = (): JSX.Element => {
             <div className='flex flex-col items-center justify-end my-2'>
                 <h2 className='font-bold text-black text-center text-3xl tracking-[1px] mt-4'>ZX7<br />SPEAKER</h2>
                 <p className='opacity-50 font-medium text-lg text-black text-center px-2 my-4'>Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.</p>
-                <button className='bg-[#D87D4A] font-bold px-6 py-4 my-'>SEE PRODUCT</button>
+                <Link href="/speakers/zx7"><button className='bg-[#D87D4A] font-bold px-6 py-4 my-'>SEE PRODUCT</button></Link>
             </div>
         </div>
     )

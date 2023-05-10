@@ -1,8 +1,6 @@
 import Link from "next/link";
 import Image from 'next/image';
 
-// public/assets/home/tablet/image-speaker-zx9.png
-
 function SpeakerImage(): JSX.Element {
     return <Image className="relative bottom-10 object-cover" src="/assets/home/tablet/image-speaker-zx9.png" alt="speakers" width={172} height={207} />
 }
@@ -25,7 +23,7 @@ const ZX9Speaker = (): JSX.Element => {
                 <p className="text-lg opacity-75">Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
             </div>
             <div>
-                <button className="bg-black px-8 py-4 tracking-[1px] text-lg font-bold mb-10">SEE PRODUCT</button>
+                <Link href="/speakers/zx9"><button className="bg-black px-8 py-4 tracking-[1px] text-lg font-bold mb-10">SEE PRODUCT</button></Link>
             </div>
         </section>
     )

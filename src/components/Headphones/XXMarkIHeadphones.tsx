@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Image from 'next/image';
 
 function PagePreview(): JSX.Element {
@@ -14,7 +15,7 @@ const XXMarkIHeadphones = (): JSX.Element => {
             <div className='flex flex-col items-center justify-end my-2'>
                 <h2 className='font-bold text-black text-center text-3xl tracking-[1px] mt-4'>XX99 MARK I<br />HEADPHONES</h2>
                 <p className='opacity-50 font-medium text-lg text-black text-center px-2 my-4'>As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.</p>
-                <button className='bg-[#D87D4A] font-bold px-6 py-4 my-'>SEE PRODUCT</button>
+                <Link href="/headphones/xx99-mark-i"><button className='bg-[#D87D4A] font-bold px-6 py-4 my-'>SEE PRODUCT</button></Link>
             </div>
         </div>
     )

@@ -1,6 +1,6 @@
-// import BackgroundImage from '../assets/home/mobile/image-header.jpg'
+import Link from "next/link";
 
-const NewProduct = () => {
+const NewProduct = (): JSX.Element => {
     return (
         <section className=" h-[510px] bg-mobile-new-product bg-cover bg-center flex flex-col items-center justify-center">
             <div className="mt-16 pt-12">
@@ -13,9 +13,10 @@ const NewProduct = () => {
                 <p className="opacity-75 text-center font-medium px-4 text-lg">Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
             </div>
             <div className="mt-6">
-                <button className="font-bold tracking-widest bg-[#d87D4A] py-4 px-6 text-base">
+                <Link href="/headphones/xx99-mark-ii"><button className="font-bold tracking-widest bg-[#d87D4A] py-4 px-6 text-base">
                     SEE PRODUCT
                 </button>
+                </Link>
             </div>
         </section>
     )
