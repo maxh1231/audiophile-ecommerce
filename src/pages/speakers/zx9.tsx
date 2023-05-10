@@ -73,7 +73,7 @@ const renderComponent = () => {
 
             {renderGallery()}
 
-            <div className='h-[983px] mx-[24px] mt-20 flex flex-col items-center'>
+            <div className='h-[983px] mx-[24px] mt-20 flex flex-col items-center my-20'>
                 <h2 className='text-black text-2xl font-bold tracking-[0.8px] my-4 mt-10'>YOU MAY ALSO LIKE</h2>
                 <div className='flex flex-col items-center'>
                     <div className='my-4'>
@@ -112,7 +112,7 @@ const renderComponent = () => {
                 </div>
             </div>
 
-            <section className='bg-white py-12'>
+            <section className='bg-white py-6'>
                 <Menu />
             </section>
 

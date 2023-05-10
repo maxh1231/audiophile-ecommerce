@@ -62,7 +62,7 @@ const renderComponent = () => {
                 <p className='text-black opacity-50 text-lg font-medium my-6'>The advanced Active Noise Cancellation with built-in equalizer allow you to experience your audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings when you need to. Combined with Bluetooth 5. 0 compliant connectivity and 17 hour battery life, the XX99 Mark II headphones gives you superior sound, cutting-edge technology, and a modern design aesthetic.</p>
             </div>
 
-            <div className='mx-[24px] mt-20'>
+            <div className='mx-[24px] mt-20 my-6'>
                 <h2 className='text-black font-bold text-2xl tracking-widest my-6'>IN THE BOX</h2>
                 <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>Headphone Unit</span></p>
                 <p className='text-[#D87D4A] font-bold text-lg my-2'>2x <span className='text-black opacity-50 font-medium ml-6'>Replacement Earcups</span></p>
@@ -73,7 +73,7 @@ const renderComponent = () => {
 
             {renderGallery()}
 
-            <div className='h-[983px] mx-[24px] mt-20 flex flex-col items-center'>
+            <div className='h-[983px] mx-[24px] mt-20 flex flex-col items-center my-20'>
                 <h2 className='text-black text-2xl font-bold tracking-[0.8px] my-4 mt-10'>YOU MAY ALSO LIKE</h2>
                 <div className='flex flex-col items-center'>
                     <div className='my-4'>
@@ -112,7 +112,7 @@ const renderComponent = () => {
                 </div>
             </div>
 
-            <section className='bg-white py-12'>
+            <section className='bg-white py-6'>
                 <Menu />
             </section>
 
