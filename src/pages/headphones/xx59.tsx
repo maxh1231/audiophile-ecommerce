@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import { props } from '../../utils/types'
 
 function PagePreview(): JSX.Element {
     return <Image src="/assets/product-xx59-headphones/mobile/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
@@ -29,8 +30,12 @@ const Footer = dynamic(() =>
     import('../../components/Footer')
 )
 
+const ItemCounter = dynamic(() =>
+    import('../../components/ItemCounter')
+)
 
-const renderComponent = () => {
+
+const renderComponent = ({ cart, setCart }: props) => {
     return (
         <div className='bg-white'>
             <div className='mx-[24px]'>
@@ -44,14 +49,7 @@ const renderComponent = () => {
                     <h2 className='font-bold text-black text-left text-3xl tracking-[1px] mt-8'>XX59<br />HEADPHONES</h2>
                     <p className='opacity-50 font-medium text-lg text-black text-left px-2 my-6'>Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.</p>
                     <p className='text-black font-bold text-xl tracking-[1.2px]'>$ 899</p>
-                    <div className='flex my-8'>
-                        <div className='bg-[#F1F1F1] flex justify-start items-center mr-4'>
-                            <button className='text-black opacity-25 text-xl pl-5'>-</button>
-                            <span className='text-black text-xl px-7 font-bold'>1</span>
-                            <button className='text-black opacity-25 text-xl pr-5'>+</button>
-                        </div>
-                        <button className='bg-[#D87D4A] font-bold px-6 py-4 tracking-[1px]'>ADD TO CART</button>
-                    </div>
+                    <ItemCounter cart={cart} setCart={setCart} name={"XX59"} price={"899"} img={"/assets/product-xx59-headphones/mobile/image-product.jpg"} />
                 </div>
             </div>
 

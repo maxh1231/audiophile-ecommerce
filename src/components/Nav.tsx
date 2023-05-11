@@ -2,6 +2,8 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from 'next/image';
 import dynamic from "next/dynamic";
+import { ItemType } from "@/utils/types";
+import { Item } from "@/utils/Item";
 
 
 
@@ -20,13 +22,19 @@ function NavCartIcon(): JSX.Element {
 const Menu = dynamic(() =>
     import('../components/Menu'))
 
-interface Background {
+const Cart = dynamic(() =>
+    import('../components/Cart'))
+
+interface props {
     background: string,
-    setBackground: React.Dispatch<React.SetStateAction<string>>
+    setBackground: React.Dispatch<React.SetStateAction<string>>,
+    cart: ItemType[],
+    setCart: React.Dispatch<React.SetStateAction<ItemType[]>>
 }
 
-const Nav = ({ background, setBackground }: Background): JSX.Element => {
+const Nav = ({ background, setBackground, cart, setCart }: props): JSX.Element => {
     const [activeMenu, setActiveMenu] = useState(false);
+    const [activeCart, setActiveCart] = useState(false);
 
     const menuHandler = () => {
         if (activeMenu == false) {
@@ -35,6 +43,17 @@ const Nav = ({ background, setBackground }: Background): JSX.Element => {
         } else {
             setActiveMenu(false);
             setBackground('')
+        }
+    }
+
+    const cartHandler = () => {
+        if (activeCart == false) {
+            setActiveCart(true)
+            setBackground('setOpacity')
+        } else {
+            setActiveCart(false);
+            setBackground('')
+
         }
     }
 
@@ -49,13 +68,19 @@ const Nav = ({ background, setBackground }: Background): JSX.Element => {
                         {NavLogo()}
                     </Link>
                 </li>
-                <li>
+                <li onClick={cartHandler}>
                     {NavCartIcon()}
                 </li>
             </ul>
             {activeMenu &&
                 <div className="fadeIn absolute top-24 z-50">
                     <Menu />
+                </div>
+            }
+
+            {activeCart &&
+                <div className="fadeIn absolute top-24 z-50">
+                    <Cart cart={cart} setCart={setCart} />
                 </div>
             }
         </div>

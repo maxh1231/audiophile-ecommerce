@@ -1,6 +1,13 @@
 import Link from "next/link";
+import { ItemType } from "@/utils/types";
 
-const Cart = () => {
+interface props {
+    cart: ItemType[],
+    setCart: React.Dispatch<React.SetStateAction<ItemType[]>>
+}
+
+const Cart = ({ cart, setCart }: props) => {
+    console.log(cart);
     return (
         <div>
             <div>

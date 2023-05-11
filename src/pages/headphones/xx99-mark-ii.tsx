@@ -1,9 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic'
-import { ItemType } from '../../utils/types'
-import { Item } from '../../utils/Item';
-import { useState } from 'react';
+import { props } from '../../utils/types'
 
 function PagePreview(): JSX.Element {
     return <Image src="/assets/product-xx99-mark-two-headphones/mobile/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
@@ -25,6 +23,10 @@ function renderGallery(): JSX.Element {
     )
 }
 
+const ItemCounter = dynamic(() =>
+    import('../../components/ItemCounter')
+)
+
 const Menu = dynamic(() =>
     import('../../components/Menu'))
 
@@ -32,39 +34,11 @@ const Footer = dynamic(() =>
     import('../../components/Footer')
 )
 
-interface props {
-    cart: ItemType[],
-    setCart: React.Dispatch<React.SetStateAction<ItemType[]>>
-}
+
 
 
 
 const renderComponent = ({ cart, setCart }: props) => {
-
-    const [itemCount, setItemCount] = useState(1);
-
-    const addItem = () => {
-        let item = new Item("XX99 MK II", "2,999", itemCount, "/assets/shared/mobile/image-xx99-mark-one-headphones.jpg");
-
-        setCart(items => [...items, item]);
-
-        console.log(cart);
-    }
-
-    const incrementCount = () => {
-        let curCount = itemCount;
-        curCount++;
-        setItemCount(curCount);
-    }
-
-    const decrementCount = () => {
-        if (itemCount > 1) {
-            let curCount = itemCount;
-            curCount--;
-            setItemCount(curCount);
-        }
-    }
-
 
     return (
         <div className='bg-white'>
@@ -80,14 +54,8 @@ const renderComponent = ({ cart, setCart }: props) => {
                     <h2 className='font-bold text-black text-left text-3xl tracking-[1px]'>XX99 MARK II<br />HEADPHONES</h2>
                     <p className='opacity-50 font-medium text-lg text-black text-left px-2 my-6'>The new XX99 Mark II headphones are the pinnicale of pristine audio. It redefines your premium headphones experience by reporducing the balanced depth and precision of studio-quality sound.</p>
                     <p className='text-black font-bold text-xl tracking-[1.2px]'>$ 2,999</p>
-                    <div className='flex my-6'>
-                        <div className='bg-[#F1F1F1] flex justify-start items-center mr-4'>
-                            <button onClick={decrementCount} className='text-black opacity-25 text-xl pl-5'>-</button>
-                            <span className='text-black text-xl px-7 font-bold'>{itemCount}</span>
-                            <button onClick={incrementCount} className='text-black opacity-25 text-xl pr-5'>+</button>
-                        </div>
-                        <button onClick={addItem} className='bg-[#D87D4A] font-bold px-6 py-4 tracking-[1px]'>ADD TO CART</button>
-                    </div>
+
+                    <ItemCounter cart={cart} setCart={setCart} name={"XX99 MK II"} price={"2,999"} img={"/assets/product-xx99-mark-two-headphones/mobile/image-product.jpg"} />
                 </div>
             </div>
 
