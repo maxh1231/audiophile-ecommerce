@@ -10,5 +10,6 @@ export interface props {
     setCart: React.Dispatch<React.SetStateAction<ItemType[]>>
     name: string,
     price: string,
-    img: string
+    img: string,
+    background: string
 }

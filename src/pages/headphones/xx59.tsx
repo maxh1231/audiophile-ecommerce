@@ -35,9 +35,9 @@ const ItemCounter = dynamic(() =>
 )
 
 
-const renderComponent = ({ cart, setCart }: props) => {
+const renderComponent = ({ cart, setCart, background }: props) => {
     return (
-        <div className='bg-white'>
+        <div className={`bg-white ${background}`}>
             <div className='mx-[24px]'>
                 <div className='py-4'>
                     <Link className='text-lg text-black opacity-50 font-medium' href={'/'}>Go Back</Link>

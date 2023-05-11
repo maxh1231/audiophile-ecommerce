@@ -19,9 +19,13 @@ const Footer = dynamic(() =>
     import('../../components/Footer')
 )
 
-const Headphones = (): JSX.Element => {
+interface Background {
+    background: string,
+}
+
+const Headphones = ({ background }: Background): JSX.Element => {
     return (
-        <div className=''>
+        <div className={`${background}`}>
             <header className="h-[102px]  flex justify-center items-center">
                 <h1 className="font-bold text-2xl tracking-[2px]">
                     HEADPHONES
