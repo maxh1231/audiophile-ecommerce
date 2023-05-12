@@ -19,7 +19,6 @@ const ItemCounter = ({ cart, setCart, name, price, img }: props) => {
             for (let i = 0; i < cart.length; i++) {
                 if (cart[i].name === item.name) {
                     cart[i].count = itemCount
-
                 }
             }
         } else {

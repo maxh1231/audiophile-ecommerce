@@ -49,7 +49,7 @@ const renderComponent = ({ cart, setCart, background }: props) => {
                     <h2 className='font-bold text-black text-left text-3xl tracking-[1px]'>ZX9<br />SPEAKER</h2>
                     <p className='opacity-50 font-medium text-lg text-black text-left px-2 my-6'>Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.</p>
                     <p className='text-black font-bold text-xl tracking-[1.2px]'>$ 4,500</p>
-                    <ItemCounter cart={cart} setCart={setCart} name={"ZX9"} price={"4,500"} img={"/assets/product-zx9-speakers/mobile/image-product.jpg"} />
+                    <ItemCounter cart={cart} setCart={setCart} name={"ZX9"} price={"4,500"} img={"/assets/product-zx9-speaker/mobile/image-product.jpg"} />
                 </div>
             </div>
 

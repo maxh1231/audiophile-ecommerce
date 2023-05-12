@@ -49,7 +49,7 @@ const renderComponent = ({ cart, setCart, background }: props) => {
                     <h2 className='font-bold text-black text-left text-3xl tracking-[1px] mt-8'>ZX7<br />SPEAKER</h2>
                     <p className='opacity-50 font-medium text-lg text-black text-left px-2 my-6'>Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.</p>
                     <p className='text-black font-bold text-xl tracking-[1.2px]'>$ 3,500</p>
-                    <ItemCounter cart={cart} setCart={setCart} name={"ZX7"} price={"3,500"} img={"/assets/product-zx7-speakers/mobile/image-product.jpg"} />
+                    <ItemCounter cart={cart} setCart={setCart} name={"ZX7"} price={"3,500"} img={"/assets/product-zx7-speaker/mobile/image-product.jpg"} />
                 </div>
             </div>
 

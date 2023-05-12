@@ -40,6 +40,7 @@ const Nav = ({ background, setBackground, cart, setCart }: props): JSX.Element =
         if (activeMenu == false) {
             setActiveMenu(true)
             setBackground('setOpacity')
+            setActiveCart(false);
         } else {
             setActiveMenu(false);
             setBackground('')
@@ -50,6 +51,7 @@ const Nav = ({ background, setBackground, cart, setCart }: props): JSX.Element =
         if (activeCart == false) {
             setActiveCart(true)
             setBackground('setOpacity')
+            setActiveMenu(false);
         } else {
             setActiveCart(false);
             setBackground('')
@@ -73,13 +75,13 @@ const Nav = ({ background, setBackground, cart, setCart }: props): JSX.Element =
                 </li>
             </ul>
             {activeMenu &&
-                <div className="fadeIn absolute top-24 z-50">
+                <div className="fadeIn absolute top-[90px] z-50">
                     <Menu />
                 </div>
             }
 
             {activeCart &&
-                <div className="fadeIn absolute top-24 z-50">
+                <div className="fadeIn absolute top-28 left-6 z-50">
                     <Cart cart={cart} setCart={setCart} />
                 </div>
             }

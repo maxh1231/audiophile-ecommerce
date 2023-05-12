@@ -11,5 +11,7 @@ export interface props {
     name: string,
     price: string,
     img: string,
-    background: string
+    background: string,
+    itemCount: number,
+    item: ItemType
 }
