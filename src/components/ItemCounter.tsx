@@ -24,7 +24,6 @@ const ItemCounter = ({ cart, setCart, name, price, img }: props) => {
         } else {
             setCart(items => [...items, item]);
         }
-        console.log(cart);
     }
 
     const incrementCount = () => {

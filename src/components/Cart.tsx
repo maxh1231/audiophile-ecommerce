@@ -16,17 +16,14 @@ const Cart = ({ cart, setCart }: props) => {
     const [cartTotal, setCartTotal] = useState(0);
 
     useEffect(() => {
-        console.log('hit')
         let total: number = 0;
         cart.forEach((item) => {
             let price = item.price.split(',').join('')
             total = total + (parseInt(price) * item.count)
-            console.log(total);
         })
         setCartTotal(total);
     }, [cart, setCart])
 
-    console.log(cart);
     return (
         <div className=" bg-[#FFFFFF] w-[327px] flex flex-col items-center rounded-lg">
             <div className="flex justify-between w-full px-6 my-6">

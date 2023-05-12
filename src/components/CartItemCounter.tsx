@@ -1,5 +1,4 @@
-import { props, ItemType } from "@/utils/types"
-import { Square_Peg } from "@next/font/google"
+import { ItemType } from "@/utils/types"
 import { useState, useEffect } from "react"
 
 interface Cart {
@@ -9,14 +8,15 @@ interface Cart {
 }
 
 const CartItemCounter = ({ cart, setCart, item }: Cart): JSX.Element => {
-    const [currCount, setCurrCount] = useState(item.count)
+    const [currCount, setCurrCount] = useState<number | undefined>()
 
     useEffect(() => {
+        setCurrCount(item.count);
         if (item.count === 0) {
             const arr = cart.filter((item) => item.count > 0)
             setCart(arr)
         }
-    }, [cart, item.count, setCart])
+    }, [cart])
 
     const incrementItem = (item: ItemType) => {
         setCurrCount(item.count + 1);
@@ -33,6 +33,8 @@ const CartItemCounter = ({ cart, setCart, item }: Cart): JSX.Element => {
             ))
         }
     }
+
+    console.log(item.name, currCount);
 
     return (
         <>
