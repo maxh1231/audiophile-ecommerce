@@ -24,11 +24,15 @@ const Cart = ({ cart, setCart }: props) => {
         setCartTotal(total);
     }, [cart, setCart])
 
+    const emptyCart = () => {
+        setCart([]);
+    }
+
     return (
         <div className=" bg-[#FFFFFF] w-[327px] flex flex-col items-center rounded-lg">
             <div className="flex justify-between w-full px-6 my-6">
                 <h2 className="text-black font-bold text-lg tracking-[1.2px]">CART ({cart.length})</h2>
-                <span className="text-black opacity-50 text-lg font-medium decoration-solid underline">Remove all</span>
+                <span onClick={emptyCart} className="text-black opacity-50 text-lg font-medium decoration-solid underline">Remove all</span>
             </div>
             {cart.map((item, i) => (
                 <div key={i} className="text-black w-full flex items-center justify-around px-6 mb-4">
