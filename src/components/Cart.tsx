@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ItemType } from "@/utils/types";
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
@@ -53,7 +54,7 @@ const Cart = ({ cart, setCart }: props) => {
                 <span className="text-black font-bold">$ {cartTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
             </div>
             <div>
-                <button className="bg-[#D87D4A] font-medium px-20 py-4 tracking-[1px] my-6">CHECKOUT</button>
+                <Link href="/checkout"><button className="bg-[#D87D4A] font-medium px-20 py-4 tracking-[1px] my-6">CHECKOUT</button></Link>
             </div>
         </div>
     )
