@@ -3,6 +3,7 @@ import Image from "next/image";
 import dynamic from 'next/dynamic';
 import { MutableRefObject, useEffect, useRef, useState } from "react";
 import { ItemType } from "@/utils/types";
+import { calcCartTotal } from "@/utils/helpers";
 
 interface props {
     cart: ItemType[],
@@ -15,6 +16,7 @@ const Checkout = ({ cart, setCart }: props) => {
     const [trigger, setTrigger] = useState(0);
     const radioOne = useRef(null) as unknown as MutableRefObject<HTMLInputElement>
     const radioTwo = useRef(null) as unknown as MutableRefObject<HTMLInputElement>
+    const [cartTotal, setCartTotal] = useState<string>('')
 
     useEffect(() => {
         if (radioOne.current.checked) {
@@ -26,12 +28,26 @@ const Checkout = ({ cart, setCart }: props) => {
         }
     }, [trigger])
 
+    useEffect(() => {
+        setCartTotal(calcCartTotal(cart))
+    }, [cart])
+
     const handler = () => {
         if (trigger) {
             setTrigger(0)
         } else {
             setTrigger(1)
         }
+    }
+
+    const calcVAT = () => {
+        let total: number = 20 / 100 * parseInt(cartTotal.split(',').join(''));
+        return Math.round(total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    }
+
+    const calcGrandTotal = () => {
+        let total = parseInt(cartTotal.split(',').join('')) + 50 + parseInt(calcVAT().split(',').join(''))
+        return total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
     const Footer = dynamic(() =>
@@ -128,22 +144,22 @@ const Checkout = ({ cart, setCart }: props) => {
                 ))}
                 <div className="flex justify-between mb-2">
                     <span className="text-black opacity-50 font-medium text-lg">TOTAL</span>
-                    <span className="text-black font-bold text-lg text-right">$ 1,000</span>
+                    <span className="text-black font-bold text-lg text-right">$ {cartTotal}</span>
                 </div>
                 <div className="flex justify-between mb-2">
                     <span className="text-black opacity-50 font-medium text-lg">SHIPPING</span>
-                    <span className="text-black font-bold text-lg text-right">$ 1,000</span>
+                    <span className="text-black font-bold text-lg text-right">$ 50</span>
                 </div>
                 <div className="flex justify-between mb-2">
                     <span className="text-black opacity-50 font-medium text-lg">VAT (INCLUDED)</span>
-                    <span className="text-black font-bold text-lg text-right">$ 1,000</span>
+                    <span className="text-black font-bold text-lg text-right">$ {calcVAT()}</span>
                 </div>
                 <div className="flex justify-between mb-2">
                     <span className="text-black opacity-50 font-medium text-lg">GRAND TOTAL</span>
-                    <span className="text-[#D87D4A] text-lg font-bold text-right">$ 1,000</span>
+                    <span className="text-[#D87D4A] text-lg font-bold text-right">$ {calcGrandTotal()}</span>
                 </div>
                 <div className="mt-10">
-                    <button className=" w-full text-white text-lg font-bold bg-[#D87D4A] py-2">CONTINUE & PAY</button>
+                    <button className=" w-full text-white text-lg font-medium bg-[#D87D4A] py-2">CONTINUE & PAY</button>
                 </div>
             </div>
 
