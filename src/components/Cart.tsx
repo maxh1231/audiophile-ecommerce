@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ItemType } from "@/utils/types";
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
+import { calcCartTotal } from "@/utils/helpers";
 
 
 const CartItemCounter = dynamic(() =>
@@ -14,15 +15,15 @@ interface props {
 }
 
 const Cart = ({ cart, setCart }: props) => {
-    const [cartTotal, setCartTotal] = useState(0);
+    const [cartTotal, setCartTotal] = useState<string | null>(null);
 
     useEffect(() => {
-        let total: number = 0;
-        cart.forEach((item) => {
-            let price = item.price.split(',').join('')
-            total = total + (parseInt(price) * item.count)
-        })
-        setCartTotal(total);
+        // let total: number = 0;
+        // cart.forEach((item) => {
+        //     let price = item.price.split(',').join('')
+        //     total = total + (parseInt(price) * item.count)
+        // })
+        setCartTotal(calcCartTotal(cart));
     }, [cart, setCart])
 
     const emptyCart = () => {
@@ -51,7 +52,7 @@ const Cart = ({ cart, setCart }: props) => {
             ))}
             <div className="flex justify-between w-full px-8 my-6">
                 <span className="text-black opacity-50 font-medium">TOTAL</span>
-                <span className="text-black font-bold">$ {cartTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
+                <span className="text-black font-bold">$ {cartTotal}</span>
             </div>
             <div>
                 <Link href="/checkout"><button className="bg-[#D87D4A] font-medium px-20 py-4 tracking-[1px] my-6">CHECKOUT</button></Link>
