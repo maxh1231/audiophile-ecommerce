@@ -7,10 +7,11 @@ import { calcCartTotal } from "@/utils/helpers";
 
 interface props {
     cart: ItemType[],
-    setCart: React.Dispatch<React.SetStateAction<ItemType[]>>
+    setCart: React.Dispatch<React.SetStateAction<ItemType[]>>,
+    background: string
 }
 
-const Checkout = ({ cart, setCart }: props) => {
+const Checkout = ({ cart, setCart, background }: props) => {
     const [active, setActive] = useState("border-[2px] border-[#CFCFCF]");
     const [activeTwo, setActiveTwo] = useState("border-[2px] border-[#CFCFCF]");
     const [trigger, setTrigger] = useState(0);
@@ -56,7 +57,7 @@ const Checkout = ({ cart, setCart }: props) => {
 
 
     return (
-        <section className="bg-[#F1F1F1]">
+        <section className={`${background} bg-[#F1F1F1]`}>
             <div className='py-4 mx-[24px]'>
                 <Link className='text-lg text-black opacity-50 font-medium' href={'/'}>Go Back</Link>
             </div>

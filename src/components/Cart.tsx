@@ -11,23 +11,27 @@ const CartItemCounter = dynamic(() =>
 
 interface props {
     cart: ItemType[],
-    setCart: React.Dispatch<React.SetStateAction<ItemType[]>>
+    setCart: React.Dispatch<React.SetStateAction<ItemType[]>>,
+    activeCart: boolean,
+    setActiveCart: React.Dispatch<React.SetStateAction<boolean>>,
+    background: string,
+    setBackground: React.Dispatch<React.SetStateAction<string>>
 }
 
-const Cart = ({ cart, setCart }: props) => {
+const Cart = ({ cart, setCart, activeCart, setActiveCart, setBackground }: props) => {
     const [cartTotal, setCartTotal] = useState<string | null>(null);
 
     useEffect(() => {
-        // let total: number = 0;
-        // cart.forEach((item) => {
-        //     let price = item.price.split(',').join('')
-        //     total = total + (parseInt(price) * item.count)
-        // })
         setCartTotal(calcCartTotal(cart));
     }, [cart, setCart])
 
     const emptyCart = () => {
         setCart([]);
+    }
+
+    const handler = () => {
+        setActiveCart(false);
+        setBackground('');
     }
 
     return (
@@ -55,7 +59,7 @@ const Cart = ({ cart, setCart }: props) => {
                 <span className="text-black font-bold">$ {cartTotal}</span>
             </div>
             <div>
-                <Link href="/checkout"><button className="bg-[#D87D4A] font-medium px-20 py-4 tracking-[1px] my-6">CHECKOUT</button></Link>
+                <Link onClick={() => handler()} href="/checkout"><button className="bg-[#D87D4A] font-medium px-20 py-4 tracking-[1px] my-6">CHECKOUT</button></Link>
             </div>
         </div>
     )
