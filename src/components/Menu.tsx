@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from 'next/image';
 
 function MenuMobileHeadphones(): JSX.Element {
-    return <Image className="relative bottom-10 object-cover" src="/assets/shared/desktop/image-category-thumbnail-headphones.png" alt="headphones" width={160} height={160} />
+    return <Image className="relative bottom-10 object-cover w-[160px] h-[160px]" src="/assets/shared/desktop/image-category-thumbnail-headphones.png" width={160} height={160} alt="headphones" />
 }
 
 function MenuMobileSpeaker(): JSX.Element {

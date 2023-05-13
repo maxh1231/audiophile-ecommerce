@@ -25,17 +25,19 @@ const Earphones = ({ background }: Background) => {
                 </h1>
             </header>
 
-            <section className='bg-white py-12'>
-                <YX1Earphones />
-            </section>
+            <div className='bg-white'>
+                <section className='bg-white py-12'>
+                    <YX1Earphones />
+                </section>
 
-            <section className='bg-white py-12'>
-                <Menu />
-            </section>
+                <section className='bg-white py-12'>
+                    <Menu />
+                </section>
 
-            <section className='bg-white pt-12'>
-                <Footer />
-            </section>
+                <section className='bg-white pt-12'>
+                    <Footer />
+                </section>
+            </div>
         </div>
     )
 }

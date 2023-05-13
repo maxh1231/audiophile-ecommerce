@@ -26,31 +26,33 @@ interface Background {
 const Headphones = ({ background }: Background): JSX.Element => {
     return (
         <div className={`${background}`}>
-            <header className="h-[102px]  flex justify-center items-center">
+            <header className="h-[102px] flex justify-center items-center">
                 <h1 className="font-bold text-2xl tracking-[2px]">
                     HEADPHONES
                 </h1>
             </header>
 
-            <section className='bg-white py-12'>
-                <XXMarkII />
-            </section>
+            <div className='bg-white'>
+                <section className='bg-white py-12'>
+                    <XXMarkII />
+                </section>
 
-            <section className='bg-white py-12'>
-                <XXMarkI />
-            </section>
+                <section className='bg-white py-12'>
+                    <XXMarkI />
+                </section>
 
-            <section className='bg-white py-12'>
-                <XX59 />
-            </section>
+                <section className='bg-white py-12'>
+                    <XX59 />
+                </section>
 
-            <section className='bg-white py-12'>
-                <Menu />
-            </section>
+                <section className='bg-white py-12'>
+                    <Menu />
+                </section>
 
-            <section className='bg-white pt-12'>
-                <Footer />
-            </section>
+                <section className='bg-white pt-12'>
+                    <Footer />
+                </section>
+            </div>
         </div>
     )
 }

@@ -28,23 +28,23 @@ const Speakers = ({ background }: Background) => {
                     SPEAKERS
                 </h1>
             </header>
+            <div className='bg-white'>
+                <section className='bg-white py-12'>
+                    <ZX9 />
+                </section>
 
-            <section className='bg-white py-12'>
-                <ZX9 />
-            </section>
+                <section className='bg-white py-12'>
+                    <ZX7 />
+                </section>
 
-            <section className='bg-white py-12'>
-                <ZX7 />
-            </section>
+                <section className='bg-white py-12'>
+                    <Menu />
+                </section>
 
-            <section className='bg-white py-12'>
-                <Menu />
-            </section>
-
-            <section className='bg-white pt-12'>
-                <Footer />
-            </section>
-
+                <section className='bg-white pt-12'>
+                    <Footer />
+                </section>
+            </div>
         </div>
     )
 }
