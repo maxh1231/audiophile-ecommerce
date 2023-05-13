@@ -19,8 +19,8 @@ function NavCartIcon(): JSX.Element {
     return <Image src="/assets/shared/desktop/icon-cart.svg" alt="earphones" width={23} height={20} />
 }
 
-const Menu = dynamic(() =>
-    import('../components/Menu'))
+const NavMenu = dynamic(() =>
+    import('../components/NavMenu'))
 
 const Cart = dynamic(() =>
     import('../components/Cart'))
@@ -35,6 +35,7 @@ interface props {
 const Nav = ({ background, setBackground, cart, setCart }: props): JSX.Element => {
     const [activeMenu, setActiveMenu] = useState(false);
     const [activeCart, setActiveCart] = useState(false);
+
 
     const menuHandler = () => {
         if (activeMenu == false) {
@@ -76,7 +77,7 @@ const Nav = ({ background, setBackground, cart, setCart }: props): JSX.Element =
             </ul>
             {activeMenu &&
                 <div className="fadeIn absolute top-[90px] z-50">
-                    <Menu />
+                    <NavMenu activeMenu={activeMenu} setActiveMenu={setActiveMenu} background={background} setBackground={setBackground} />
                 </div>
             }
 

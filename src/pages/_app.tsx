@@ -15,8 +15,8 @@ const manrope = Manrope({
 })
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [background, setBackground] = useState<string>(' ');
   const [cart, setCart] = useState<ItemType[] | []>([]);
+  const [background, setBackground] = useState<string>(' ');
   return (
     <main className={manrope.className}>
       <NavComponent {...pageProps} background={background} setBackground={setBackground} cart={cart} setCart={setCart} />
