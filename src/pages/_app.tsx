@@ -20,11 +20,10 @@ export default function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     let localStorageCart = localStorage.getItem("cart") as string;
-    JSON.parse(localStorageCart);
-    if (!Array.isArray(localStorageCart) || !localStorageCart.length) {
-      return
-    } else {
-      setCart(localStorageCart);
+    if (localStorageCart) {
+      if (JSON.parse(localStorageCart).length > 0) {
+        setCart(JSON.parse(localStorageCart));
+      }
     }
   }, [])
   return (
