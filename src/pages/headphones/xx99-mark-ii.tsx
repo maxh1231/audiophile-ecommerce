@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic'
 import { props } from '../../utils/types'
+import { storeCart } from '@/utils/helpers';
 
 function PagePreview(): JSX.Element {
     return <Image src="/assets/product-xx99-mark-two-headphones/mobile/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />

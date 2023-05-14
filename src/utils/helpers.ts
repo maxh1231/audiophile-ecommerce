@@ -10,3 +10,14 @@ export const calcCartTotal = (cart: ItemType[]) => {
     return total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 
 }
+
+export const storeCart = async (cart: ItemType[] | ItemType) => {
+    // if (localStorage.getItem("cart")) {
+    //     let currCart = localStorage.getItem("cart");
+
+    //     localStorage.setItem("cart", currCart + JSON.stringify(cart));
+    // } else {
+    //     localStorage.setItem("cart", JSON.stringify(cart));
+    // }
+    localStorage.setItem("cart", JSON.stringify(cart));
+}

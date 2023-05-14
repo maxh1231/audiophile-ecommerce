@@ -1,5 +1,6 @@
 import { ItemType } from "@/utils/types"
 import { useState, useEffect } from "react"
+import { storeCart } from "@/utils/helpers"
 
 interface Cart {
     cart: ItemType[],
@@ -34,7 +35,6 @@ const CartItemCounter = ({ cart, setCart, item }: Cart): JSX.Element => {
         }
     }
 
-    console.log(item.name, currCount);
 
     return (
         <>
