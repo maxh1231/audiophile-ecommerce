@@ -130,3 +130,46 @@ a {
     opacity: 1;
   }
 }
+
+.setOpacity {
+  opacity: .40;
+  transition: opacity .5s;
+}
+
+input::placeholder {
+  color: black;
+  opacity: .4;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+input[type="text"] {
+  color: black;
+  font-weight: bold;
+  position: relative;
+  padding-left: 25px;
+}
+
+input[type="text"]:focus,
+input[type="text"]:hover {
+  border: 2px solid #D87D4A;
+  outline: none;
+}
+
+
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 50%;
+
+  border: 5px solid #FFF;
+  box-shadow: 0 0 0 1px #CFCFCF;
+}
+
+input[type="radio"]:checked {
+  background: #D87D4A;
+
+}

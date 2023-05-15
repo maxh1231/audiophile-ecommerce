@@ -17,10 +17,22 @@ function MenuRightArrow(): JSX.Element {
     return <Image className="relative bottom-12 left-12" src="/assets/shared/desktop/icon-arrow-right.svg" alt="earphones" width={8} height={12} />
 }
 
-const Menu = (): JSX.Element => {
+interface props {
+    activeMenu: boolean,
+    setActiveMenu: React.Dispatch<React.SetStateAction<boolean>>
+    background: string,
+    setBackground: React.Dispatch<React.SetStateAction<string>>
+}
+
+const Menu = ({ activeMenu, setActiveMenu, background, setBackground }: props): JSX.Element => {
+
+    const handler = () => {
+        setActiveMenu(false)
+        setBackground(' ')
+    }
     return (
         <div className=" overflow-hidden h-[750px] bg-[#FFFFFF] w-[375px] flex flex-col items-center justify-evenly rounded-b-lg">
-            <Link href='/headphones' className="flex flex-col justify-center items-center w-[325px] h-[165px] rounded-xl bg-[#F1F1F1] mt-10">
+            <Link onClick={() => handler()} href='/headphones' className="flex flex-col justify-center items-center w-[325px] h-[165px] rounded-xl bg-[#F1F1F1] mt-10">
                 {MenuMobileHeadphones()}
                 <h2 className="relative bottom-12 text-black font-extrabold tracking-wider">HEADPHONES</h2>
                 <div>
@@ -28,7 +40,7 @@ const Menu = (): JSX.Element => {
                     {MenuRightArrow()}
                 </div>
             </Link>
-            <Link href='/speakers' className="flex flex-col justify-center items-center w-[325px] h-[165px] rounded-xl bg-[#F1F1F1] mt-10">
+            <Link onClick={() => handler()} href='/speakers' className="flex flex-col justify-center items-center w-[325px] h-[165px] rounded-xl bg-[#F1F1F1] mt-10">
                 {MenuMobileSpeaker()}
                 <h2 className="relative bottom-12 text-black font-extrabold tracking-wider">SPEAKERS</h2>
                 <div>
@@ -36,7 +48,7 @@ const Menu = (): JSX.Element => {
                     {MenuRightArrow()}
                 </div>
             </Link>
-            <Link href='/earphones' className="flex flex-col justify-center items-center w-[325px] h-[165px] rounded-xl bg-[#F1F1F1] mt-10">
+            <Link onClick={() => handler()} href='/earphones' className="flex flex-col justify-center items-center w-[325px] h-[165px] rounded-xl bg-[#F1F1F1] mt-10">
                 {MenuMobileEarphones()}
                 <h2 className="relative bottom-12 text-black font-extrabold tracking-wider">EARPHONES</h2>
                 <div>

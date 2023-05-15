@@ -2,6 +2,8 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from 'next/image';
 import dynamic from "next/dynamic";
+import { ItemType } from "@/utils/types";
+import { Item } from "@/utils/Item";
 
 
 
@@ -17,17 +19,47 @@ function NavCartIcon(): JSX.Element {
     return <Image src="/assets/shared/desktop/icon-cart.svg" alt="earphones" width={23} height={20} />
 }
 
-const Menu = dynamic(() =>
-    import('../components/Menu'))
+const NavMenu = dynamic(() =>
+    import('../components/NavMenu'))
 
-const Nav = (): JSX.Element => {
+const Cart = dynamic(() =>
+    import('../components/Cart'))
+
+
+
+interface props {
+    background: string,
+    setBackground: React.Dispatch<React.SetStateAction<string>>,
+    cart: ItemType[],
+    setCart: React.Dispatch<React.SetStateAction<ItemType[]>>
+}
+
+const Nav = ({ background, setBackground, cart, setCart }: props): JSX.Element => {
     const [activeMenu, setActiveMenu] = useState(false);
+    const [activeCart, setActiveCart] = useState(false);
+
+
 
     const menuHandler = () => {
         if (activeMenu == false) {
             setActiveMenu(true)
+            setBackground('setOpacity')
+            setActiveCart(false);
         } else {
             setActiveMenu(false);
+            setBackground('')
+        }
+    }
+
+    const cartHandler = () => {
+        if (activeCart == false) {
+            setActiveCart(true)
+            setBackground('setOpacity')
+            setActiveMenu(false);
+        } else {
+            setActiveCart(false);
+            setBackground('')
+
         }
     }
 
@@ -38,19 +70,27 @@ const Nav = (): JSX.Element => {
                     {NavMenuIcon()}
                 </li>
                 <li>
-                    {NavLogo()}
+                    <Link href="/">
+                        {NavLogo()}
+                    </Link>
                 </li>
-                <li>
+                <li onClick={cartHandler}>
                     {NavCartIcon()}
                 </li>
             </ul>
             {activeMenu &&
-                <div className="fadeIn absolute top-24 z-50">
-                    <Menu />
+                <div className="fadeIn absolute top-[90px] z-50">
+                    <NavMenu activeMenu={activeMenu} setActiveMenu={setActiveMenu} background={background} setBackground={setBackground} />
                 </div>
-
-
             }
+
+            {activeCart &&
+                <div className="fadeIn absolute top-28 left-6 z-50">
+                    <Cart cart={cart} setCart={setCart} activeCart={activeCart} setActiveCart={setActiveCart} background={background} setBackground={setBackground} />
+                </div>
+            }
+
+
         </div>
     )
 }

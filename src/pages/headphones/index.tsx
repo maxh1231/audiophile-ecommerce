@@ -1,15 +1,15 @@
 import dynamic from 'next/dynamic';
 
 const XXMarkII = dynamic(() =>
-    import('../../components/XXMarkII')
+    import('../../components/Headphones/XXMarkIIHeadphones')
 )
 
 const XXMarkI = dynamic(() =>
-    import('../../components/XXMarkI')
+    import('../../components/Headphones/XXMarkIHeadphones')
 )
 
 const XX59 = dynamic(() =>
-    import('../../components/XX59Headphones')
+    import('../../components/Headphones/XX59Headphones')
 )
 
 const Menu = dynamic(() =>
@@ -19,34 +19,40 @@ const Footer = dynamic(() =>
     import('../../components/Footer')
 )
 
-const Headphones = (): JSX.Element => {
+interface Background {
+    background: string,
+}
+
+const Headphones = ({ background }: Background): JSX.Element => {
     return (
-        <div className=''>
-            <header className="h-[102px]  flex justify-center items-center">
+        <div className={`${background}`}>
+            <header className="h-[102px] flex justify-center items-center">
                 <h1 className="font-bold text-2xl tracking-[2px]">
                     HEADPHONES
                 </h1>
             </header>
 
-            <section className='bg-white py-12'>
-                <XXMarkII />
-            </section>
+            <div className='bg-white'>
+                <section className='bg-white py-12'>
+                    <XXMarkII />
+                </section>
 
-            <section className='bg-white py-12'>
-                <XXMarkI />
-            </section>
+                <section className='bg-white py-12'>
+                    <XXMarkI />
+                </section>
 
-            <section className='bg-white py-12'>
-                <XX59 />
-            </section>
+                <section className='bg-white py-12'>
+                    <XX59 />
+                </section>
 
-            <section className='bg-white py-12'>
-                <Menu />
-            </section>
+                <section className='bg-white py-12'>
+                    <Menu />
+                </section>
 
-            <section className='bg-white pt-12'>
-                <Footer />
-            </section>
+                <section className='bg-white pt-12'>
+                    <Footer />
+                </section>
+            </div>
         </div>
     )
 }
