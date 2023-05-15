@@ -25,6 +25,8 @@ const NavMenu = dynamic(() =>
 const Cart = dynamic(() =>
     import('../components/Cart'))
 
+
+
 interface props {
     background: string,
     setBackground: React.Dispatch<React.SetStateAction<string>>,
@@ -35,6 +37,7 @@ interface props {
 const Nav = ({ background, setBackground, cart, setCart }: props): JSX.Element => {
     const [activeMenu, setActiveMenu] = useState(false);
     const [activeCart, setActiveCart] = useState(false);
+
 
 
     const menuHandler = () => {
@@ -86,6 +89,8 @@ const Nav = ({ background, setBackground, cart, setCart }: props): JSX.Element =
                     <Cart cart={cart} setCart={setCart} activeCart={activeCart} setActiveCart={setActiveCart} background={background} setBackground={setBackground} />
                 </div>
             }
+
+
         </div>
     )
 }
