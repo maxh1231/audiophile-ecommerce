@@ -34,8 +34,11 @@ const Checkout = ({ cart, setCart, background, setBackground }: props) => {
 
     useEffect(() => {
         setCartTotal(calcCartTotal(cart))
-        setGrandTotal(calcGrandTotal)
     }, [cart])
+
+    useEffect(() => {
+        setGrandTotal(calcGrandTotal())
+    }, [cartTotal])
 
     const handler = () => {
         if (trigger) {
@@ -50,7 +53,6 @@ const Checkout = ({ cart, setCart, background, setBackground }: props) => {
             setActiveConfirmation(false)
             setBackground('')
         } else {
-            // window.scrollTo({ top: 20, behavior: 'smooth' });
             setActiveConfirmation(true);
             setBackground('opacity-40');
         }
