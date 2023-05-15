@@ -13,7 +13,7 @@ const NewProduct = (): JSX.Element => {
                 <p className="opacity-75 text-center font-medium px-4 text-lg">Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
             </div>
             <div className="mt-6">
-                <Link href="/headphones/xx99-mark-ii"><button className="font-bold tracking-widest bg-[#d87D4A] py-4 px-6 text-base">
+                <Link href="/headphones/xx99-mark-ii"><button className="font-bold tracking-widest bg-[#d87D4A] py-4 px-6 text-base hover:cursor-pointer hover:bg-[#FBAF85]">
                     SEE PRODUCT
                 </button>
                 </Link>

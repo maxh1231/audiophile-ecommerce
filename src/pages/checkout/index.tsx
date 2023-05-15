@@ -189,7 +189,7 @@ const Checkout = ({ cart, setCart, background, setBackground }: props) => {
                         <span className="text-[#D87D4A] text-lg font-bold text-right">$ {grandTotal}</span>
                     </div>
                     <div className="mt-10">
-                        <button onClick={() => showConfirmation()} className=" w-full text-white text-lg font-medium bg-[#D87D4A] py-2">CONTINUE & PAY</button>
+                        <button onClick={() => showConfirmation()} className=" w-full text-white text-lg font-medium bg-[#D87D4A] py-2 hover:cursor-pointer hover:bg-[#FBAF85]">CONTINUE & PAY</button>
                     </div>
                 </div>
 

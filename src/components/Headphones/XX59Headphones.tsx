@@ -15,7 +15,7 @@ const XX59Headphones = (): JSX.Element => {
             <div className='flex flex-col items-center justify-end my-2'>
                 <h2 className='font-bold text-black text-center text-3xl tracking-[1px] mt-4'>XX59<br />HEADPHONES</h2>
                 <p className='opacity-50 font-medium text-lg text-black text-center px-2 my-4'>Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.</p>
-                <Link href="/headphones/xx59"><button className='bg-[#D87D4A] font-bold px-6 py-4 my-'>SEE PRODUCT</button></Link>
+                <Link href="/headphones/xx59"><button className='bg-[#D87D4A] font-bold px-6 py-4 hover:cursor-pointer hover:bg-[#FBAF85]'>SEE PRODUCT</button></Link>
             </div>
         </div>
     )

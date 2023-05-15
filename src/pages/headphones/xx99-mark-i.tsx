@@ -79,7 +79,7 @@ const renderComponent = ({ cart, setCart, background }: props) => {
                         <h2 className='text-black text-2xl font-bold tracking-[0.8px]'>XX99 MARK II</h2>
                     </div>
                     <div className='my-4'>
-                        <Link href="/headphones/xx99-mark-ii"><button className='bg-[#D87D4A] font-bold px-6 py-4 tracking-[1px]'>SEE PRODUCT</button></Link>
+                        <Link href="/headphones/xx99-mark-ii"><button className='bg-[#D87D4A] font-bold px-6 py-4 tracking-[1px] hover:cursor-pointer hover:bg-[#FBAF85]'>SEE PRODUCT</button></Link>
                     </div>
                 </div>
 
@@ -91,7 +91,7 @@ const renderComponent = ({ cart, setCart, background }: props) => {
                         <h2 className='text-black text-2xl font-bold tracking-[0.8px]'>XX59</h2>
                     </div>
                     <div className='my-4'>
-                        <Link href="/headphones/xx59"><button className='bg-[#D87D4A] font-bold px-6 py-4 tracking-[1px]'>SEE PRODUCT</button></Link>
+                        <Link href="/headphones/xx59"><button className='bg-[#D87D4A] font-bold px-6 py-4 tracking-[1px] hover:cursor-pointer hover:bg-[#FBAF85]'>SEE PRODUCT</button></Link>
                     </div>
                 </div>
 
@@ -103,7 +103,7 @@ const renderComponent = ({ cart, setCart, background }: props) => {
                         <h2 className='text-black text-2xl font-bold tracking-[0.8px]'>ZX9 SPEAKER</h2>
                     </div>
                     <div className='my-4'>
-                        <Link href="/speakers/zx9"><button className='bg-[#D87D4A] font-bold px-6 py-4 tracking-[1px]'>SEE PRODUCT</button></Link>
+                        <Link href="/speakers/zx9"><button className='bg-[#D87D4A] font-bold px-6 py-4 tracking-[1px] hover:cursor-pointer hover:bg-[#FBAF85]'>SEE PRODUCT</button></Link>
                     </div>
                 </div>
             </div>
