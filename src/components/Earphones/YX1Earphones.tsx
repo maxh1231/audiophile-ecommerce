@@ -15,7 +15,7 @@ const YX1Earphones = (): JSX.Element => {
                 <p className='text-[#D87D4A]  tracking-[10px] my-4'>NEW PRODUCT</p>
                 <h2 className='font-bold text-black text-center text-3xl tracking-[1px]'>YX1 WIRELESS<br />EARPHONES</h2>
                 <p className='opacity-50 font-medium text-lg text-black text-center px-2 my-4'>Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.</p>
-                <Link href="/earphones/yx1"><button className='bg-[#D87D4A] font-bold px-6 py-4 my-'>SEE PRODUCT</button></Link>
+                <Link href="/earphones/yx1"><button className='bg-[#D87D4A] font-bold px-6 py-4 hover:cursor-pointer hover:bg-[#FBAF85]'>SEE PRODUCT</button></Link>
             </div>
         </div>
     )

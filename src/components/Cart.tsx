@@ -59,7 +59,7 @@ const Cart = ({ cart, setCart, activeCart, setActiveCart, setBackground }: props
                 <span className="text-black font-bold">$ {cartTotal}</span>
             </div>
             <div>
-                <Link onClick={() => handler()} href="/checkout"><button className="bg-[#D87D4A] font-medium px-20 py-4 tracking-[1px] my-6">CHECKOUT</button></Link>
+                <Link onClick={() => handler()} href="/checkout"><button className="bg-[#D87D4A] font-medium px-20 py-4 tracking-[1px] my-6 hover:cursor-pointer hover:bg-[#FBAF85]">CHECKOUT</button></Link>
             </div>
         </div>
     )

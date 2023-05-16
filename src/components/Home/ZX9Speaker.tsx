@@ -23,7 +23,7 @@ const ZX9Speaker = (): JSX.Element => {
                 <p className="text-lg opacity-75">Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
             </div>
             <div>
-                <Link href="/speakers/zx9"><button className="bg-black px-8 py-4 tracking-[1px] text-lg font-bold mb-10">SEE PRODUCT</button></Link>
+                <Link href="/speakers/zx9"><button className="bg-black px-8 py-4 tracking-[1px] text-lg font-bold mb-10 hover:bg-[#4C4C4C]">SEE PRODUCT</button></Link>
             </div>
         </section>
     )

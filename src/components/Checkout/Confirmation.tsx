@@ -55,7 +55,7 @@ const Confirmation = ({ cart, setCart, grandTotal, setBackground }: props) => {
                     </div>
                 </div>
             </div>
-            <button onClick={() => returnUser()} className="mb-2 w-full bg-[#D87D4A] font-bold tracking-[1px] py-4">BACK TO HOME</button>
+            <button onClick={() => returnUser()} className="hover:cursor-pointer hover:bg-[#FBAF85] mb-2 w-full bg-[#D87D4A] font-bold tracking-[1px] py-4">BACK TO HOME</button>
         </section>
     )
 }

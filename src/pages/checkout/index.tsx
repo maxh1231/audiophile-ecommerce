@@ -34,8 +34,11 @@ const Checkout = ({ cart, setCart, background, setBackground }: props) => {
 
     useEffect(() => {
         setCartTotal(calcCartTotal(cart))
-        setGrandTotal(calcGrandTotal)
     }, [cart])
+
+    useEffect(() => {
+        setGrandTotal(calcGrandTotal())
+    }, [cartTotal])
 
     const handler = () => {
         if (trigger) {
@@ -50,7 +53,6 @@ const Checkout = ({ cart, setCart, background, setBackground }: props) => {
             setActiveConfirmation(false)
             setBackground('')
         } else {
-            // window.scrollTo({ top: 20, behavior: 'smooth' });
             setActiveConfirmation(true);
             setBackground('opacity-40');
         }
@@ -187,7 +189,7 @@ const Checkout = ({ cart, setCart, background, setBackground }: props) => {
                         <span className="text-[#D87D4A] text-lg font-bold text-right">$ {grandTotal}</span>
                     </div>
                     <div className="mt-10">
-                        <button onClick={() => showConfirmation()} className=" w-full text-white text-lg font-medium bg-[#D87D4A] py-2">CONTINUE & PAY</button>
+                        <button onClick={() => showConfirmation()} className=" w-full text-white text-lg font-medium bg-[#D87D4A] py-2 hover:cursor-pointer hover:bg-[#FBAF85]">CONTINUE & PAY</button>
                     </div>
                 </div>
 
