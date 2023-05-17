@@ -173,3 +173,7 @@ input[type="radio"]:checked {
   background: #D87D4A;
 
 }
+
+.test svg:hover path {
+  fill: #D87D4A
+}
