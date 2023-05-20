@@ -85,7 +85,7 @@ const Nav = ({ background, setBackground, cart, setCart }: props): JSX.Element =
             }
 
             {activeCart &&
-                <div className="fadeIn absolute top-28 left-6 z-50">
+                <div className="fadeIn absolute top-28 left-[calc(100vw / 2)px] z-50">
                     <Cart cart={cart} setCart={setCart} activeCart={activeCart} setActiveCart={setActiveCart} background={background} setBackground={setBackground} />
                 </div>
             }

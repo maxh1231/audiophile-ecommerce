@@ -177,3 +177,12 @@ input[type="radio"]:checked {
 .test svg:hover path {
   fill: #D87D4A
 }
+
+.control:hover~.target {
+  color: #D87D4A;
+}
+
+.parent:hover .child {
+  color: #D87D4A !important;
+  opacity: 100;
+}

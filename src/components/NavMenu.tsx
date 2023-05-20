@@ -31,29 +31,30 @@ const Menu = ({ activeMenu, setActiveMenu, background, setBackground }: props): 
         setBackground(' ')
     }
     return (
-        <div className=" overflow-hidden h-[750px] bg-[#FFFFFF] w-[375px] flex flex-col items-center justify-evenly rounded-b-lg">
-            <Link onClick={() => handler()} href='/headphones' className="flex flex-col justify-center items-center w-[325px] h-[165px] rounded-xl bg-[#F1F1F1] mt-10">
+        <div className=" overflow-hidden h-[750px] bg-[#FFFFFF] w-screen flex flex-col items-center justify-evenly rounded-b-lg">
+            <Link onClick={() => handler()} href='/headphones' className="parent flex flex-col justify-center items-center w-[325px] h-[165px] rounded-xl bg-[#F1F1F1] mt-10">
                 {MenuMobileHeadphones()}
                 <h2 className="relative bottom-12 text-black font-extrabold tracking-wider">HEADPHONES</h2>
                 <div>
-                    <p className="relative bottom-8 text-black font-bold tracking-widest text-[13px] opacity-50">SHOP </p>
+                    <p className="child relative bottom-8 text-black font-bold tracking-widest text-[13px] opacity-50">SHOP </p>
                     {MenuRightArrow()}
                 </div>
             </Link>
-            <Link onClick={() => handler()} href='/speakers' className="flex flex-col justify-center items-center w-[325px] h-[165px] rounded-xl bg-[#F1F1F1] mt-10">
+            <Link onClick={() => handler()} href='/speakers' className="parent flex flex-col justify-center items-center w-[325px] h-[165px] rounded-xl bg-[#F1F1F1] mt-10">
                 {MenuMobileSpeaker()}
                 <h2 className="relative bottom-12 text-black font-extrabold tracking-wider">SPEAKERS</h2>
                 <div>
-                    <p className="relative bottom-8 text-black font-bold tracking-widest text-[13px] opacity-50">SHOP </p>
+                    <p className="child relative bottom-8 text-black font-bold tracking-widest text-[13px] opacity-50">SHOP </p>
                     {MenuRightArrow()}
                 </div>
             </Link>
-            <Link onClick={() => handler()} href='/earphones' className="flex flex-col justify-center items-center w-[325px] h-[165px] rounded-xl bg-[#F1F1F1] mt-10">
+            <Link onClick={() => handler()} href='/earphones' className="parent flex flex-col justify-center items-center w-[325px] h-[165px] rounded-xl bg-[#F1F1F1] mt-10">
                 {MenuMobileEarphones()}
                 <h2 className="relative bottom-12 text-black font-extrabold tracking-wider">EARPHONES</h2>
                 <div>
-                    <p className="relative bottom-8 text-black font-bold tracking-widest text-[13px] opacity-50">SHOP </p>
-                    {MenuRightArrow()}
+                    <p className="child relative bottom-8 text-black font-bold tracking-widest text-[13px] opacity-50">SHOP </p>
+                    {/* {MenuRightArrow()} */}
+                    <svg width="8" height="12" className=" relative bottom-12 left-12" xmlns="http://www.w3.org/2000/svg"><path d="M1.322 1l5 5-5 5" stroke="#D87D4A" stroke-width="2" fill="none" fill-rule="evenodd" /></svg>
                 </div>
             </Link>
         </div>
