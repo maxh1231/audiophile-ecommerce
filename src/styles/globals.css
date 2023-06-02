@@ -186,3 +186,15 @@ input[type="radio"]:checked {
   color: #D87D4A !important;
   opacity: 100;
 }
+
+.cart {
+  /* left: calc(50% - 163.5px); */
+  left: 0;
+  right: 0;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* left-[calc(250px + 100vw - 1024px)] */

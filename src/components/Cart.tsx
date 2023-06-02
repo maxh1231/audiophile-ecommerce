@@ -15,10 +15,12 @@ interface props {
     activeCart: boolean,
     setActiveCart: React.Dispatch<React.SetStateAction<boolean>>,
     background: string,
-    setBackground: React.Dispatch<React.SetStateAction<string>>
+    setBackground: React.Dispatch<React.SetStateAction<string>>,
+    numItems: number,
+    setNumItems: React.Dispatch<React.SetStateAction<number>>,
 }
 
-const Cart = ({ cart, setCart, activeCart, setActiveCart, setBackground }: props) => {
+const Cart = ({ cart, setCart, activeCart, setActiveCart, setBackground, numItems, setNumItems }: props) => {
     const [cartTotal, setCartTotal] = useState<string | null>(null);
 
     useEffect(() => {
@@ -27,6 +29,7 @@ const Cart = ({ cart, setCart, activeCart, setActiveCart, setBackground }: props
 
     const emptyCart = () => {
         setCart([]);
+        setNumItems(0);
     }
 
     const handler = () => {

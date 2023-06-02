@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from 'next/image';
 import dynamic from "next/dynamic";
 import { ItemType } from "@/utils/types";
-import { Item } from "@/utils/Item";
+import { calcNumItems } from "@/utils/helpers";
 
 
 
@@ -31,14 +31,14 @@ interface props {
     background: string,
     setBackground: React.Dispatch<React.SetStateAction<string>>,
     cart: ItemType[],
-    setCart: React.Dispatch<React.SetStateAction<ItemType[]>>
+    setCart: React.Dispatch<React.SetStateAction<ItemType[]>>,
+    numItems: number,
+    setNumItems: React.Dispatch<React.SetStateAction<number>>
 }
 
-const Nav = ({ background, setBackground, cart, setCart }: props): JSX.Element => {
+const Nav = ({ background, setBackground, cart, setCart, numItems, setNumItems }: props): JSX.Element => {
     const [activeMenu, setActiveMenu] = useState(false);
     const [activeCart, setActiveCart] = useState(false);
-
-
 
     const menuHandler = () => {
         if (activeMenu == false) {
@@ -67,7 +67,9 @@ const Nav = ({ background, setBackground, cart, setCart }: props): JSX.Element =
         <div className="flex flex-col">
             <ul className="flex justify-between items-center py-8 px-8 border-b-[1px] border-neutral-800">
                 <li onClick={menuHandler}>
-                    {NavMenuIcon()}
+                    <button type="button" className="relative inline-flex items-center p-3 text-sm font-medium text-center text-white rounded-lg hover:bg-gray-800 ">
+                        {NavMenuIcon()}
+                    </button>
                 </li>
                 <li>
                     <Link href="/">
@@ -75,7 +77,13 @@ const Nav = ({ background, setBackground, cart, setCart }: props): JSX.Element =
                     </Link>
                 </li>
                 <li onClick={cartHandler}>
-                    {NavCartIcon()}
+                    <button type="button" className="relative inline-flex items-center p-3 text-sm font-medium text-center text-white rounded-lg hover:bg-gray-800 ">
+                        {NavCartIcon()}
+                        <span className="sr-only">Notifications</span>
+                        {numItems > 0 &&
+                            <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">{numItems}</div>
+                        }
+                    </button>
                 </li>
             </ul>
             {activeMenu &&
@@ -85,8 +93,8 @@ const Nav = ({ background, setBackground, cart, setCart }: props): JSX.Element =
             }
 
             {activeCart &&
-                <div className="fadeIn absolute top-28 left-[calc(100vw / 2)px] z-50">
-                    <Cart cart={cart} setCart={setCart} activeCart={activeCart} setActiveCart={setActiveCart} background={background} setBackground={setBackground} />
+                <div className="cart fadeIn absolute top-28 z-50">
+                    <Cart cart={cart} setCart={setCart} activeCart={activeCart} setActiveCart={setActiveCart} background={background} setBackground={setBackground} numItems={numItems} setNumItems={setNumItems} />
                 </div>
             }
 

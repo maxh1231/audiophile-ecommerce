@@ -13,5 +13,7 @@ export interface props {
     img: string,
     background: string,
     itemCount: number,
-    item: ItemType
+    item: ItemType,
+    numItems: number,
+    setNumItems: React.Dispatch<React.SetStateAction<number>>
 }
