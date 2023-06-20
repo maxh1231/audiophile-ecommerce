@@ -30,6 +30,7 @@ const Cart = ({ cart, setCart, activeCart, setActiveCart, setBackground, numItem
     const emptyCart = () => {
         setCart([]);
         setNumItems(0);
+        localStorage.setItem('cart', '');
     }
 
     const handler = () => {

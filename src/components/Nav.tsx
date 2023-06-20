@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from 'next/image';
 import dynamic from "next/dynamic";
 import { ItemType } from "@/utils/types";
-import { calcNumItems } from "@/utils/helpers";
 
 
 

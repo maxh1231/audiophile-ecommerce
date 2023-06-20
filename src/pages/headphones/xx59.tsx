@@ -35,7 +35,7 @@ const ItemCounter = dynamic(() =>
 )
 
 
-const renderComponent = ({ cart, setCart, background }: props) => {
+const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: props) => {
     return (
         <div className={`bg-white ${background}`}>
             <div className='mx-[24px]'>
@@ -49,7 +49,7 @@ const renderComponent = ({ cart, setCart, background }: props) => {
                     <h2 className='font-bold text-black text-left text-3xl tracking-[1px] mt-8'>XX59<br />HEADPHONES</h2>
                     <p className='opacity-50 font-medium text-lg text-black text-left px-2 my-6'>Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.</p>
                     <p className='text-black font-bold text-xl tracking-[1.2px]'>$ 899</p>
-                    <ItemCounter cart={cart} setCart={setCart} name={"XX59"} price={"899"} img={"/assets/product-xx59-headphones/mobile/image-product.jpg"} />
+                    <ItemCounter cart={cart} setCart={setCart} name={"XX59"} price={"899"} img={"/assets/product-xx59-headphones/mobile/image-product.jpg"} numItems={numItems} setNumItems={setNumItems} />
                 </div>
             </div>
 

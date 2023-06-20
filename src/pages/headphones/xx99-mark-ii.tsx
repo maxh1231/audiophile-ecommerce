@@ -35,7 +35,7 @@ const Footer = dynamic(() =>
     import('../../components/Footer')
 )
 
-const renderComponent = ({ cart, setCart, background }: props) => {
+const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: props) => {
 
     return (
         <div className={`bg-white ${background}`}>
@@ -52,7 +52,7 @@ const renderComponent = ({ cart, setCart, background }: props) => {
                     <p className='opacity-50 font-medium text-lg text-black text-left px-2 my-6'>The new XX99 Mark II headphones are the pinnicale of pristine audio. It redefines your premium headphones experience by reporducing the balanced depth and precision of studio-quality sound.</p>
                     <p className='text-black font-bold text-xl tracking-[1.2px]'>$ 2,999</p>
 
-                    <ItemCounter cart={cart} setCart={setCart} name={"XX99 MK II"} price={"2,999"} img={"/assets/product-xx99-mark-two-headphones/mobile/image-product.jpg"} />
+                    <ItemCounter cart={cart} setCart={setCart} name={"XX99 MK II"} price={"2,999"} img={"/assets/product-xx99-mark-two-headphones/mobile/image-product.jpg"} numItems={numItems} setNumItems={setNumItems} />
                 </div>
             </div>
 

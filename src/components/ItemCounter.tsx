@@ -29,8 +29,8 @@ const ItemCounter = ({ cart, setCart, name, price, img, numItems, setNumItems }:
                 i.name === item.name ? { ...i, count: itemCount } : i
             ))
             setNumItems(calcNumItems(cart))
-            // if item doesn't exist, add new
         } else {
+            // if item doesn't exist, add new
             setCart(items => [...items, item]);
             setNumItems(calcNumItems(cart))
         }

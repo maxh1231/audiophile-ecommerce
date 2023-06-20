@@ -32,7 +32,10 @@ export default function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     let localStorageCart = localStorage.getItem("cart") as string;
-    setNumItems(calcNumItems(JSON.parse(localStorageCart)))
+    console.log('hit')
+    if (localStorageCart) {
+      setNumItems(calcNumItems(JSON.parse(localStorageCart)))
+    }
   }, [cart])
   return (
     <main className={manrope.className}>
