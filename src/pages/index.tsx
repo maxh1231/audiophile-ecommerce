@@ -33,17 +33,17 @@ export default function Home({ background }: Background) {
       <div className={`bg-white ${background}`}>
         <NewProduct />
         <section>
-          <div className='py-10 bg-white'>
+          <div className='py-10 md:pt-10 md:pb-0 bg-white'>
             <Menu />;
           </div>
         </section>
-        <section className='bg-white py-10'>
+        <section className='bg-white py-10 md:pt-0'>
           <ZX9Speaker />
         </section>
-        <section className='bg-white py-10'>
+        <section className='bg-white py-10 md:pt-0'>
           <ZX7Speaker />
         </section>
-        <section className='bg-white py-10'>
+        <section className='bg-white py-10 md:pt-0'>
           <YX1Earphones />
         </section>
         <section className='bg-white pt-10'>
