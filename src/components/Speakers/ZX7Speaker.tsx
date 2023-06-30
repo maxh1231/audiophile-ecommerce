@@ -1,16 +1,30 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { useWindowSize } from '../../hooks/useWindowResize';
 
-function PagePreview(): JSX.Element {
+function PagePreviewMobile(): JSX.Element {
     return <Image src="/assets/product-zx7-speaker/mobile/image-category-page-preview.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+}
+function PagePreviewTablet(): JSX.Element {
+    return <Image src="/assets/product-zx7-speaker/tablet/image-category-page-preview.jpg" className='rounded-lg' alt="earphones" width={750} height={352} />
 }
 
 const ZX7Speaker = (): JSX.Element => {
-    return (
+    const windowSize = useWindowSize()
+    let pagePreview;
 
+    if (windowSize.width && windowSize.width < 768) {
+        pagePreview = PagePreviewMobile();
+    } else if (windowSize.width && windowSize.width < 1024) {
+        pagePreview = PagePreviewTablet();
+    } else {
+        // pagePreview = PagePreviewDesktop();
+    }
+
+    return (
         <div className='mx-[24px] h-[724px]'>
             <div>
-                {PagePreview()}
+                {pagePreview}
             </div>
             <div className='flex flex-col items-center justify-end my-2'>
                 <h2 className='font-bold text-black text-center text-3xl tracking-[1px] mt-4'>ZX7<br />SPEAKER</h2>
