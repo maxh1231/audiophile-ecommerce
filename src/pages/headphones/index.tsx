@@ -33,19 +33,19 @@ const Headphones = ({ background }: Background): JSX.Element => {
             </header>
 
             <div className='bg-white'>
-                <section className='bg-white py-12'>
+                <section className='bg-white py-12 md:pb-0'>
                     <XXMarkII />
                 </section>
 
-                <section className='bg-white py-12'>
+                <section className='bg-white py-12 md:pb-0'>
                     <XXMarkI />
                 </section>
 
-                <section className='bg-white py-12'>
+                <section className='bg-white py-12 md:pb-0'>
                     <XX59 />
                 </section>
 
-                <section className='bg-white py-12'>
+                <section className='bg-white py-12 md:pb-0'>
                     <Menu />
                 </section>
 
