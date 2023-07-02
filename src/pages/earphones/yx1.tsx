@@ -2,21 +2,27 @@ import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { props } from '../../utils/types'
+import { useWindowSize } from '@/hooks/useWindowResize';
 
-function PagePreview(): JSX.Element {
+function PagePreviewMobile(): JSX.Element {
     return <Image src="/assets/product-yx1-earphones/mobile/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+}
+function PagePreviewTablet(): JSX.Element {
+    return <Image src="/assets/product-yx1-earphones/tablet/image-product.jpg" className='rounded-lg md:h-full md:w-full' alt="earphones" width={372} height={352} />
 }
 
 function renderGallery(): JSX.Element {
     return (
-        <div className='h-[726px] mx-[24px] mt-20'>
-            <div className='my-5 bg-cover'>
-                <Image src="/assets/product-yx1-earphones/mobile/image-gallery-1.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+        <div className='h-[726px] md:h-[500px] mx-[24px] mt-20 flex flex-col md:flex-row'>
+            <div className='md:mr-4'>
+                <div className='my-5 bg-cover'>
+                    <Image src="/assets/product-yx1-earphones/mobile/image-gallery-1.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+                </div>
+                <div className='my-5 bg-cover'>
+                    <Image src="/assets/product-yx1-earphones/mobile/image-gallery-2.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+                </div>
             </div>
-            <div className='my-5 bg-cover'>
-                <Image src="/assets/product-yx1-earphones/mobile/image-gallery-2.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
-            </div>
-            <div className='my-5 bg-cover'>
+            <div className='md:my-5 bg-cover'>
                 <Image src="/assets/product-yx1-earphones/mobile/image-gallery-3.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
             </div>
         </div>
@@ -35,16 +41,28 @@ const ItemCounter = dynamic(() =>
 )
 
 const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: props) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const windowSize = useWindowSize();
+    let pagePreview;
+
+    if (windowSize.width && windowSize.width < 768) {
+        pagePreview = PagePreviewMobile();
+    } else if (windowSize.width && windowSize.width < 1024) {
+        pagePreview = PagePreviewTablet();
+    } else {
+        // pagePreview = PagePreviewDesktop();
+    }
+
     return (
         <div className={`bg-white ${background}`}>
-            <div className='mx-[24px]'>
-                <div className='py-4'>
+                <div className='py-4 mx-[24px]'>
                     <Link className='text-lg text-black opacity-50 font-medium' href={'/'}>Go Back</Link>
                 </div>
-                <div>
-                    {PagePreview()}
+            <div className='mx-[24px] flex flex-col md:flex-row'>
+                <div className='md:w-5/12 md:m-4'>
+                    {pagePreview}
                 </div>
-                <div className='flex flex-col items-start justify-center my-2'>
+                <div className='flex flex-col items-start justify-center my-2 w-7/12'>
                     <p className='text-[#D87D4A]  tracking-[10px] my-6'>NEW PRODUCT</p>
                     <h2 className='font-bold text-black text-left text-3xl tracking-[1px]'>YX1 WIRELESS<br />EARPHONES</h2>
                     <p className='opacity-50 font-medium text-lg text-black text-left my-6'>Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.</p>
@@ -70,11 +88,16 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
 
             {renderGallery()}
 
-            <div className='h-[983px] mx-[24px] mt-20 flex flex-col items-center my-20'>
-                <h2 className='text-black text-2xl font-bold tracking-[0.8px] my-4 mt-10'>YOU MAY ALSO LIKE</h2>
-                <div className='flex flex-col items-center'>
+            <h2 className='text-black text-2xl font-bold tracking-[0.8px] my-4 mt-10 mx-[24px]'>YOU MAY ALSO LIKE</h2>
+            <div className='h-[983px] mx-[24px] mt-20 flex flex-col items-center my-20 md:flex-row md:h-[500px]'>
+                <div className='flex flex-col items-center md:m-1'>
                     <div className='my-4'>
-                        <Image className='' src="/assets/shared/mobile/image-xx99-mark-one-headphones.jpg" width={327} height={120} alt='mark-1'></Image>
+                    {windowSize.width && windowSize.width < 768 &&
+                            <Image className='' src="/assets/shared/mobile/image-xx99-mark-one-headphones.jpg" width={327} height={120} alt='mark-1'></Image>
+                        }
+                        {windowSize.width && windowSize.width < 1024 &&
+                            <Image className='' src="/assets/shared/tablet/image-xx99-mark-one-headphones.jpg" width={327} height={250} alt='mark-1'></Image>
+                        }
                     </div>
                     <div className='my-4'>
                         <h2 className='text-black text-2xl font-bold tracking-[0.8px]'>XX99 MARK I</h2>
@@ -84,9 +107,14 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                     </div>
                 </div>
 
-                <div className='flex flex-col items-center'>
+                <div className='flex flex-col items-center md:m-1'>
                     <div className='my-4'>
-                        <Image className='' src="/assets/shared/mobile/image-xx59-headphones.jpg" width={327} height={120} alt='xx59'></Image>
+                    {windowSize.width && windowSize.width < 768 &&
+                            <Image className='' src="/assets/shared/mobile/image-xx59-headphones.jpg" width={327} height={120} alt='mark-1'></Image>
+                        }
+                        {windowSize.width && windowSize.width < 1024 &&
+                            <Image className='' src="/assets/shared/tablet/image-xx59-headphones.jpg" width={327} height={250} alt='mark-1'></Image>
+                        }
                     </div>
                     <div className='my-4'>
                         <h2 className='text-black text-2xl font-bold tracking-[0.8px]'>XX59</h2>
@@ -96,9 +124,14 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                     </div>
                 </div>
 
-                <div className='flex flex-col items-center'>
+                <div className='flex flex-col items-center md:m-1'>
                     <div className='my-4'>
-                        <Image className='' src="/assets/shared/mobile/image-zx9-speaker.jpg" width={327} height={120} alt='zx9'></Image>
+                    {windowSize.width && windowSize.width < 768 &&
+                            <Image className='' src="/assets/shared/mobile/image-zx9-speaker.jpg" width={327} height={120} alt='mark-1'></Image>
+                        }
+                        {windowSize.width && windowSize.width < 1024 &&
+                            <Image className='' src="/assets/shared/tablet/image-zx9-speaker.jpg" width={327} height={250} alt='mark-1'></Image>
+                        }
                     </div>
                     <div className='my-4'>
                         <h2 className='text-black text-2xl font-bold tracking-[0.8px]'>ZX9 SPEAKER</h2>
