@@ -8,7 +8,7 @@ function PagePreviewMobile(): JSX.Element {
     return <Image src="/assets/product-zx9-speaker/mobile/image-product.jpg" className='rounded-lg md:h-full md:w-full' alt="earphones" width={372} height={352} />
 }
 function PagePreviewTablet(): JSX.Element {
-    return <Image src="/assets/product-zx9-speaker/tablet/image-product.jpg" className='rounded-lg md:h-full md:w-full' alt="earphones" width={372} height={352} />
+    return <Image src="/assets/product-zx9-speaker/tablet/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
 }
 
 function renderGallery(): JSX.Element {
@@ -62,7 +62,7 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                 <div className='md:w-5/12 md:m-4'>
                     {pagePreview}
                 </div>
-                <div className='flex flex-col items-start justify-center my-2 w-7/12'>
+                <div className='flex flex-col items-start justify-center my-2 md:w-7/12'>
                     <p className='text-[#D87D4A]  tracking-[10px] my-6'>NEW PRODUCT</p>
                     <h2 className='font-bold text-black text-left text-3xl tracking-[1px]'>ZX9<br />SPEAKER</h2>
                     <p className='opacity-50 font-medium text-lg text-black text-left px-2 my-6'>Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.</p>
@@ -109,7 +109,7 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
 
                 <div className='flex flex-col items-center md:m-1'>
                     <div className='my-4'>
-                    {windowSize.width && windowSize.width < 768 &&
+                        {windowSize.width && windowSize.width < 768 &&
                             <Image className='' src="/assets/shared/mobile/image-xx99-mark-one-headphones.jpg" width={327} height={120} alt='mark-1'></Image>
                         }
                         {windowSize.width && windowSize.width < 1024 &&
@@ -126,7 +126,7 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
 
                 <div className='flex flex-col items-center md:m-1'>
                     <div className='my-4'>
-                    {windowSize.width && windowSize.width < 768 &&
+                        {windowSize.width && windowSize.width < 768 &&
                             <Image className='' src="/assets/shared/mobile/image-xx59-headphones.jpg" width={327} height={120} alt='mark-1'></Image>
                         }
                         {windowSize.width && windowSize.width < 1024 &&

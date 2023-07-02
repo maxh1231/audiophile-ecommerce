@@ -8,7 +8,7 @@ function PagePreviewMobile(): JSX.Element {
     return <Image src="/assets/product-yx1-earphones/mobile/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
 }
 function PagePreviewTablet(): JSX.Element {
-    return <Image src="/assets/product-yx1-earphones/tablet/image-product.jpg" className='rounded-lg md:h-full md:w-full' alt="earphones" width={372} height={352} />
+    return <Image src="/assets/product-yx1-earphones/tablet/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
 }
 
 function renderGallery(): JSX.Element {
@@ -55,14 +55,14 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
 
     return (
         <div className={`bg-white ${background}`}>
-                <div className='py-4 mx-[24px]'>
-                    <Link className='text-lg text-black opacity-50 font-medium' href={'/'}>Go Back</Link>
-                </div>
+            <div className='py-4 mx-[24px]'>
+                <Link className='text-lg text-black opacity-50 font-medium' href={'/'}>Go Back</Link>
+            </div>
             <div className='mx-[24px] flex flex-col md:flex-row'>
                 <div className='md:w-5/12 md:m-4'>
                     {pagePreview}
                 </div>
-                <div className='flex flex-col items-start justify-center my-2 w-7/12'>
+                <div className='flex flex-col items-start justify-center my-2 md:w-7/12'>
                     <p className='text-[#D87D4A]  tracking-[10px] my-6'>NEW PRODUCT</p>
                     <h2 className='font-bold text-black text-left text-3xl tracking-[1px]'>YX1 WIRELESS<br />EARPHONES</h2>
                     <p className='opacity-50 font-medium text-lg text-black text-left my-6'>Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.</p>
@@ -92,7 +92,7 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
             <div className='h-[983px] mx-[24px] mt-20 flex flex-col items-center my-20 md:flex-row md:h-[500px]'>
                 <div className='flex flex-col items-center md:m-1'>
                     <div className='my-4'>
-                    {windowSize.width && windowSize.width < 768 &&
+                        {windowSize.width && windowSize.width < 768 &&
                             <Image className='' src="/assets/shared/mobile/image-xx99-mark-one-headphones.jpg" width={327} height={120} alt='mark-1'></Image>
                         }
                         {windowSize.width && windowSize.width < 1024 &&
@@ -109,7 +109,7 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
 
                 <div className='flex flex-col items-center md:m-1'>
                     <div className='my-4'>
-                    {windowSize.width && windowSize.width < 768 &&
+                        {windowSize.width && windowSize.width < 768 &&
                             <Image className='' src="/assets/shared/mobile/image-xx59-headphones.jpg" width={327} height={120} alt='mark-1'></Image>
                         }
                         {windowSize.width && windowSize.width < 1024 &&
@@ -126,7 +126,7 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
 
                 <div className='flex flex-col items-center md:m-1'>
                     <div className='my-4'>
-                    {windowSize.width && windowSize.width < 768 &&
+                        {windowSize.width && windowSize.width < 768 &&
                             <Image className='' src="/assets/shared/mobile/image-zx9-speaker.jpg" width={327} height={120} alt='mark-1'></Image>
                         }
                         {windowSize.width && windowSize.width < 1024 &&
