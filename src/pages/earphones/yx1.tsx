@@ -13,7 +13,7 @@ function PagePreviewTablet(): JSX.Element {
 
 function renderGallery(): JSX.Element {
     return (
-        <div className='h-[726px] md:h-[500px] mx-[24px] mt-20 flex flex-col md:flex-row'>
+        <div className='mx-[24px] mt-20 flex flex-col md:flex-row items-center md:justify-center'>
             <div className='md:mr-4'>
                 <div className='my-5 bg-cover'>
                     <Image src="/assets/product-yx1-earphones/mobile/image-gallery-1.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
@@ -88,14 +88,14 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
 
             {renderGallery()}
 
-            <h2 className='text-black text-2xl font-bold tracking-[0.8px] my-4 mt-10 mx-[24px]'>YOU MAY ALSO LIKE</h2>
+            <h2 className='text-black text-2xl font-bold tracking-[0.8px] my-4 mt-10 mx-[24px] text-center'>YOU MAY ALSO LIKE</h2>
             <div className='h-[983px] mx-[24px] mt-20 flex flex-col items-center my-20 md:flex-row md:h-[500px]'>
                 <div className='flex flex-col items-center md:m-1'>
                     <div className='my-4'>
                         {windowSize.width && windowSize.width < 768 &&
                             <Image className='' src="/assets/shared/mobile/image-xx99-mark-one-headphones.jpg" width={327} height={120} alt='mark-1'></Image>
                         }
-                        {windowSize.width && windowSize.width < 1024 &&
+                        {windowSize.width && windowSize.width < 1024 && windowSize.width > 768 &&
                             <Image className='' src="/assets/shared/tablet/image-xx99-mark-one-headphones.jpg" width={327} height={250} alt='mark-1'></Image>
                         }
                     </div>
@@ -112,7 +112,7 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                         {windowSize.width && windowSize.width < 768 &&
                             <Image className='' src="/assets/shared/mobile/image-xx59-headphones.jpg" width={327} height={120} alt='mark-1'></Image>
                         }
-                        {windowSize.width && windowSize.width < 1024 &&
+                        {windowSize.width && windowSize.width < 1024 && windowSize.width > 768 &&
                             <Image className='' src="/assets/shared/tablet/image-xx59-headphones.jpg" width={327} height={250} alt='mark-1'></Image>
                         }
                     </div>
@@ -129,7 +129,7 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                         {windowSize.width && windowSize.width < 768 &&
                             <Image className='' src="/assets/shared/mobile/image-zx9-speaker.jpg" width={327} height={120} alt='mark-1'></Image>
                         }
-                        {windowSize.width && windowSize.width < 1024 &&
+                        {windowSize.width && windowSize.width < 1024 && windowSize.width > 768 &&
                             <Image className='' src="/assets/shared/tablet/image-zx9-speaker.jpg" width={327} height={250} alt='mark-1'></Image>
                         }
                     </div>
