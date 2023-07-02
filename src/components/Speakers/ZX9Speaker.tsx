@@ -6,7 +6,7 @@ function PagePreviewMobile(): JSX.Element {
     return <Image src="/assets/product-zx9-speaker/mobile/image-category-page-preview.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
 }
 function PagePreviewTablet(): JSX.Element {
-    return <Image src="/assets/product-zx9-speaker/tablet/image-category-page-preview.jpg" className='rounded-lg' alt="earphones" width={750} height={352} />
+    return <Image src="/assets/product-zx9-speaker/tablet/image-category-page-preview.jpg" className='rounded-lg mx-auto' alt="earphones" width={750} height={352} />
 }
 
 const ZX9Speaker = (): JSX.Element => {
