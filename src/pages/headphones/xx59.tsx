@@ -93,14 +93,17 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
             {renderGallery()}
 
             <h2 className='text-black text-2xl font-bold tracking-[0.8px] my-4 mt-10 mx-[24px] text-center'>YOU MAY ALSO LIKE</h2>
-            <div className='h-[983px] mx-[24px] mt-20 flex flex-col items-center my-20 md:flex-row md:h-[500px]'>
-                <div className='flex flex-col items-center md:m-1'>
+            <div className='h-[983px] mx-[24px] mt-20 flex flex-col items-center my-20 md:flex-row md:h-[500px] lg:justify-center lg:mt-0'>
+                <div className='flex flex-col items-center md:m-1 lg:m-2'>
                     <div className='my-4'>
                         {windowSize.width && windowSize.width < 768 &&
                             <Image className='' src="/assets/shared/mobile/image-xx99-mark-two-headphones.jpg" width={327} height={120} alt='mark-1'></Image>
                         }
-                        {windowSize.width && windowSize.width < 1024 && windowSize.width > 768 &&
+                        {windowSize.width && windowSize.width < 1024 &&
                             <Image className='' src="/assets/shared/tablet/image-xx99-mark-two-headphones.jpg" width={327} height={250} alt='mark-1'></Image>
+                        }
+                        {windowSize.width && windowSize.width > 1024 &&
+                            <Image className='' src="/assets/shared/desktop/image-xx99-mark-two-headphones.jpg" width={327} height={250} alt='mark-1'></Image>
                         }
                     </div>
                     <div className='my-4'>
@@ -111,13 +114,16 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                     </div>
                 </div>
 
-                <div className='flex flex-col items-center md:m-1'>
+                <div className='flex flex-col items-center md:m-1 lg:m-2'>
                     <div className='my-4'>
                         {windowSize.width && windowSize.width < 768 &&
                             <Image className='' src="/assets/shared/mobile/image-xx99-mark-one-headphones.jpg" width={327} height={120} alt='mark-1'></Image>
                         }
-                        {windowSize.width && windowSize.width < 1024 && windowSize.width > 768 &&
+                        {windowSize.width && windowSize.width < 1024 &&
                             <Image className='' src="/assets/shared/tablet/image-xx99-mark-one-headphones.jpg" width={327} height={250} alt='mark-1'></Image>
+                        }
+                        {windowSize.width && windowSize.width > 1024 &&
+                            <Image className='' src="/assets/shared/desktop/image-xx99-mark-one-headphones.jpg" width={327} height={250} alt='mark-1'></Image>
                         }
                     </div>
                     <div className='my-4'>
@@ -128,13 +134,16 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                     </div>
                 </div>
 
-                <div className='flex flex-col items-center md:m-1'>
+                <div className='flex flex-col items-center md:m-1 lg:m-2'>
                     <div className='my-4'>
                         {windowSize.width && windowSize.width < 768 &&
                             <Image className='' src="/assets/shared/mobile/image-zx9-speaker.jpg" width={327} height={120} alt='mark-1'></Image>
                         }
-                        {windowSize.width && windowSize.width < 1024 && windowSize.width > 768 &&
+                        {windowSize.width && windowSize.width < 1024 &&
                             <Image className='' src="/assets/shared/tablet/image-zx9-speaker.jpg" width={327} height={250} alt='mark-1'></Image>
+                        }
+                        {windowSize.width && windowSize.width > 1024 &&
+                            <Image className='' src="/assets/shared/desktop/image-zx9-speaker.jpg" width={327} height={250} alt='mark-1'></Image>
                         }
                     </div>
                     <div className='my-4'>
