@@ -41,7 +41,7 @@ const Headphones = ({ background }: Background): JSX.Element => {
                     <XXMarkI />
                 </section>
 
-                <section className='bg-white py-12 md:pb-0'>
+                <section className='bg-white py-12 md:pb-0 lg:pb-12'>
                     <XX59 />
                 </section>
 

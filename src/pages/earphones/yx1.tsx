@@ -10,6 +10,9 @@ function PagePreviewMobile(): JSX.Element {
 function PagePreviewTablet(): JSX.Element {
     return <Image src="/assets/product-yx1-earphones/tablet/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
 }
+function PagePreviewDesktop(): JSX.Element {
+    return <Image src="/assets/product-yx1-earphones/desktop/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+}
 
 function renderGallery(): JSX.Element {
     return (
@@ -50,7 +53,7 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
     } else if (windowSize.width && windowSize.width < 1024) {
         pagePreview = PagePreviewTablet();
     } else {
-        // pagePreview = PagePreviewDesktop();
+        pagePreview = PagePreviewDesktop();
     }
 
     return (

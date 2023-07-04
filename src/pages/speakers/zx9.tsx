@@ -10,6 +10,9 @@ function PagePreviewMobile(): JSX.Element {
 function PagePreviewTablet(): JSX.Element {
     return <Image src="/assets/product-zx9-speaker/tablet/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
 }
+function PagePreviewDesktop(): JSX.Element {
+    return <Image src="/assets/product-zx9-speaker/desktop/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+}
 
 function renderGallery(): JSX.Element {
     return (
@@ -50,7 +53,7 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
     } else if (windowSize.width && windowSize.width < 1024) {
         pagePreview = PagePreviewTablet();
     } else {
-        // pagePreview = PagePreviewDesktop();
+        pagePreview = PagePreviewDesktop();
     }
 
     return (
@@ -59,10 +62,10 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                     <Link className='text-lg text-black opacity-50 font-medium' href={'/'}>Go Back</Link>
                 </div>
             <div className='mx-[24px] flex flex-col md:flex-row'>
-                <div className='md:w-5/12 md:m-4'>
+                <div className='md:w-5/12 lg:w-1/2 md:m-4'>
                     {pagePreview}
                 </div>
-                <div className='flex flex-col items-start justify-center my-2 md:w-7/12'>
+                <div className='flex flex-col items-start justify-center my-2 md:w-7/12 lg:w-1/2'>
                     <p className='text-[#D87D4A]  tracking-[10px] my-6'>NEW PRODUCT</p>
                     <h2 className='font-bold text-black text-left text-3xl tracking-[1px]'>ZX9<br />SPEAKER</h2>
                     <p className='opacity-50 font-medium text-lg text-black text-left px-2 my-6'>Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.</p>

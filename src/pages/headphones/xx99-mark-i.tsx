@@ -10,6 +10,9 @@ function PagePreviewMobile(): JSX.Element {
 function PagePreviewTablet(): JSX.Element {
     return <Image src="/assets/product-xx99-mark-one-headphones/tablet/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
 }
+function PagePreviewDesktop(): JSX.Element {
+    return <Image src="/assets/product-xx99-mark-one-headphones/desktop/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+}
 
 function renderGallery(): JSX.Element {
     return (
