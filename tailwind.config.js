@@ -19,6 +19,7 @@ module.exports = {
         'tablet-yx1': "url('/assets/home/tablet/image-earphones-yx1.jpg')",
         'mobile-best-gear': "url('/assets/shared/mobile/image-best-gear.jpg')",
         'tablet-best-gear': "url('/assets/shared/tablet/image-best-gear.jpg')",
+        'desktop-best-gear': "url('/assets/shared/desktop/image-best-gear.jpg')",
       }
     },
   },
