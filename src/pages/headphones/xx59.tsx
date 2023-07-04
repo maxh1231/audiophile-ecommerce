@@ -62,13 +62,13 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
             <div className='py-4 mx-[24px]'>
                 <Link className='text-lg text-black opacity-50 font-medium' href={'/'}>Go Back</Link>
             </div>
-            <div className='mx-[24px] flex flex-col md:flex-row'>
-                <div className='md:w-5/12 md:m-4'>
+            <div className='mx-[24px] flex flex-col md:flex-row lg:justify-center lg:items-center'>
+                <div className='md:w-5/12 md:m-4 lg:w-1/2 lg:max-w-[450px]'>
                     {pagePreview}
                 </div>
-                <div className='flex flex-col items-start justify-center my-2 md:w-7/12'>
+                <div className='flex flex-col items-start justify-center my-2 md:w-7/12 lg:w-1/2 lg:max-w-[450px]'>
                     <h2 className='font-bold text-black text-left text-3xl tracking-[1px] mt-8'>XX59<br />HEADPHONES</h2>
-                    <p className='opacity-50 font-medium text-lg text-black text-left px-2 my-6'>Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.</p>
+                    <p className='opacity-50 font-medium text-lg text-black text-left px-2 my-6 lg:p-0'>Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.</p>
                     <p className='text-black font-bold text-xl tracking-[1.2px]'>$ 899</p>
                     <ItemCounter cart={cart} setCart={setCart} name={"XX59"} price={"899"} img={"/assets/product-xx59-headphones/mobile/image-product.jpg"} numItems={numItems} setNumItems={setNumItems} />
                 </div>

@@ -62,13 +62,13 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
             <div className='py-4 mx-[24px]'>
                 <Link className='text-lg text-black opacity-50 font-medium' href={'/'}>Go Back</Link>
             </div>
-            <div className='mx-[24px] flex flex-col md:flex-row'>
-                <div className='md:w-5/12 md:m-4'>
+            <div className='mx-[24px] flex flex-col md:flex-row lg:justify-center lg:items-center'>
+                <div className='md:w-5/12 md:m-4 lg:w-1/2 lg:max-w-[450px]'>
                     {pagePreview}
                 </div>
-                <div className='flex flex-col items-start justify-center my-2 md:w-7/12'>
+                <div className='flex flex-col items-start justify-center my-2 md:w-7/12 lg:w-1/2 lg:max-w-[450px]'>
                     <h2 className='font-bold text-black text-left text-3xl tracking-[1px] mt-8'>ZX7<br />SPEAKER</h2>
-                    <p className='opacity-50 font-medium text-lg text-black text-left px-2 my-6'>Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.</p>
+                    <p className='opacity-50 font-medium text-lg text-black text-left px-2 my-6 lg:p-0'>Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.</p>
                     <p className='text-black font-bold text-xl tracking-[1.2px]'>$ 3,500</p>
                     <ItemCounter cart={cart} setCart={setCart} name={"ZX7"} price={"3,500"} img={"/assets/product-zx7-speaker/mobile/image-product.jpg"} numItems={numItems} setNumItems={setNumItems} />
                 </div>

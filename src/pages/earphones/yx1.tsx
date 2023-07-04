@@ -61,14 +61,14 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
             <div className='py-4 mx-[24px]'>
                 <Link className='text-lg text-black opacity-50 font-medium' href={'/'}>Go Back</Link>
             </div>
-            <div className='mx-[24px] flex flex-col md:flex-row'>
-                <div className='md:w-5/12 md:m-4'>
+            <div className='mx-[24px] flex flex-col md:flex-row lg:justify-center lg:items-center'>
+                <div className='md:w-5/12 md:m-4 lg:w-1/2 lg:max-w-[450px]'>
                     {pagePreview}
                 </div>
-                <div className='flex flex-col items-start justify-center my-2 md:w-7/12'>
+                <div className='flex flex-col items-start justify-center my-2 md:w-7/12 lg:w-1/2 lg:max-w-[450px]'>
                     <p className='text-[#D87D4A]  tracking-[10px] my-6'>NEW PRODUCT</p>
                     <h2 className='font-bold text-black text-left text-3xl tracking-[1px]'>YX1 WIRELESS<br />EARPHONES</h2>
-                    <p className='opacity-50 font-medium text-lg text-black text-left my-6'>Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.</p>
+                    <p className='opacity-50 font-medium text-lg text-black text-left my-6 lg:p-0'>Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.</p>
                     <p className='text-black font-bold text-xl tracking-[1.2px]'>$ 599</p>
                     <ItemCounter cart={cart} setCart={setCart} name={"YX1"} price={"599"} img={"/assets/product-yx1-earphones/mobile/image-product.jpg"} numItems={numItems} setNumItems={setNumItems} />
                 </div>
