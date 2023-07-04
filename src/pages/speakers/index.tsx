@@ -33,7 +33,7 @@ const Speakers = ({ background }: Background) => {
                     <ZX9 />
                 </section>
 
-                <section className='bg-white py-12 md:pb-0'>
+                <section className='bg-white py-12 md:pb-0 lg:pb-12'>
                     <ZX7 />
                 </section>
 
