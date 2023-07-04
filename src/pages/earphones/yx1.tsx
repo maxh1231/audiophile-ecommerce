@@ -74,19 +74,21 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                 </div>
             </div>
 
-            <div className='mx-[24px] mt-20'>
-                <h2 className='text-black font-bold text-2xl tracking-widest my-6'>FEATURES</h2>
-                <p className='text-black opacity-50 text-lg font-medium my-6'>Experience unrivaled stereo sound thanks to innovative acoustic technology. With improved ergonomics designed for full day wearing, these revolutionary earphones have been finely crafted to provide you with the perfect fit, delivering complete comfort all day long while enjoying exceptional noise isolation and truly immersive sound.</p>
-                <p className='text-black opacity-50 text-lg font-medium my-6'>The YX1 Wireless Earphones features customizable controls for volume, music, calls, and voice assistants built into both earbuds. The new 7-hour battery life can be extended up to 28 hours with the charging case, giving you uninterrupted play time. Exquisite craftsmanship with a splash resistant design now available in an all new white and grey color scheme as well as the popular classic black.</p>
-            </div>
+            <div className='flex flex-col lg:flex-row lg:justify-center'>
+                <div className='mx-[24px] mt-20 lg:max-w-[700px]'>
+                    <h2 className='text-black font-bold text-2xl tracking-widest my-6'>FEATURES</h2>
+                    <p className='text-black opacity-50 text-lg font-medium my-6'>Experience unrivaled stereo sound thanks to innovative acoustic technology. With improved ergonomics designed for full day wearing, these revolutionary earphones have been finely crafted to provide you with the perfect fit, delivering complete comfort all day long while enjoying exceptional noise isolation and truly immersive sound.</p>
+                    <p className='text-black opacity-50 text-lg font-medium my-6'>The YX1 Wireless Earphones features customizable controls for volume, music, calls, and voice assistants built into both earbuds. The new 7-hour battery life can be extended up to 28 hours with the charging case, giving you uninterrupted play time. Exquisite craftsmanship with a splash resistant design now available in an all new white and grey color scheme as well as the popular classic black.</p>
+                </div>
 
-            <div className='mx-[24px] mt-20 my-6'>
-                <h2 className='text-black font-bold text-2xl tracking-widest my-6'>IN THE BOX</h2>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>2x <span className='text-black opacity-50 font-medium ml-6'>Earphone Unit</span></p>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>6x <span className='text-black opacity-50 font-medium ml-6'>Multi-size Earplugs</span></p>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>User Manual</span></p>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>USB-C Charging Cable</span></p>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>Travel Pouch</span></p>
+                <div className='mx-[24px] mt-20 my-6 lg:w-fit'>
+                    <h2 className='text-black font-bold text-2xl tracking-widest my-6'>IN THE BOX</h2>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>2x <span className='text-black opacity-50 font-medium ml-6'>Earphone Unit</span></p>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>6x <span className='text-black opacity-50 font-medium ml-6'>Multi-size Earplugs</span></p>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>User Manual</span></p>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>USB-C Charging Cable</span></p>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>Travel Pouch</span></p>
+                </div>
             </div>
 
             {renderGallery()}

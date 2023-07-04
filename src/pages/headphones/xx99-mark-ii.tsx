@@ -76,19 +76,21 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                 </div>
             </div>
 
-            <div className='mx-[24px] mt-20'>
-                <h2 className='text-black font-bold text-2xl tracking-widest my-6'>FEATURES</h2>
-                <p className='text-black opacity-50 text-lg font-medium my-6'>Featuring a genuine leather head strap and premium earcups, these headphones deliver superior comfort for those who like to enjoy endless listening. It includes intuitive controls designed for any situation. Whether you’re taking a business call or just in your own personal space, the auto on/off and pause features ensure that you’ll never miss a beat.</p>
-                <p className='text-black opacity-50 text-lg font-medium my-6'>The advanced Active Noise Cancellation with built-in equalizer allow you to experience your audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings when you need to. Combined with Bluetooth 5. 0 compliant connectivity and 17 hour battery life, the XX99 Mark II headphones gives you superior sound, cutting-edge technology, and a modern design aesthetic.</p>
-            </div>
+            <div className='flex flex-col lg:flex-row lg:justify-center'>
+                <div className='mx-[24px] mt-20 lg:max-w-[700px]'>
+                    <h2 className='text-black font-bold text-2xl tracking-widest my-6'>FEATURES</h2>
+                    <p className='text-black opacity-50 text-lg font-medium my-6'>Featuring a genuine leather head strap and premium earcups, these headphones deliver superior comfort for those who like to enjoy endless listening. It includes intuitive controls designed for any situation. Whether you’re taking a business call or just in your own personal space, the auto on/off and pause features ensure that you’ll never miss a beat.</p>
+                    <p className='text-black opacity-50 text-lg font-medium my-6'>The advanced Active Noise Cancellation with built-in equalizer allow you to experience your audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings when you need to. Combined with Bluetooth 5. 0 compliant connectivity and 17 hour battery life, the XX99 Mark II headphones gives you superior sound, cutting-edge technology, and a modern design aesthetic.</p>
+                </div>
 
-            <div className='mx-[24px] mt-20 my-6'>
-                <h2 className='text-black font-bold text-2xl tracking-widest my-6'>IN THE BOX</h2>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>Headphone Unit</span></p>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>2x <span className='text-black opacity-50 font-medium ml-6'>Replacement Earcups</span></p>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>User Manual</span></p>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>3.5mm 5m Audio Cable</span></p>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>Travel Bag</span></p>
+                <div className='mx-[24px] mt-20 my-6 lg:w-fit'>
+                    <h2 className='text-black font-bold text-2xl tracking-widest my-6'>IN THE BOX</h2>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>Headphone Unit</span></p>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>2x <span className='text-black opacity-50 font-medium ml-6'>Replacement Earcups</span></p>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>User Manual</span></p>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>3.5mm 5m Audio Cable</span></p>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>Travel Bag</span></p>
+                </div>
             </div>
 
             {renderGallery()}

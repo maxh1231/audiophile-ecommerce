@@ -74,18 +74,20 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                 </div>
             </div>
 
-            <div className='mx-[24px] mt-20'>
-                <h2 className='text-black font-bold text-2xl tracking-widest my-6'>FEATURES</h2>
-                <p className='text-black opacity-50 text-lg font-medium my-6'>As the headphones all others are measured against, the XX99 Mark I demonstrates over five decades of audio expertise, redefining the critical listening experience. This pair of closed-back headphones are made of industrial, aerospace-grade materials to emphasize durability at a relatively light weight of 11 oz.</p>
-                <p className='text-black opacity-50 text-lg font-medium my-6'>From the handcrafted microfiber ear cushions to the robust metal headband with inner damping element, the components work together to deliver comfort and uncompromising sound. Its closed-back design delivers up to 27 dB of passive noise cancellation, reducing resonance by reflecting sound to a dedicated absorber. For connectivity, a specially tuned cable is included with a balanced gold connector.</p>
-            </div>
+            <div className='flex flex-col lg:flex-row lg:justify-center'>
+                <div className='mx-[24px] mt-20 lg:max-w-[700px]'>
+                    <h2 className='text-black font-bold text-2xl tracking-widest my-6'>FEATURES</h2>
+                    <p className='text-black opacity-50 text-lg font-medium my-6'>As the headphones all others are measured against, the XX99 Mark I demonstrates over five decades of audio expertise, redefining the critical listening experience. This pair of closed-back headphones are made of industrial, aerospace-grade materials to emphasize durability at a relatively light weight of 11 oz.</p>
+                    <p className='text-black opacity-50 text-lg font-medium my-6'>From the handcrafted microfiber ear cushions to the robust metal headband with inner damping element, the components work together to deliver comfort and uncompromising sound. Its closed-back design delivers up to 27 dB of passive noise cancellation, reducing resonance by reflecting sound to a dedicated absorber. For connectivity, a specially tuned cable is included with a balanced gold connector.</p>
+                </div>
 
-            <div className='mx-[24px] mt-20'>
-                <h2 className='text-black font-bold text-2xl tracking-widest my-6'>IN THE BOX</h2>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>Headphone Unit</span></p>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>2x <span className='text-black opacity-50 font-medium ml-6'>Replacement Earcups</span></p>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>User Manual</span></p>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>3.5mm 5m Audio Cable</span></p>
+                <div className='mx-[24px] mt-20 lg:w-fit'>
+                    <h2 className='text-black font-bold text-2xl tracking-widest my-6'>IN THE BOX</h2>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>Headphone Unit</span></p>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>2x <span className='text-black opacity-50 font-medium ml-6'>Replacement Earcups</span></p>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>User Manual</span></p>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>3.5mm 5m Audio Cable</span></p>
+                </div>
             </div>
 
             {renderGallery()}

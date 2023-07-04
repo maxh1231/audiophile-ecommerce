@@ -74,19 +74,21 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                 </div>
             </div>
 
-            <div className='mx-[24px] mt-20'>
-                <h2 className='text-black font-bold text-2xl tracking-widest my-6'>FEATURES</h2>
-                <p className='text-black opacity-50 text-lg font-medium my-6'>Reap the advantages of a flat diaphragm tweeter cone. This provides a fast response rate and excellent high frequencies that lower tiered bookshelf speakers cannot provide. The woofers are made from aluminum that produces a unique and clear sound. XLR inputs allow you to connect to a mixer for more advanced usage. </p>
-                <p className='text-black opacity-50 text-lg font-medium my-6'>The ZX7 speaker is the perfect blend of stylish design and high performance. It houses an encased MDF wooden enclosure which minimises acoustic resonance. Dual connectivity allows pairing through bluetooth or traditional optical and RCA input. Switch input sources and control volume at your finger tips with the included wireless remote. This versatile speaker is equipped to deliver an authentic listening experience.</p>
-            </div>
+            <div className='flex flex-col lg:flex-row lg:justify-center'>
+                <div className='mx-[24px] mt-20 lg:max-w-[700px]'>
+                    <h2 className='text-black font-bold text-2xl tracking-widest my-6'>FEATURES</h2>
+                    <p className='text-black opacity-50 text-lg font-medium my-6'>Reap the advantages of a flat diaphragm tweeter cone. This provides a fast response rate and excellent high frequencies that lower tiered bookshelf speakers cannot provide. The woofers are made from aluminum that produces a unique and clear sound. XLR inputs allow you to connect to a mixer for more advanced usage. </p>
+                    <p className='text-black opacity-50 text-lg font-medium my-6'>The ZX7 speaker is the perfect blend of stylish design and high performance. It houses an encased MDF wooden enclosure which minimises acoustic resonance. Dual connectivity allows pairing through bluetooth or traditional optical and RCA input. Switch input sources and control volume at your finger tips with the included wireless remote. This versatile speaker is equipped to deliver an authentic listening experience.</p>
+                </div>
 
-            <div className='mx-[24px] mt-20'>
-                <h2 className='text-black font-bold text-2xl tracking-widest my-6'>IN THE BOX</h2>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>2x <span className='text-black opacity-50 font-medium ml-6'>Speaker Unit</span></p>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>2x <span className='text-black opacity-50 font-medium ml-6'>Speaker Cloth Panel</span></p>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>User Manual</span></p>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>3.5mm 7.5m Audio Cable</span></p>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>7.5m Optical Cable</span></p>
+                <div className='mx-[24px] mt-20 lg:w-fit'>
+                    <h2 className='text-black font-bold text-2xl tracking-widest my-6'>IN THE BOX</h2>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>2x <span className='text-black opacity-50 font-medium ml-6'>Speaker Unit</span></p>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>2x <span className='text-black opacity-50 font-medium ml-6'>Speaker Cloth Panel</span></p>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>User Manual</span></p>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>3.5mm 7.5m Audio Cable</span></p>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>7.5m Optical Cable</span></p>
+                </div>
             </div>
 
             {renderGallery()}

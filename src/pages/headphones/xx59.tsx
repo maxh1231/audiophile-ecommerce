@@ -74,18 +74,20 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                 </div>
             </div>
 
-            <div className='mx-[24px] mt-20'>
-                <h2 className='text-black font-bold text-2xl tracking-widest my-6'>FEATURES</h2>
-                <p className='text-black opacity-50 text-lg font-medium my-6'>These headphones have been created from durable, high-quality materials tough enough to take anywhere. Its compact folding design fuses comfort and minimalist style making it perfect for travel. Flawless transmission is assured by the latest wireless technology engineered for audio synchronization with videos.</p>
-                <p className='text-black opacity-50 text-lg font-medium my-6'>More than a simple pair of headphones, this headset features a pair of built-in microphones for clear, hands-free calling when paired with a compatible smartphone. Controlling music and calls is also intuitive thanks to easy-access touch buttons on the earcups. Regardless of how you use the  XX59 headphones, you can do so all day thanks to an impressive 30-hour battery life that can be rapidly recharged via USB-C.</p>
-            </div>
+            <div className='flex flex-col lg:flex-row lg:justify-center'>
+                <div className='mx-[24px] mt-20 lg:max-w-[700px]'>
+                    <h2 className='text-black font-bold text-2xl tracking-widest my-6'>FEATURES</h2>
+                    <p className='text-black opacity-50 text-lg font-medium my-6'>These headphones have been created from durable, high-quality materials tough enough to take anywhere. Its compact folding design fuses comfort and minimalist style making it perfect for travel. Flawless transmission is assured by the latest wireless technology engineered for audio synchronization with videos.</p>
+                    <p className='text-black opacity-50 text-lg font-medium my-6'>More than a simple pair of headphones, this headset features a pair of built-in microphones for clear, hands-free calling when paired with a compatible smartphone. Controlling music and calls is also intuitive thanks to easy-access touch buttons on the earcups. Regardless of how you use the  XX59 headphones, you can do so all day thanks to an impressive 30-hour battery life that can be rapidly recharged via USB-C.</p>
+                </div>
 
-            <div className='mx-[24px] mt-20'>
-                <h2 className='text-black font-bold text-2xl tracking-widest my-6'>IN THE BOX</h2>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>Headphone Unit</span></p>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>2x <span className='text-black opacity-50 font-medium ml-6'>Replacement Earcups</span></p>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>User Manual</span></p>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>3.5mm 5m Audio Cable</span></p>
+                <div className='mx-[24px] mt-20 lg:w-fit'>
+                    <h2 className='text-black font-bold text-2xl tracking-widest my-6'>IN THE BOX</h2>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>Headphone Unit</span></p>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>2x <span className='text-black opacity-50 font-medium ml-6'>Replacement Earcups</span></p>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>User Manual</span></p>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>3.5mm 5m Audio Cable</span></p>
+                </div>
             </div>
 
             {renderGallery()}
