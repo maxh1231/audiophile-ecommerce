@@ -2,22 +2,55 @@ import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { props } from '../../utils/types'
+import { useWindowSize } from '@/hooks/useWindowResize';
 
-function PagePreview(): JSX.Element {
-    return <Image src="/assets/product-yx1-earphones/mobile/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+function PagePreviewMobile(): JSX.Element {
+    return <Image src="/assets/product-yx1-earphones/mobile/image-product.jpg" className='rounded-lg m-auto' alt="earphones" width={372} height={352} />
+}
+function PagePreviewTablet(): JSX.Element {
+    return <Image src="/assets/product-yx1-earphones/tablet/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+}
+function PagePreviewDesktop(): JSX.Element {
+    return <Image src="/assets/product-yx1-earphones/desktop/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
 }
 
-function renderGallery(): JSX.Element {
+function renderGallery(windowSize: number): JSX.Element {
     return (
-        <div className='h-[726px] mx-[24px] mt-20'>
-            <div className='my-5 bg-cover'>
-                <Image src="/assets/product-yx1-earphones/mobile/image-gallery-1.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+        <div className='mx-[24px] mt-20 flex flex-col md:flex-row items-center md:justify-center'>
+            <div className='md:mr-4'>
+                <div className='my-5 bg-cover'>
+                    {windowSize < 768 &&
+                        <Image src="/assets/product-yx1-earphones/mobile/image-gallery-1.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+                    }
+                    {windowSize < 1024 && windowSize > 768 &&
+                        <Image src="/assets/product-yx1-earphones/tablet/image-gallery-1.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+                    }
+                    {windowSize > 1024 &&
+                        <Image src="/assets/product-yx1-earphones/desktop/image-gallery-1.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+                    }
+                </div>
+                <div className='my-5 bg-cover'>
+                    {windowSize < 768 &&
+                        <Image src="/assets/product-yx1-earphones/mobile/image-gallery-2.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+                    }
+                    {windowSize < 1024 && windowSize > 768 &&
+                        <Image src="/assets/product-yx1-earphones/tablet/image-gallery-2.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+                    }
+                    {windowSize > 1024 &&
+                        <Image src="/assets/product-yx1-earphones/desktop/image-gallery-2.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+                    }
+                </div>
             </div>
-            <div className='my-5 bg-cover'>
-                <Image src="/assets/product-yx1-earphones/mobile/image-gallery-2.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
-            </div>
-            <div className='my-5 bg-cover'>
-                <Image src="/assets/product-yx1-earphones/mobile/image-gallery-3.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+            <div className='md:my-5 bg-cover'>
+                {windowSize < 768 &&
+                    <Image src="/assets/product-yx1-earphones/tablet/image-gallery-3.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+                }
+                {windowSize < 1024 && windowSize > 768 &&
+                    <Image src="/assets/product-yx1-earphones/tablet/image-gallery-3.jpg" className='rounded-lg' alt="earphones" width={525} height={352} />
+                }
+                {windowSize > 1024 &&
+                    <Image src="/assets/product-yx1-earphones/desktop/image-gallery-3.jpg" className='rounded-lg' alt="earphones" width={525} height={352} />
+                }
             </div>
         </div>
     )
@@ -35,46 +68,68 @@ const ItemCounter = dynamic(() =>
 )
 
 const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: props) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const windowSize = useWindowSize();
+    let pagePreview;
+
+    if (windowSize.width && windowSize.width < 768) {
+        pagePreview = PagePreviewMobile();
+    } else if (windowSize.width && windowSize.width < 1024) {
+        pagePreview = PagePreviewTablet();
+    } else {
+        pagePreview = PagePreviewDesktop();
+    }
+
     return (
         <div className={`bg-white ${background}`}>
-            <div className='mx-[24px]'>
-                <div className='py-4'>
-                    <Link className='text-lg text-black opacity-50 font-medium' href={'/'}>Go Back</Link>
+            <div className='py-4 mx-[24px]'>
+                <Link className='text-lg text-black opacity-50 font-medium' href={'/'}>Go Back</Link>
+            </div>
+            <div className='mx-[24px] flex flex-col md:flex-row lg:justify-center lg:items-center'>
+                <div className='md:w-5/12 md:m-4 lg:w-1/2 lg:max-w-[450px]'>
+                    {pagePreview}
                 </div>
-                <div>
-                    {PagePreview()}
-                </div>
-                <div className='flex flex-col items-start justify-center my-2'>
+                <div className='flex flex-col items-start justify-center my-2 md:w-7/12 lg:w-1/2 lg:max-w-[450px]'>
                     <p className='text-[#D87D4A]  tracking-[10px] my-6'>NEW PRODUCT</p>
                     <h2 className='font-bold text-black text-left text-3xl tracking-[1px]'>YX1 WIRELESS<br />EARPHONES</h2>
-                    <p className='opacity-50 font-medium text-lg text-black text-left my-6'>Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.</p>
+                    <p className='opacity-50 font-medium text-lg text-black text-left my-6 lg:p-0'>Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.</p>
                     <p className='text-black font-bold text-xl tracking-[1.2px]'>$ 599</p>
                     <ItemCounter cart={cart} setCart={setCart} name={"YX1"} price={"599"} img={"/assets/product-yx1-earphones/mobile/image-product.jpg"} numItems={numItems} setNumItems={setNumItems} />
                 </div>
             </div>
 
-            <div className='mx-[24px] mt-20'>
-                <h2 className='text-black font-bold text-2xl tracking-widest my-6'>FEATURES</h2>
-                <p className='text-black opacity-50 text-lg font-medium my-6'>Experience unrivaled stereo sound thanks to innovative acoustic technology. With improved ergonomics designed for full day wearing, these revolutionary earphones have been finely crafted to provide you with the perfect fit, delivering complete comfort all day long while enjoying exceptional noise isolation and truly immersive sound.</p>
-                <p className='text-black opacity-50 text-lg font-medium my-6'>The YX1 Wireless Earphones features customizable controls for volume, music, calls, and voice assistants built into both earbuds. The new 7-hour battery life can be extended up to 28 hours with the charging case, giving you uninterrupted play time. Exquisite craftsmanship with a splash resistant design now available in an all new white and grey color scheme as well as the popular classic black.</p>
+            <div className='flex flex-col lg:flex-row lg:justify-center'>
+                <div className='mx-[24px] mt-20 lg:max-w-[700px]'>
+                    <h2 className='text-black font-bold text-2xl tracking-widest my-6'>FEATURES</h2>
+                    <p className='text-black opacity-50 text-lg font-medium my-6'>Experience unrivaled stereo sound thanks to innovative acoustic technology. With improved ergonomics designed for full day wearing, these revolutionary earphones have been finely crafted to provide you with the perfect fit, delivering complete comfort all day long while enjoying exceptional noise isolation and truly immersive sound.</p>
+                    <p className='text-black opacity-50 text-lg font-medium my-6'>The YX1 Wireless Earphones features customizable controls for volume, music, calls, and voice assistants built into both earbuds. The new 7-hour battery life can be extended up to 28 hours with the charging case, giving you uninterrupted play time. Exquisite craftsmanship with a splash resistant design now available in an all new white and grey color scheme as well as the popular classic black.</p>
+                </div>
+
+                <div className='mx-[24px] mt-20 my-6 lg:w-fit'>
+                    <h2 className='text-black font-bold text-2xl tracking-widest my-6'>IN THE BOX</h2>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>2x <span className='text-black opacity-50 font-medium ml-6'>Earphone Unit</span></p>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>6x <span className='text-black opacity-50 font-medium ml-6'>Multi-size Earplugs</span></p>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>User Manual</span></p>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>USB-C Charging Cable</span></p>
+                    <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>Travel Pouch</span></p>
+                </div>
             </div>
 
-            <div className='mx-[24px] mt-20 my-6'>
-                <h2 className='text-black font-bold text-2xl tracking-widest my-6'>IN THE BOX</h2>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>2x <span className='text-black opacity-50 font-medium ml-6'>Earphone Unit</span></p>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>6x <span className='text-black opacity-50 font-medium ml-6'>Multi-size Earplugs</span></p>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>User Manual</span></p>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>USB-C Charging Cable</span></p>
-                <p className='text-[#D87D4A] font-bold text-lg my-2'>1x <span className='text-black opacity-50 font-medium ml-6'>Travel Pouch</span></p>
-            </div>
+            {renderGallery(windowSize.width || 0)}
 
-            {renderGallery()}
-
-            <div className='h-[983px] mx-[24px] mt-20 flex flex-col items-center my-20'>
-                <h2 className='text-black text-2xl font-bold tracking-[0.8px] my-4 mt-10'>YOU MAY ALSO LIKE</h2>
-                <div className='flex flex-col items-center'>
+            <h2 className='text-black text-2xl font-bold tracking-[0.8px] my-4 mt-20 mx-[24px] text-center'>YOU MAY ALSO LIKE</h2>
+            <div className='h-[983px] mx-[24px] mt-10 flex flex-col items-center my-20 md:flex-row md:h-[500px] lg:justify-center lg:mt-0'>
+                <div className='flex flex-col items-center md:m-1 lg:m-2'>
                     <div className='my-4'>
-                        <Image className='' src="/assets/shared/mobile/image-xx99-mark-one-headphones.jpg" width={327} height={120} alt='mark-1'></Image>
+                        {windowSize.width && windowSize.width < 768 &&
+                            <Image className='' src="/assets/shared/mobile/image-xx99-mark-one-headphones.jpg" width={327} height={120} alt='mark-1'></Image>
+                        }
+                        {windowSize.width && windowSize.width < 1024 && windowSize.width > 768 &&
+                            <Image className='' src="/assets/shared/tablet/image-xx99-mark-one-headphones.jpg" width={327} height={250} alt='mark-1'></Image>
+                        }
+                        {windowSize.width && windowSize.width > 1024 &&
+                            <Image className='' src="/assets/shared/desktop/image-xx99-mark-one-headphones.jpg" width={327} height={250} alt='mark-1'></Image>
+                        }
                     </div>
                     <div className='my-4'>
                         <h2 className='text-black text-2xl font-bold tracking-[0.8px]'>XX99 MARK I</h2>
@@ -84,9 +139,17 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                     </div>
                 </div>
 
-                <div className='flex flex-col items-center'>
+                <div className='flex flex-col items-center md:m-1 lg:m-2'>
                     <div className='my-4'>
-                        <Image className='' src="/assets/shared/mobile/image-xx59-headphones.jpg" width={327} height={120} alt='xx59'></Image>
+                        {windowSize.width && windowSize.width < 768 &&
+                            <Image className='' src="/assets/shared/mobile/image-xx59-headphones.jpg" width={327} height={120} alt='mark-1'></Image>
+                        }
+                        {windowSize.width && windowSize.width < 1024 && windowSize.width > 768 &&
+                            <Image className='' src="/assets/shared/tablet/image-xx59-headphones.jpg" width={327} height={250} alt='mark-1'></Image>
+                        }
+                        {windowSize.width && windowSize.width > 1024 &&
+                            <Image className='' src="/assets/shared/desktop/image-xx59-headphones.jpg" width={327} height={250} alt='mark-1'></Image>
+                        }
                     </div>
                     <div className='my-4'>
                         <h2 className='text-black text-2xl font-bold tracking-[0.8px]'>XX59</h2>
@@ -96,9 +159,17 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                     </div>
                 </div>
 
-                <div className='flex flex-col items-center'>
+                <div className='flex flex-col items-center md:m-1 lg:m-2'>
                     <div className='my-4'>
-                        <Image className='' src="/assets/shared/mobile/image-zx9-speaker.jpg" width={327} height={120} alt='zx9'></Image>
+                        {windowSize.width && windowSize.width < 768 &&
+                            <Image className='' src="/assets/shared/mobile/image-zx9-speaker.jpg" width={327} height={120} alt='mark-1'></Image>
+                        }
+                        {windowSize.width && windowSize.width < 1024 && windowSize.width > 768 &&
+                            <Image className='' src="/assets/shared/tablet/image-zx9-speaker.jpg" width={327} height={250} alt='mark-1'></Image>
+                        }
+                        {windowSize.width && windowSize.width > 1024 &&
+                            <Image className='' src="/assets/shared/desktop/image-zx9-speaker.jpg" width={327} height={250} alt='mark-1'></Image>
+                        }
                     </div>
                     <div className='my-4'>
                         <h2 className='text-black text-2xl font-bold tracking-[0.8px]'>ZX9 SPEAKER</h2>
