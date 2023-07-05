@@ -19,7 +19,7 @@ function MenuRightArrow(): JSX.Element {
 
 const Menu = (): JSX.Element => {
     return (
-        <div className=" overflow-hidden h-[750px] bg-[#FFFFFF] w-screen flex flex-col items-center justify-evenly rounded-b-lg md:h-[300px] md:flex-row">
+        <div className=" overflow-hidden h-[750px] bg-[#FFFFFF] w-screen flex flex-col items-center justify-evenly rounded-b-lg md:h-[300px] md:flex-row max-w-[1024px] md:m-auto">
             <Link href='/headphones' className="parent flex flex-col justify-center items-center w-[325px] h-[165px] rounded-xl bg-[#F1F1F1] mt-10 md:m-2 md:w-[225px]">
                 {MenuMobileHeadphones()}
                 <h2 className="relative bottom-12 text-black font-extrabold tracking-wider">HEADPHONES</h2>

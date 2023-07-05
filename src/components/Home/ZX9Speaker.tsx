@@ -7,7 +7,7 @@ function SpeakerImage(): JSX.Element {
 
 const ZX9Speaker = (): JSX.Element => {
     return (
-        <section className="mx-[24px] flex flex-col items-center h-[600px] bg-[#D87D4A] rounded-md overflow-clip">
+        <section className="mx-[24px] flex flex-col items-center h-[600px] bg-[#D87D4A] rounded-md overflow-clip max-w-[1024px] md:m-auto">
             <div className="absolute mt-4 rounded-full border-[1px] border-[#FFFFFF]/[.5] w-[279px] h-[279px]">
                 <div className="relative top-16 flex  justify-center">
                     {SpeakerImage()}

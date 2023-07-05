@@ -8,7 +8,7 @@ function logo(): JSX.Element {
 const Footer = (): JSX.Element => {
     return (
         <div>
-            <div className="flex flex-col h-[698px] mx-[24px] my-6 mb-20 md:mb-10 lg:flex-row-reverse lg:h-[400px] lg:items-center lg:justify-center">
+            <div className="flex flex-col h-[698px] mx-[24px] my-6 mb-20 md:mb-10 lg:mb-20 lg:flex-row-reverse lg:h-[400px] lg:items-center lg:justify-center">
                 <div className="bg-mobile-best-gear h-1/2 bg-cover bg-no-repeat rounded-md md:bg-tablet-best-gear lg:w-1/2 lg:h-full lg:max-w-[500px] lg:bg-center"></div>
                 <div className="flex flex-col items-center justify-center h-1/2 my-6 lg:w-1/2 lg:max-w-[500px] lg:items-start">
                     <h3 className="text-black font-bold text-[28px] tracking-[1px] text-center my-6 md:text-[32px] md:w-3/4 lg:text-left">BRINGING YOU THE <span className="text-[#D97D4A]">BEST</span> AUDIO GEAR</h3>
