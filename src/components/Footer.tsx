@@ -26,10 +26,10 @@ const Footer = (): JSX.Element => {
                         <Link href="/earphones"><li className="font-bold text-center text-lg tracking-[2px] my-4 hover:text-[#D87D4A] md:mx-4 md:text-sm">EARPHONES</li></Link>
                     </ul>
                 </div>
-                <p className="text-center px-6 opacity-50 font-medium md:text-left md:px-0 md:ml-8 md:mb-8 md:font-normal">Audiophile is an all in one stop to fulfill your audio needs. We&apos;re a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit your demo facility - we&apos;re open 7 days a week.</p>
-                <div className='flex flex-col md:flex-row md:justify-between md:w-full'>
+                <p className="text-center px-6 opacity-50 font-medium md:text-left md:px-0 md:mx-8 md:mb-8 md:font-normal">Audiophile is an all in one stop to fulfill your audio needs. We&apos;re a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit your demo facility - we&apos;re open 7 days a week.</p>
+                <div className='flex flex-col md:flex-row md:justify-between md:w-full items-center'>
                     <p className="text-center opacity-50 font-bold md:ml-8">Copyright 2023. All Rights Reserved</p>
-                    <div className="flex flex-row items-center mb-8 md:mr-8">
+                    <div className="flex flex-row items-center my-8 md:mr-8 justify-center">
                         <div className="px-2 ">
                             <svg width="24" className='test fill-current hover:cursor-pointer hover:text-[#d87d4A] ' height="24" xmlns="http://www.w3.org/2000/svg"><path className='fill-current hover:fill-[#D87D4A]' d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z" fill="#FFF" fillRule="nonzero" /></svg>
                         </div>

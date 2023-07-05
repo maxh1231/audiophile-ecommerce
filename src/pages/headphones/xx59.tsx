@@ -14,19 +14,43 @@ function PagePreviewDesktop(): JSX.Element {
     return <Image src="/assets/product-xx59-headphones/desktop/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
 }
 
-function renderGallery(): JSX.Element {
+function renderGallery(windowSize: number): JSX.Element {
     return (
         <div className='mx-[24px] mt-10 flex flex-col md:flex-row items-center md:justify-center'>
             <div className='md:mr-4'>
                 <div className='my-5 bg-cover'>
-                    <Image src="/assets/product-xx59-headphones/mobile/image-gallery-1.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+                    {windowSize < 768 &&
+                        <Image src="/assets/product-xx59-headphones/mobile/image-gallery-1.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+                    }
+                    {windowSize < 1024 && windowSize > 768 &&
+                        <Image src="/assets/product-xx59-headphones/tablet/image-gallery-1.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+                    }
+                    {windowSize > 1024 &&
+                        <Image src="/assets/product-xx59-headphones/desktop/image-gallery-1.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+                    }
                 </div>
                 <div className='my-5 bg-cover'>
-                    <Image src="/assets/product-xx59-headphones/mobile/image-gallery-2.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+                    {windowSize < 768 &&
+                        <Image src="/assets/product-xx59-headphones/mobile/image-gallery-2.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+                    }
+                    {windowSize < 1024 && windowSize > 768 &&
+                        <Image src="/assets/product-xx59-headphones/tablet/image-gallery-2.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+                    }
+                    {windowSize > 1024 &&
+                        <Image src="/assets/product-xx59-headphones/desktop/image-gallery-2.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+                    }
                 </div>
             </div>
             <div className='md:my-5 bg-cover'>
-                <Image src="/assets/product-xx59-headphones/mobile/image-gallery-3.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+                {windowSize < 768 &&
+                    <Image src="/assets/product-xx59-headphones/mobile/image-gallery-3.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+                }
+                {windowSize < 1024 && windowSize > 768 &&
+                    <Image src="/assets/product-xx59-headphones/tablet/image-gallery-3.jpg" className='rounded-lg' alt="earphones" width={525} height={352} />
+                }
+                {windowSize > 1024 &&
+                    <Image src="/assets/product-xx59-headphones/desktop/image-gallery-3.jpg" className='rounded-lg' alt="earphones" width={525} height={352} />
+                }
             </div>
         </div>
     )
@@ -90,16 +114,16 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                 </div>
             </div>
 
-            {renderGallery()}
+            {renderGallery(windowSize.width || 0)}
 
-            <h2 className='text-black text-2xl font-bold tracking-[0.8px] my-4 mt-10 mx-[24px] text-center'>YOU MAY ALSO LIKE</h2>
-            <div className='h-[983px] mx-[24px] mt-20 flex flex-col items-center my-20 md:flex-row md:h-[500px] lg:justify-center lg:mt-0'>
+            <h2 className='text-black text-2xl font-bold tracking-[0.8px] my-4 mt-20 mx-[24px] text-center'>YOU MAY ALSO LIKE</h2>
+            <div className='h-[983px] mx-[24px] mt-10 flex flex-col items-center my-20 md:flex-row md:h-[500px] lg:justify-center lg:mt-0'>
                 <div className='flex flex-col items-center md:m-1 lg:m-2'>
                     <div className='my-4'>
                         {windowSize.width && windowSize.width < 768 &&
                             <Image className='' src="/assets/shared/mobile/image-xx99-mark-two-headphones.jpg" width={327} height={120} alt='mark-1'></Image>
                         }
-                        {windowSize.width && windowSize.width < 1024 &&
+                        {windowSize.width && windowSize.width < 1024 && windowSize.width > 768 &&
                             <Image className='' src="/assets/shared/tablet/image-xx99-mark-two-headphones.jpg" width={327} height={250} alt='mark-1'></Image>
                         }
                         {windowSize.width && windowSize.width > 1024 &&
@@ -119,7 +143,7 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                         {windowSize.width && windowSize.width < 768 &&
                             <Image className='' src="/assets/shared/mobile/image-xx99-mark-one-headphones.jpg" width={327} height={120} alt='mark-1'></Image>
                         }
-                        {windowSize.width && windowSize.width < 1024 &&
+                        {windowSize.width && windowSize.width < 1024 && windowSize.width > 768 &&
                             <Image className='' src="/assets/shared/tablet/image-xx99-mark-one-headphones.jpg" width={327} height={250} alt='mark-1'></Image>
                         }
                         {windowSize.width && windowSize.width > 1024 &&
@@ -139,7 +163,7 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                         {windowSize.width && windowSize.width < 768 &&
                             <Image className='' src="/assets/shared/mobile/image-zx9-speaker.jpg" width={327} height={120} alt='mark-1'></Image>
                         }
-                        {windowSize.width && windowSize.width < 1024 &&
+                        {windowSize.width && windowSize.width < 1024 && windowSize.width > 768 &&
                             <Image className='' src="/assets/shared/tablet/image-zx9-speaker.jpg" width={327} height={250} alt='mark-1'></Image>
                         }
                         {windowSize.width && windowSize.width > 1024 &&
