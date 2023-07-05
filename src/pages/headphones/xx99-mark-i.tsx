@@ -5,7 +5,7 @@ import { props } from '../../utils/types'
 import { useWindowSize } from '@/hooks/useWindowResize';
 
 function PagePreviewMobile(): JSX.Element {
-    return <Image src="/assets/product-xx99-mark-one-headphones/mobile/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+    return <Image src="/assets/product-xx99-mark-one-headphones/mobile/image-product.jpg" className='rounded-lg m-auto' alt="earphones" width={372} height={352} />
 }
 function PagePreviewTablet(): JSX.Element {
     return <Image src="/assets/product-xx99-mark-one-headphones/tablet/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
@@ -91,7 +91,7 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                 </div>
                 <div className='flex flex-col items-start justify-center my-2 md:w-7/12 lg:max-w-[450px]'>
                     <h2 className='font-bold text-black text-left text-3xl tracking-[1px] mt-8'>XX99 MARK I<br />HEADPHONES</h2>
-                    <p className='opacity-50 font-medium text-lg text-black text-left px-2 my-6 lg:p-0'>As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.</p>
+                    <p className='opacity-50 font-medium text-lg text-black text-left my-6'>As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.</p>
                     <p className='text-black font-bold text-xl tracking-[1.2px]'>$ 1,750</p>
                     <ItemCounter cart={cart} setCart={setCart} name={"XX99 MK I"} price={"1,750"} img={"/assets/product-xx99-mark-one-headphones/mobile/image-product.jpg"} numItems={numItems} setNumItems={setNumItems} />
 

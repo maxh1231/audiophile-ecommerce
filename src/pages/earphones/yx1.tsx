@@ -5,7 +5,7 @@ import { props } from '../../utils/types'
 import { useWindowSize } from '@/hooks/useWindowResize';
 
 function PagePreviewMobile(): JSX.Element {
-    return <Image src="/assets/product-yx1-earphones/mobile/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+    return <Image src="/assets/product-yx1-earphones/mobile/image-product.jpg" className='rounded-lg m-auto' alt="earphones" width={372} height={352} />
 }
 function PagePreviewTablet(): JSX.Element {
     return <Image src="/assets/product-yx1-earphones/tablet/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />

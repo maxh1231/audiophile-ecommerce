@@ -5,7 +5,7 @@ import { props } from '../../utils/types'
 import { useWindowSize } from '@/hooks/useWindowResize';
 
 function PagePreviewMobile(): JSX.Element {
-    return <Image src="/assets/product-zx7-speaker/mobile/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+    return <Image src="/assets/product-zx7-speaker/mobile/image-product.jpg" className='rounded-lg m-auto' alt="earphones" width={372} height={352} />
 }
 function PagePreviewTablet(): JSX.Element {
     return <Image src="/assets/product-zx7-speaker/tablet/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
@@ -68,7 +68,7 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                 </div>
                 <div className='flex flex-col items-start justify-center my-2 md:w-7/12 lg:w-1/2 lg:max-w-[450px]'>
                     <h2 className='font-bold text-black text-left text-3xl tracking-[1px] mt-8'>ZX7<br />SPEAKER</h2>
-                    <p className='opacity-50 font-medium text-lg text-black text-left px-2 my-6 lg:p-0'>Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.</p>
+                    <p className='opacity-50 font-medium text-lg text-black text-left my-6'>Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.</p>
                     <p className='text-black font-bold text-xl tracking-[1.2px]'>$ 3,500</p>
                     <ItemCounter cart={cart} setCart={setCart} name={"ZX7"} price={"3,500"} img={"/assets/product-zx7-speaker/mobile/image-product.jpg"} numItems={numItems} setNumItems={setNumItems} />
                 </div>
@@ -100,7 +100,7 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                         {windowSize.width && windowSize.width < 768 &&
                             <Image className='' src="/assets/shared/mobile/image-zx9-speaker.jpg" width={327} height={120} alt='mark-1'></Image>
                         }
-                        {windowSize.width && windowSize.width < 1024 &&
+                        {windowSize.width && windowSize.width < 1024 && windowSize.width > 768 &&
                             <Image className='' src="/assets/shared/tablet/image-zx9-speaker.jpg" width={327} height={250} alt='mark-1'></Image>
                         }
                         {windowSize.width && windowSize.width > 1024 &&
@@ -119,7 +119,7 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                         {windowSize.width && windowSize.width < 768 &&
                             <Image className='' src="/assets/shared/mobile/image-xx99-mark-one-headphones.jpg" width={327} height={120} alt='mark-1'></Image>
                         }
-                        {windowSize.width && windowSize.width < 1024 &&
+                        {windowSize.width && windowSize.width < 1024 && windowSize.width > 768 &&
                             <Image className='' src="/assets/shared/tablet/image-xx99-mark-one-headphones.jpg" width={327} height={250} alt='mark-1'></Image>
                         }
                         {windowSize.width && windowSize.width > 1024 &&
@@ -139,7 +139,7 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                         {windowSize.width && windowSize.width < 768 &&
                             <Image className='' src="/assets/shared/mobile/image-xx59-headphones.jpg" width={327} height={120} alt='mark-1'></Image>
                         }
-                        {windowSize.width && windowSize.width < 1024 &&
+                        {windowSize.width && windowSize.width < 1024 && windowSize.width > 768 &&
                             <Image className='' src="/assets/shared/tablet/image-xx59-headphones.jpg" width={327} height={250} alt='mark-1'></Image>
                         }
                         {windowSize.width && windowSize.width > 1024 &&

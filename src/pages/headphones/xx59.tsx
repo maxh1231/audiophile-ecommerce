@@ -5,7 +5,7 @@ import { props } from '../../utils/types'
 import { useWindowSize } from '@/hooks/useWindowResize';
 
 function PagePreviewMobile(): JSX.Element {
-    return <Image src="/assets/product-xx59-headphones/mobile/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+    return <Image src="/assets/product-xx59-headphones/mobile/image-product.jpg" className='rounded-lg m-auto' alt="earphones" width={372} height={352} />
 }
 function PagePreviewTablet(): JSX.Element {
     return <Image src="/assets/product-xx59-headphones/tablet/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
@@ -92,7 +92,7 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                 </div>
                 <div className='flex flex-col items-start justify-center my-2 md:w-7/12 lg:w-1/2 lg:max-w-[450px]'>
                     <h2 className='font-bold text-black text-left text-3xl tracking-[1px] mt-8'>XX59<br />HEADPHONES</h2>
-                    <p className='opacity-50 font-medium text-lg text-black text-left px-2 my-6 lg:p-0'>Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.</p>
+                    <p className='opacity-50 font-medium text-lg text-black text-left my-6'>Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.</p>
                     <p className='text-black font-bold text-xl tracking-[1.2px]'>$ 899</p>
                     <ItemCounter cart={cart} setCart={setCart} name={"XX59"} price={"899"} img={"/assets/product-xx59-headphones/mobile/image-product.jpg"} numItems={numItems} setNumItems={setNumItems} />
                 </div>
