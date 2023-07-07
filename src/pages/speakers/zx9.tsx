@@ -68,7 +68,7 @@ const ItemCounter = dynamic(() =>
     import('../../components/ItemCounter')
 )
 
-const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: props) => {
+const RenderComponent = ({ cart, setCart, background, numItems, setNumItems }: props) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const windowSize = useWindowSize();
     let pagePreview;
@@ -194,4 +194,4 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
     )
 }
 
-export default renderComponent;
+export default RenderComponent;
