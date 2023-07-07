@@ -85,7 +85,7 @@ const RenderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
     return (
         <div className={`bg-white ${background}`}>
             <div className='py-4 mx-[24px]'>
-                <button className='text-lg text-black opacity-50 font-medium' onClick={() => useRouter()}>Go Back</button>
+                <button className='text-lg text-black opacity-50 font-medium' onClick={() => router.back()}>Go Back</button>
             </div>
             <div className='mx-[24px] flex flex-col md:flex-row lg:justify-center lg:items-center'>
                 <div className='md:w-5/12 md:m-4 lg:max-w-[450px]'>
