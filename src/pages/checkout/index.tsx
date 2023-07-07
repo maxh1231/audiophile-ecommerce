@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import { MutableRefObject, useEffect, useRef, useState } from "react";
 import { ItemType } from "@/utils/types";
 import { calcCartTotal } from "@/utils/helpers";
+import { useRouter } from "next/router";
 
 interface props {
     cart: ItemType[],
@@ -21,6 +22,7 @@ const Checkout = ({ cart, setCart, background, setBackground }: props) => {
     const radioOne = useRef(null) as unknown as MutableRefObject<HTMLInputElement>
     const radioTwo = useRef(null) as unknown as MutableRefObject<HTMLInputElement>
     const [cartTotal, setCartTotal] = useState<string>('')
+    const router = useRouter()
 
     useEffect(() => {
         if (radioOne.current.checked) {
@@ -86,7 +88,7 @@ const Checkout = ({ cart, setCart, background, setBackground }: props) => {
             }
             <section className={`${background} bg-[#F1F1F1]`}>
                 <div className='py-4 mx-[24px]'>
-                    <Link className='text-lg text-black opacity-50 font-medium' href={'/'}>Go Back</Link>
+                    <button className='text-lg text-black opacity-50 font-medium' onClick={() => router.back()}>Go Back</button>
                 </div>
                 <div className="bg-white mx-[24px] rounded-lg flex flex-col items-start py-6 px-6">
                     <h2 className="text-black font-bold text-3xl tracking-[1px]">CHECKOUT</h2>

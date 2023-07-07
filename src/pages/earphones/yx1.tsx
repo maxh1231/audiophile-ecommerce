@@ -3,6 +3,7 @@ import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { props } from '../../utils/types'
 import { useWindowSize } from '@/hooks/useWindowResize';
+import { Router, useRouter } from 'next/router';
 
 function PagePreviewMobile(): JSX.Element {
     return <Image src="/assets/product-yx1-earphones/mobile/image-product.jpg" className='rounded-lg m-auto' alt="earphones" width={372} height={352} />
@@ -70,6 +71,7 @@ const ItemCounter = dynamic(() =>
 const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: props) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const windowSize = useWindowSize();
+    const router = useRouter();
     let pagePreview;
 
     if (windowSize.width && windowSize.width < 768) {
@@ -83,7 +85,7 @@ const renderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
     return (
         <div className={`bg-white ${background}`}>
             <div className='py-4 mx-[24px]'>
-                <Link className='text-lg text-black opacity-50 font-medium' href={'/'}>Go Back</Link>
+                <button className='text-lg text-black opacity-50 font-medium' onClick={() => router.back()}>Go Back</button>
             </div>
             <div className='mx-[24px] flex flex-col md:flex-row lg:justify-center lg:items-center'>
                 <div className='md:w-5/12 md:m-4 lg:w-1/2 lg:max-w-[450px]'>
