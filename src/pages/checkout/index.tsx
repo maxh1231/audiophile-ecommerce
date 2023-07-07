@@ -11,9 +11,10 @@ interface props {
     setCart: React.Dispatch<React.SetStateAction<ItemType[]>>,
     background: string,
     setBackground: React.Dispatch<React.SetStateAction<string>>,
+    setNumItems: React.Dispatch<React.SetStateAction<number>>,
 }
 
-const Checkout = ({ cart, setCart, background, setBackground }: props) => {
+const Checkout = ({ cart, setCart, background, setBackground, setNumItems }: props) => {
     const [active, setActive] = useState("border-[2px] border-[#CFCFCF]");
     const [activeTwo, setActiveTwo] = useState("border-[2px] border-[#CFCFCF]");
     const [trigger, setTrigger] = useState(0);
@@ -82,8 +83,8 @@ const Checkout = ({ cart, setCart, background, setBackground }: props) => {
     return (
         <section>
             {activeConfirmation &&
-                <div className="fadeIn absolute top-[1400px] z-50 opacity-100">
-                    <Confirmation cart={cart} setCart={setCart} grandTotal={grandTotal} setBackground={setBackground} />
+                <div className="cart fadeIn absolute top-[1400px] z-50 opacity-100">
+                    <Confirmation cart={cart} setCart={setCart} grandTotal={grandTotal} setBackground={setBackground} setNumItems={setNumItems} />
                 </div>
             }
             <section className={`${background} bg-[#F1F1F1]`}>

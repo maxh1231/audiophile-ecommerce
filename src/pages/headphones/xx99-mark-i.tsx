@@ -6,13 +6,13 @@ import { useWindowSize } from '@/hooks/useWindowResize';
 import { useRouter } from 'next/router';
 
 function PagePreviewMobile(): JSX.Element {
-    return <Image src="/assets/product-xx99-mark-one-headphones/mobile/image-product.jpg" className='rounded-lg m-auto' alt="earphones" width={372} height={352} />
+    return <Image src="/assets/product-xx99-mark-one-headphones/mobile/image-product.jpg" className='rounded-lg m-auto' alt="earphones" width={372} height={352} priority={true} />
 }
 function PagePreviewTablet(): JSX.Element {
-    return <Image src="/assets/product-xx99-mark-one-headphones/tablet/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+    return <Image src="/assets/product-xx99-mark-one-headphones/tablet/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} priority={true} />
 }
 function PagePreviewDesktop(): JSX.Element {
-    return <Image src="/assets/product-xx99-mark-one-headphones/desktop/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} />
+    return <Image src="/assets/product-xx99-mark-one-headphones/desktop/image-product.jpg" className='rounded-lg' alt="earphones" width={372} height={352} priority={true} />
 }
 
 function renderGallery(windowSize: number): JSX.Element {

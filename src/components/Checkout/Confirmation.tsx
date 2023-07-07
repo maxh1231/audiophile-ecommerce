@@ -7,17 +7,19 @@ interface props {
     cart: ItemType[],
     setCart: React.Dispatch<React.SetStateAction<ItemType[]>>,
     grandTotal: string
-    setBackground: React.Dispatch<React.SetStateAction<string>>
+    setBackground: React.Dispatch<React.SetStateAction<string>>,
+    setNumItems: React.Dispatch<React.SetStateAction<number>>,
 }
 
-const Confirmation = ({ cart, setCart, grandTotal, setBackground }: props) => {
+const Confirmation = ({ cart, setCart, grandTotal, setBackground, setNumItems }: props) => {
     const router = useRouter();
 
     const returnUser = () => {
         setCart([]);
         setBackground("")
+        localStorage.setItem('cart', '');
+        setNumItems(0);
         router.push('/')
-
     }
 
     return (
