@@ -32,12 +32,16 @@ interface props {
     cart: ItemType[],
     setCart: React.Dispatch<React.SetStateAction<ItemType[]>>,
     numItems: number,
-    setNumItems: React.Dispatch<React.SetStateAction<number>>
+    setNumItems: React.Dispatch<React.SetStateAction<number>>,
+    activeMenu: boolean,
+    setActiveMenu: React.Dispatch<React.SetStateAction<boolean>>,
+    activeCart: boolean,
+    setActiveCart: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const Nav = ({ background, setBackground, cart, setCart, numItems, setNumItems }: props): JSX.Element => {
-    const [activeMenu, setActiveMenu] = useState(false);
-    const [activeCart, setActiveCart] = useState(false);
+const Nav = ({ background, setBackground, cart, setCart, numItems, setNumItems, activeMenu, setActiveMenu, activeCart, setActiveCart }: props): JSX.Element => {
+    // const [activeMenu, setActiveMenu] = useState(false);
+    // const [activeCart, setActiveCart] = useState(false);
 
     const menuHandler = () => {
         if (activeMenu == false) {
