@@ -41,9 +41,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
   const modalHandle = () => {
     if (activeMenu || activeCart) {
-      setActiveMenu(false);
-      setActiveCart(false);
-      setBackground("");
+      // setActiveMenu(false);
+      // setActiveCart(false);
+      // setBackground("");
     }
   }
 

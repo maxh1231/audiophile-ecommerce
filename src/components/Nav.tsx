@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from 'next/image';
 import dynamic from "next/dynamic";
 import { ItemType } from "@/utils/types";
+import useDetectClickOut from "@/hooks/useDetectClickOut"
 
 
 
@@ -42,6 +43,7 @@ interface props {
 const Nav = ({ background, setBackground, cart, setCart, numItems, setNumItems, activeMenu, setActiveMenu, activeCart, setActiveCart }: props): JSX.Element => {
     // const [activeMenu, setActiveMenu] = useState(false);
     // const [activeCart, setActiveCart] = useState(false);
+    // const [modalShown, toggleModal] = useState<boolean>(false)
 
     const menuHandler = () => {
         if (activeMenu == false) {
@@ -79,7 +81,10 @@ const Nav = ({ background, setBackground, cart, setCart, numItems, setNumItems, 
                         {NavLogo()}
                     </Link>
                 </li>
-                <li onClick={cartHandler}>
+                <li onClick={() => {
+                    setActiveCart(!activeCart)
+                    cartHandler();
+                }}>
                     <button type="button" className="relative inline-flex items-center p-3 text-sm font-medium text-center text-white rounded-lg hover:bg-gray-800 ">
                         {NavCartIcon()}
                         <span className="sr-only">Notifications</span>
@@ -96,10 +101,10 @@ const Nav = ({ background, setBackground, cart, setCart, numItems, setNumItems, 
             }
 
             {activeCart &&
-                <div className="cart fadeIn absolute top-28 z-50">
-                    <Cart cart={cart} setCart={setCart} activeCart={activeCart} setActiveCart={setActiveCart} background={background} setBackground={setBackground} numItems={numItems} setNumItems={setNumItems} />
-                </div>
+                <Cart activeCart={activeCart} setActiveCart={setActiveCart} cart={cart} setCart={setCart} background={background} setBackground={setBackground} numItems={numItems} setNumItems={setNumItems} />
+
             }
+
 
 
         </div>
