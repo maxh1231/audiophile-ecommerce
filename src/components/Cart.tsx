@@ -39,7 +39,10 @@ const Cart = ({ cart, setCart, activeCart, setActiveCart, setBackground, numItem
     }
 
     return activeCart ? (
-        <div className="modal-backdrop" onClick={() => setActiveCart(false)}>
+        <div className="modal-backdrop" onClick={() => {
+            setActiveCart(false)
+            setBackground('');
+        }}>
 
             <div className="cart fadeIn bg-[#FFFFFF] w-[327px] flex flex-col items-center rounded-lg" onClick={(e) => e.stopPropagation()} >
                 <div className="flex justify-between w-full px-6 my-6">
