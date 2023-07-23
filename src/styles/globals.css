@@ -215,4 +215,28 @@ input[type="radio"]:checked {
 
 }
 
+.navbar {
+  width: 100%;
+  max-width: 100%;
+  min-height: 6vh;
+  box-sizing: border-box;
+  z-index: 50;
+}
+
+.scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  background-color: #191919;
+  ;
+}
+
+.scrolled-backdrop {
+  position: fixed;
+  /* top: 105px; */
+  left: 0;
+  z-index: 50;
+}
+
 /* left-[calc(250px + 100vw - 1024px)] */

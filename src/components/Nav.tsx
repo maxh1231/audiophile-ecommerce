@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from 'next/image';
 import dynamic from "next/dynamic";
@@ -43,6 +43,25 @@ const Nav = ({ background, setBackground, cart, setCart, numItems, setNumItems, 
     // const [activeMenu, setActiveMenu] = useState(false);
     // const [activeCart, setActiveCart] = useState(false);
     // const [modalShown, toggleModal] = useState<boolean>(false)
+    const [scrolled, setScrolled] = useState(false);
+
+    const handleScroll = () => {
+        const offset = window.scrollY;
+        if (offset > 200) {
+            setScrolled(true);
+        }
+        else {
+            setScrolled(false);
+        }
+    }
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+    })
+
+    let x = ['navbar'];
+    if (scrolled) {
+        x.push('scrolled');
+    }
 
     const menuHandler = () => {
         if (activeMenu == false) {
@@ -68,7 +87,7 @@ const Nav = ({ background, setBackground, cart, setCart, numItems, setNumItems, 
     }
 
     return (
-        <div className="flex flex-col">
+        <div className={`${x.join(" ")} dark flex flex-col`}>
             <ul className="flex justify-between items-center py-8 px-8 border-b-[1px] border-neutral-800">
                 <li onClick={menuHandler}>
                     <button type="button" className="relative inline-flex items-center p-3 text-sm font-medium text-center text-white rounded-lg hover:bg-gray-800 ">

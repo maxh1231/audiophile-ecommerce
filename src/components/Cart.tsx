@@ -39,7 +39,7 @@ const Cart = ({ cart, setCart, activeCart, setActiveCart, setBackground, numItem
     }
 
     return activeCart ? (
-        <div className="modal-backdrop" onClick={() => {
+        <div className="scrolled-backdrop modal-backdrop" onClick={() => {
             setActiveCart(false)
             setBackground('');
         }}>
@@ -50,11 +50,11 @@ const Cart = ({ cart, setCart, activeCart, setActiveCart, setBackground, numItem
                     <span onClick={emptyCart} className="text-black opacity-50 text-lg font-medium decoration-solid underline hover:cursor-pointer hover:text-[#D87D4A] hover:opacity-100">Remove all</span>
                 </div>
                 {cart.map((item, i) => (
-                    <div key={i} className="text-black w-full flex items-center justify-around px-6 mb-4">
+                    <div key={i} className="text-black w-full flex items-center justify-around px-4 mb-4">
                         <div>
                             <Image className="rounded-lg" src={item.img} width={64} height={64} alt="cart item"></Image>
                         </div>
-                        <div className="flex flex-col min-w-[80px] py-4 ">
+                        <div className="flex flex-col min-w-[80px] py-4 px-2 ">
                             <h2 className="font-bold ">{item.name}</h2>
                             <p className="font-bold text-black text-[14px] opacity-50">$ {item.price}</p>
                         </div>
