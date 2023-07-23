@@ -7,17 +7,19 @@ interface props {
     cart: ItemType[],
     setCart: React.Dispatch<React.SetStateAction<ItemType[]>>,
     grandTotal: string
-    setBackground: React.Dispatch<React.SetStateAction<string>>
+    setBackground: React.Dispatch<React.SetStateAction<string>>,
+    setNumItems: React.Dispatch<React.SetStateAction<number>>,
 }
 
-const Confirmation = ({ cart, setCart, grandTotal, setBackground }: props) => {
+const Confirmation = ({ cart, setCart, grandTotal, setBackground, setNumItems }: props) => {
     const router = useRouter();
 
     const returnUser = () => {
         setCart([]);
         setBackground("")
+        localStorage.setItem('cart', '');
+        setNumItems(0);
         router.push('/')
-
     }
 
     return (
@@ -55,7 +57,7 @@ const Confirmation = ({ cart, setCart, grandTotal, setBackground }: props) => {
                     </div>
                 </div>
             </div>
-            <button onClick={() => returnUser()} className="mb-2 w-full bg-[#D87D4A] font-bold tracking-[1px] py-4">BACK TO HOME</button>
+            <button onClick={() => returnUser()} className="hover:cursor-pointer hover:bg-[#FBAF85] mb-2 w-full bg-[#D87D4A] font-bold tracking-[1px] py-4">BACK TO HOME</button>
         </section>
     )
 }

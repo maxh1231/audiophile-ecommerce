@@ -1,9 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from 'next/image';
 import dynamic from "next/dynamic";
 import { ItemType } from "@/utils/types";
-import { Item } from "@/utils/Item";
 
 
 
@@ -31,14 +30,38 @@ interface props {
     background: string,
     setBackground: React.Dispatch<React.SetStateAction<string>>,
     cart: ItemType[],
-    setCart: React.Dispatch<React.SetStateAction<ItemType[]>>
+    setCart: React.Dispatch<React.SetStateAction<ItemType[]>>,
+    numItems: number,
+    setNumItems: React.Dispatch<React.SetStateAction<number>>,
+    activeMenu: boolean,
+    setActiveMenu: React.Dispatch<React.SetStateAction<boolean>>,
+    activeCart: boolean,
+    setActiveCart: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const Nav = ({ background, setBackground, cart, setCart }: props): JSX.Element => {
-    const [activeMenu, setActiveMenu] = useState(false);
-    const [activeCart, setActiveCart] = useState(false);
+const Nav = ({ background, setBackground, cart, setCart, numItems, setNumItems, activeMenu, setActiveMenu, activeCart, setActiveCart }: props): JSX.Element => {
+    // const [activeMenu, setActiveMenu] = useState(false);
+    // const [activeCart, setActiveCart] = useState(false);
+    // const [modalShown, toggleModal] = useState<boolean>(false)
+    const [scrolled, setScrolled] = useState(false);
 
+    const handleScroll = () => {
+        const offset = window.scrollY;
+        if (offset > 200) {
+            setScrolled(true);
+        }
+        else {
+            setScrolled(false);
+        }
+    }
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+    })
 
+    let x = ['navbar'];
+    if (scrolled) {
+        x.push('scrolled');
+    }
 
     const menuHandler = () => {
         if (activeMenu == false) {
@@ -64,18 +87,29 @@ const Nav = ({ background, setBackground, cart, setCart }: props): JSX.Element =
     }
 
     return (
-        <div className="flex flex-col">
+        <div className={`${x.join(" ")} dark flex flex-col`}>
             <ul className="flex justify-between items-center py-8 px-8 border-b-[1px] border-neutral-800">
                 <li onClick={menuHandler}>
-                    {NavMenuIcon()}
+                    <button type="button" className="relative inline-flex items-center p-3 text-sm font-medium text-center text-white rounded-lg hover:bg-gray-800 ">
+                        {NavMenuIcon()}
+                    </button>
                 </li>
                 <li>
                     <Link href="/">
                         {NavLogo()}
                     </Link>
                 </li>
-                <li onClick={cartHandler}>
-                    {NavCartIcon()}
+                <li onClick={() => {
+                    setActiveCart(!activeCart)
+                    cartHandler();
+                }}>
+                    <button type="button" className="relative inline-flex items-center p-3 text-sm font-medium text-center text-white rounded-lg hover:bg-gray-800 ">
+                        {NavCartIcon()}
+                        <span className="sr-only">Notifications</span>
+                        {numItems > 0 &&
+                            <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">{numItems}</div>
+                        }
+                    </button>
                 </li>
             </ul>
             {activeMenu &&
@@ -85,10 +119,10 @@ const Nav = ({ background, setBackground, cart, setCart }: props): JSX.Element =
             }
 
             {activeCart &&
-                <div className="fadeIn absolute top-28 left-6 z-50">
-                    <Cart cart={cart} setCart={setCart} activeCart={activeCart} setActiveCart={setActiveCart} background={background} setBackground={setBackground} />
-                </div>
+                <Cart activeCart={activeCart} setActiveCart={setActiveCart} cart={cart} setCart={setCart} background={background} setBackground={setBackground} numItems={numItems} setNumItems={setNumItems} />
+
             }
+
 
 
         </div>

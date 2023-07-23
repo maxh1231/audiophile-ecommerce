@@ -11,6 +11,15 @@ export const calcCartTotal = (cart: ItemType[]) => {
 
 }
 
+export const calcNumItems = (cart: ItemType[]) => {
+    let total = 0;
+    cart.forEach((item) => {
+        total += item.count;
+    })
+
+    return total;
+}
+
 export const storeCart = async (cart: ItemType[] | ItemType) => {
     // if (localStorage.getItem("cart")) {
     //     let currCart = localStorage.getItem("cart");

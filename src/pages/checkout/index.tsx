@@ -4,15 +4,17 @@ import dynamic from 'next/dynamic';
 import { MutableRefObject, useEffect, useRef, useState } from "react";
 import { ItemType } from "@/utils/types";
 import { calcCartTotal } from "@/utils/helpers";
+import { useRouter } from "next/router";
 
 interface props {
     cart: ItemType[],
     setCart: React.Dispatch<React.SetStateAction<ItemType[]>>,
     background: string,
     setBackground: React.Dispatch<React.SetStateAction<string>>,
+    setNumItems: React.Dispatch<React.SetStateAction<number>>,
 }
 
-const Checkout = ({ cart, setCart, background, setBackground }: props) => {
+const Checkout = ({ cart, setCart, background, setBackground, setNumItems }: props) => {
     const [active, setActive] = useState("border-[2px] border-[#CFCFCF]");
     const [activeTwo, setActiveTwo] = useState("border-[2px] border-[#CFCFCF]");
     const [trigger, setTrigger] = useState(0);
@@ -21,6 +23,7 @@ const Checkout = ({ cart, setCart, background, setBackground }: props) => {
     const radioOne = useRef(null) as unknown as MutableRefObject<HTMLInputElement>
     const radioTwo = useRef(null) as unknown as MutableRefObject<HTMLInputElement>
     const [cartTotal, setCartTotal] = useState<string>('')
+    const router = useRouter()
 
     useEffect(() => {
         if (radioOne.current.checked) {
@@ -34,8 +37,11 @@ const Checkout = ({ cart, setCart, background, setBackground }: props) => {
 
     useEffect(() => {
         setCartTotal(calcCartTotal(cart))
-        setGrandTotal(calcGrandTotal)
     }, [cart])
+
+    useEffect(() => {
+        setGrandTotal(calcGrandTotal())
+    }, [cartTotal])
 
     const handler = () => {
         if (trigger) {
@@ -50,7 +56,6 @@ const Checkout = ({ cart, setCart, background, setBackground }: props) => {
             setActiveConfirmation(false)
             setBackground('')
         } else {
-            // window.scrollTo({ top: 20, behavior: 'smooth' });
             setActiveConfirmation(true);
             setBackground('opacity-40');
         }
@@ -78,13 +83,13 @@ const Checkout = ({ cart, setCart, background, setBackground }: props) => {
     return (
         <section>
             {activeConfirmation &&
-                <div className="fadeIn absolute top-[1400px] z-50 opacity-100">
-                    <Confirmation cart={cart} setCart={setCart} grandTotal={grandTotal} setBackground={setBackground} />
+                <div className="cart fadeIn absolute top-[1400px] z-50 opacity-100">
+                    <Confirmation cart={cart} setCart={setCart} grandTotal={grandTotal} setBackground={setBackground} setNumItems={setNumItems} />
                 </div>
             }
             <section className={`${background} bg-[#F1F1F1]`}>
                 <div className='py-4 mx-[24px]'>
-                    <Link className='text-lg text-black opacity-50 font-medium' href={'/'}>Go Back</Link>
+                    <button className='text-lg text-black opacity-50 font-medium' onClick={() => router.back()}>Go Back</button>
                 </div>
                 <div className="bg-white mx-[24px] rounded-lg flex flex-col items-start py-6 px-6">
                     <h2 className="text-black font-bold text-3xl tracking-[1px]">CHECKOUT</h2>
@@ -187,7 +192,7 @@ const Checkout = ({ cart, setCart, background, setBackground }: props) => {
                         <span className="text-[#D87D4A] text-lg font-bold text-right">$ {grandTotal}</span>
                     </div>
                     <div className="mt-10">
-                        <button onClick={() => showConfirmation()} className=" w-full text-white text-lg font-medium bg-[#D87D4A] py-2">CONTINUE & PAY</button>
+                        <button onClick={() => showConfirmation()} className=" w-full text-white text-lg font-medium bg-[#D87D4A] py-2 hover:cursor-pointer hover:bg-[#FBAF85]">CONTINUE & PAY</button>
                     </div>
                 </div>
 

@@ -38,9 +38,9 @@ const CartItemCounter = ({ cart, setCart, item }: Cart): JSX.Element => {
 
     return (
         <>
-            <button onClick={() => decrementItem(item)} className='text-black opacity-25 text-xl pl-5'>-</button>
+            <button onClick={() => decrementItem(item)} className='text-black opacity-25 text-xl pl-5 hover:text-[#D87D4A] hover:opacity-100'>-</button>
             <span className='text-black px-4 py-2 font-bold'>{currCount}</span>
-            <button onClick={() => incrementItem(item)} className='text-black opacity-25 text-xl pr-5'>+</button>
+            <button onClick={() => incrementItem(item)} className='text-black opacity-25 text-xl pr-5 hover:text-[#D87D4A] hover:opacity-100'>+</button>
         </>
     )
 }
