@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from 'next/image';
 import dynamic from "next/dynamic";
@@ -32,12 +32,36 @@ interface props {
     cart: ItemType[],
     setCart: React.Dispatch<React.SetStateAction<ItemType[]>>,
     numItems: number,
-    setNumItems: React.Dispatch<React.SetStateAction<number>>
+    setNumItems: React.Dispatch<React.SetStateAction<number>>,
+    activeMenu: boolean,
+    setActiveMenu: React.Dispatch<React.SetStateAction<boolean>>,
+    activeCart: boolean,
+    setActiveCart: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const Nav = ({ background, setBackground, cart, setCart, numItems, setNumItems }: props): JSX.Element => {
-    const [activeMenu, setActiveMenu] = useState(false);
-    const [activeCart, setActiveCart] = useState(false);
+const Nav = ({ background, setBackground, cart, setCart, numItems, setNumItems, activeMenu, setActiveMenu, activeCart, setActiveCart }: props): JSX.Element => {
+    // const [activeMenu, setActiveMenu] = useState(false);
+    // const [activeCart, setActiveCart] = useState(false);
+    // const [modalShown, toggleModal] = useState<boolean>(false)
+    const [scrolled, setScrolled] = useState(false);
+
+    const handleScroll = () => {
+        const offset = window.scrollY;
+        if (offset > 200) {
+            setScrolled(true);
+        }
+        else {
+            setScrolled(false);
+        }
+    }
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+    })
+
+    let x = ['navbar'];
+    if (scrolled) {
+        x.push('scrolled');
+    }
 
     const menuHandler = () => {
         if (activeMenu == false) {
@@ -63,7 +87,7 @@ const Nav = ({ background, setBackground, cart, setCart, numItems, setNumItems }
     }
 
     return (
-        <div className="flex flex-col">
+        <div className={`${x.join(" ")} dark flex flex-col`}>
             <ul className="flex justify-between items-center py-8 px-8 border-b-[1px] border-neutral-800">
                 <li onClick={menuHandler}>
                     <button type="button" className="relative inline-flex items-center p-3 text-sm font-medium text-center text-white rounded-lg hover:bg-gray-800 ">
@@ -75,7 +99,10 @@ const Nav = ({ background, setBackground, cart, setCart, numItems, setNumItems }
                         {NavLogo()}
                     </Link>
                 </li>
-                <li onClick={cartHandler}>
+                <li onClick={() => {
+                    setActiveCart(!activeCart)
+                    cartHandler();
+                }}>
                     <button type="button" className="relative inline-flex items-center p-3 text-sm font-medium text-center text-white rounded-lg hover:bg-gray-800 ">
                         {NavCartIcon()}
                         <span className="sr-only">Notifications</span>
@@ -92,10 +119,10 @@ const Nav = ({ background, setBackground, cart, setCart, numItems, setNumItems }
             }
 
             {activeCart &&
-                <div className="cart fadeIn absolute top-28 z-50">
-                    <Cart cart={cart} setCart={setCart} activeCart={activeCart} setActiveCart={setActiveCart} background={background} setBackground={setBackground} numItems={numItems} setNumItems={setNumItems} />
-                </div>
+                <Cart activeCart={activeCart} setActiveCart={setActiveCart} cart={cart} setCart={setCart} background={background} setBackground={setBackground} numItems={numItems} setNumItems={setNumItems} />
+
             }
+
 
 
         </div>

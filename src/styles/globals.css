@@ -196,5 +196,47 @@ input[type="radio"]:checked {
   margin-right: auto;
 }
 
+.modal-backdrop {
+  position: absolute;
+  top: 109px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* background-color: rgba(0, 0, 0, 0.4); */
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 100;
+
+}
+
+.modal-content {
+
+  background-color: white;
+
+}
+
+.navbar {
+  width: 100%;
+  max-width: 100%;
+  min-height: 6vh;
+  box-sizing: border-box;
+  z-index: 50;
+}
+
+.scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  background-color: #191919;
+  ;
+}
+
+.scrolled-backdrop {
+  position: fixed;
+  /* top: 105px; */
+  left: 0;
+  z-index: 50;
+}
 
 /* left-[calc(250px + 100vw - 1024px)] */
