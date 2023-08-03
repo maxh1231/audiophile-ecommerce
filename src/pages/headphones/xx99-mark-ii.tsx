@@ -95,7 +95,7 @@ const RenderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                 <div className='flex flex-col items-start justify-center my-2 md:w-7/12 lg:max-w-[450px]'>
                     <p className='text-[#D87D4A]  tracking-[10px] my-6'>NEW PRODUCT</p>
                     <h2 className='font-bold text-black text-left text-3xl tracking-[1px]'>XX99 MARK II<br />HEADPHONES</h2>
-                    <p className='opacity-50 font-medium text-lg text-black text-left my-6'>The new XX99 Mark II headphones are the pinnicale of pristine audio. It redefines your premium headphones experience by reporducing the balanced depth and precision of studio-quality sound.</p>
+                    <p className='opacity-50 font-medium text-lg text-black text-left my-6'>The new XX99 Mark II headphones are the pinnicale of pristine audio. It redefines your premium headphones experience by reproducing the balanced depth and precision of studio-quality sound.</p>
                     <p className='text-black font-bold text-xl tracking-[1.2px]'>$ 2,999</p>
 
                     <ItemCounter cart={cart} setCart={setCart} name={"XX99 MK II"} price={"2,999"} img={"/assets/product-xx99-mark-two-headphones/mobile/image-product.jpg"} numItems={numItems} setNumItems={setNumItems} />
@@ -106,7 +106,7 @@ const RenderComponent = ({ cart, setCart, background, numItems, setNumItems }: p
                 <div className='mx-[24px] mt-20 lg:max-w-[700px]'>
                     <h2 className='text-black font-bold text-2xl tracking-widest my-6'>FEATURES</h2>
                     <p className='text-black opacity-50 text-lg font-medium my-6'>Featuring a genuine leather head strap and premium earcups, these headphones deliver superior comfort for those who like to enjoy endless listening. It includes intuitive controls designed for any situation. Whether you’re taking a business call or just in your own personal space, the auto on/off and pause features ensure that you’ll never miss a beat.</p>
-                    <p className='text-black opacity-50 text-lg font-medium my-6'>The advanced Active Noise Cancellation with built-in equalizer allow you to experience your audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings when you need to. Combined with Bluetooth 5. 0 compliant connectivity and 17 hour battery life, the XX99 Mark II headphones gives you superior sound, cutting-edge technology, and a modern design aesthetic.</p>
+                    <p className='text-black opacity-50 text-lg font-medium my-6'>The advanced Active Noise Cancellation with built-in equalizer allow you to experience your audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings when you need to. Combined with Bluetooth 5.0 compliant connectivity and 17 hour battery life, the XX99 Mark II headphones gives you superior sound, cutting-edge technology, and a modern design aesthetic.</p>
                 </div>
 
                 <div className='mx-[24px] mt-20 my-6 lg:w-fit'>

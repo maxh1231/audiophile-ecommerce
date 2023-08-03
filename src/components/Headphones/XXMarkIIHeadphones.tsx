@@ -12,7 +12,7 @@ function PagePreviewDesktop(): JSX.Element {
     return <Image src="/assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg" className='rounded-lg' alt="earphones" width={750} height={352} />
 }
 
-const XXMarkIIHeadphones = (): JSX.Element => { 
+const XXMarkIIHeadphones = (): JSX.Element => {
     const windowSize = useWindowSize()
     let pagePreview;
 
@@ -32,7 +32,7 @@ const XXMarkIIHeadphones = (): JSX.Element => {
             <div className='flex flex-col items-center justify-end my-2 lg:w-1/2 lg:max-w-[450px] lg:justify-center lg:items-start lg:ml-24'>
                 <p className='text-[#D87D4A]  tracking-[10px] my-4'>NEW PRODUCT</p>
                 <h2 className='font-bold text-black text-center text-3xl tracking-[1px] lg:text-left'>XX99 MARK II<br />HEADPHONES</h2>
-                <p className='opacity-50 font-medium text-lg text-black text-center px-2 my-4 md:w-3/4 lg:text-left lg:p-0'>The new XX99 Mark II headphones are the pinnicale of pristine audio. It redefines your premium headphones experience by reporducing the balanced depth and precision of studio-quality sound.</p>
+                <p className='opacity-50 font-medium text-lg text-black text-center px-2 my-4 md:w-3/4 lg:text-left lg:p-0'>The new XX99 Mark II headphones are the pinnicale of pristine audio. It redefines your premium headphones experience by reproducing the balanced depth and precision of studio-quality sound.</p>
                 <Link href="/headphones/xx99-mark-ii"> <button className='bg-[#D87D4A] font-bold px-6 py-4 hover:cursor-pointer hover:bg-[#FBAF85]'>SEE PRODUCT</button></Link>
             </div>
         </div>

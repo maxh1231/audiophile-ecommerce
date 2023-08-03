@@ -12,7 +12,7 @@ const Footer = (): JSX.Element => {
                 <div className="bg-mobile-best-gear h-1/2 bg-cover bg-no-repeat rounded-md md:bg-tablet-best-gear lg:w-1/2 lg:h-full lg:max-w-[500px] lg:bg-center"></div>
                 <div className="flex flex-col items-center justify-center h-1/2 my-6 lg:w-1/2 lg:max-w-[500px] lg:items-start">
                     <h3 className="text-black font-bold text-[28px] tracking-[1px] text-center my-6 md:text-[32px] md:w-3/4 lg:text-left">BRINGING YOU THE <span className="text-[#D97D4A]">BEST</span> AUDIO GEAR</h3>
-                    <p className="text-black text-center opacity-50 font-medium leading-[25px] md:w-3/4 lg:text-left">Located at the heart of New York City, Audiophile is the preimer store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience. Stop by our store to meet some of the fantastic people who make Audiphile the best place to buy your portable audio equipment.</p>
+                    <p className="text-black text-center opacity-50 font-medium leading-[25px] md:w-3/4 lg:text-left">Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment.</p>
                 </div>
             </div>
             <div className="h-[654px] bg-black flex flex-col items-center md:items-start justify-between md:h-[400px] lg:flex-row">
@@ -52,7 +52,7 @@ const Footer = (): JSX.Element => {
                             </div>
                         </div>
                     </div>
-               </div>
+                </div>
             </div>
         </div>
     )
